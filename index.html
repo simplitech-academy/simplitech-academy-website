@@ -164,6 +164,19 @@ a{color:inherit}
 .card-link{display:inline-block;margin-top:4px;font-weight:600;font-size:14.5px;color:var(--accent-text);text-decoration:none}
 .card-link:hover{text-decoration:underline;text-underline-offset:4px}
 
+/* learn: two ways */
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.way{display:flex;flex-direction:column;gap:14px;padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.way-feature{border-color:var(--accent)}
+.way h3{font-size:1.35rem}
+.way .intro{color:var(--muted)}
+.way ul{margin:0;padding:0;list-style:none}
+.way li{padding:10px 0 10px 22px;border-top:1px solid var(--line);position:relative;font-size:.95rem}
+.way li::before{content:"";position:absolute;left:2px;top:19px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--grad-a),var(--grad-b))}
+.way .btn{margin-top:auto;align-self:flex-start}
+.way .note{color:var(--muted);font-size:.88rem}
+@media (max-width:760px){.ways{grid-template-columns:minmax(0,1fr)}.way{padding:22px}}
+
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;list-style:none;margin:0;padding:0}
 .step{padding-top:20px;border-top:1px solid var(--line)}
@@ -320,6 +333,7 @@ a{color:inherit}
     </a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#courses" data-nav="courses">Courses</a>
+      <a href="#learn" data-nav="learn">Tutorials</a>
       <a href="#how" data-nav="how">How it works</a>
       <a href="#blog" data-nav="blog">Blog</a>
       <a href="#about" data-nav="about">About us</a>
@@ -429,6 +443,38 @@ a{color:inherit}
             <p>Not sure which course fits you? Your coach will help you choose in a free consultation.</p>
             <a class="card-link" href="#contact">Book a free consultation</a>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="sec-learn">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Learn your way</p>
+        <h2>Online tutorials, or a coach of your own</h2>
+        <p>Start free on our YouTube channel, or work one to one with a coach who builds the plan around you.</p>
+      </div>
+      <div class="ways">
+        <article class="way">
+          <div class="card-top"><span class="mono-tag" aria-hidden="true">YT</span><h3>Online tutorials</h3></div>
+          <p class="intro">Free video lessons on the Simplitech Academy YouTube channel.</p>
+          <ul>
+            <li>Watch at your own pace, any time</li>
+            <li>Topics from our four course areas: AI, data, software and cloud, design</li>
+            <li>A good way to try a subject before booking a coach</li>
+          </ul>
+          <a class="btn btn-ghost" href="https://www.youtube.com/results?search_query=Simplitech+Academy" target="_blank" rel="noopener" data-yt>Watch on YouTube</a>
+        </article>
+        <article class="way way-feature">
+          <div class="card-top"><span class="mono-tag" aria-hidden="true">1:1</span><h3>Personal online training</h3></div>
+          <p class="intro">Live sessions with your own coach, built around your goal.</p>
+          <ul>
+            <li>One learner, one coach, live online</li>
+            <li>A plan matched to your level and your goal</li>
+            <li>Questions answered as you work, not after the video ends</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Book a free consultation</a>
         </article>
       </div>
     </div>
@@ -686,6 +732,7 @@ a{color:inherit}
         <p class="label">Academy</p>
         <ul class="foot-links">
           <li><a href="#about">About us</a></li>
+          <li><a href="#learn">Online tutorials</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Book a consultation</a></li>
@@ -701,6 +748,7 @@ a{color:inherit}
   var routes={
     home:['home',null],
     courses:['home','sec-courses'],
+    learn:['home','sec-learn'],
     how:['home','sec-how'],
     faq:['home','sec-faq'],
     blog:['blog',null],

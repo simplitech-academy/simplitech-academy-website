@@ -175,6 +175,12 @@ a{color:inherit}
 .way li::before{content:"";position:absolute;left:2px;top:19px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--grad-a),var(--grad-b))}
 .way .btn{margin-top:auto;align-self:flex-start}
 .way .note{color:var(--muted);font-size:.88rem}
+.latest{margin-top:40px}
+.latest h3{font-size:1.2rem;margin-bottom:6px}
+.latest > p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
+.player{position:relative;aspect-ratio:16/9;max-width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface-2)}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.latest .more{display:inline-block;margin-top:14px}
 @media (max-width:760px){.ways{grid-template-columns:minmax(0,1fr)}.way{padding:22px}}
 
 /* steps */
@@ -476,6 +482,12 @@ a{color:inherit}
           </ul>
           <a class="btn btn-primary" href="#contact">Book a free consultation</a>
         </article>
+      </div>
+      <div class="latest">
+        <h3>Latest videos</h3>
+        <p>The newest tutorials from our channel play here, newest first.</p>
+        <div class="player"><iframe title="Simplitech Academy latest videos" src="https://www.youtube-nocookie.com/embed/videoseries?list=UUfg70o1GIURH0ud9kliMgJw" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <a class="card-link more" href="https://www.youtube.com/channel/UCfg70o1GIURH0ud9kliMgJw" target="_blank" rel="noopener" data-yt>See all videos on YouTube</a>
       </div>
     </div>
   </section>

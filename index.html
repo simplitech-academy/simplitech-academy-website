@@ -255,6 +255,17 @@ a{color:inherit}
   .road li::after{display:none}
 }
 @media (max-width:520px){.road{grid-template-columns:repeat(2,minmax(0,1fr))}.cards.compact .course-head{flex-wrap:wrap}}
+
+/* technology tiles: official logo files in /logos are used when present, otherwise a monogram */
+.tools-grid{display:grid;gap:28px}
+.tools-group h3{font:500 11.5px/1.4 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.tools-row{display:flex;flex-wrap:wrap;gap:12px}
+.tool{display:flex;align-items:center;gap:12px;min-width:0;padding:12px 18px 12px 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-weight:600;font-size:.95rem}
+.tool-img{position:relative;display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:#fff;border:1px solid var(--line);flex:none;overflow:hidden}
+.tool-img img{position:relative;z-index:1;width:26px;height:26px;object-fit:contain}
+.tool-img .mono{position:absolute;inset:0;display:grid;place-items:center;font:700 13px var(--font-display);color:var(--btn-ink);background:linear-gradient(135deg,var(--grad-a),var(--grad-b))}
+.tool-img.has .mono{display:none}
+@media (max-width:520px){.tool{flex:1 1 calc(50% - 6px);padding-right:12px;font-size:.88rem}}
 .course-list p{color:var(--muted);font-size:.92rem;margin-top:4px}
 .tag{font:500 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);white-space:nowrap}
 .tag-long{color:var(--accent-text);border-color:var(--accent)}
@@ -697,6 +708,22 @@ body.dialog-open{overflow:hidden}
           <p class="label">Today's Simplibyte</p>
           <div id="byteToday"><p class="empty">Loading today's card.</p></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sec-tools">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:32px">
+        <p class="eyebrow">Technologies</p>
+        <h2>Tools you will use</h2>
+      </div>
+      <div class="tools-grid">
+        <div class="tools-group"><h3>Cloud</h3><div class="tools-row"><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">AWS</b><img src="logos/aws.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>AWS</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Az</b><img src="logos/azure.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Microsoft Azure</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">GC</b><img src="logos/googlecloud.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Google Cloud</span></div></div>
+        <div class="tools-group"><h3>Containers and infrastructure</h3><div class="tools-row"><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Dk</b><img src="logos/docker.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Docker</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">K8</b><img src="logos/kubernetes.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Kubernetes</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">He</b><img src="logos/helm.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Helm</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Tf</b><img src="logos/terraform.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Terraform</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">An</b><img src="logos/ansible.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Ansible</span></div></div>
+        <div class="tools-group"><h3>CI/CD</h3><div class="tools-row"><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">GH</b><img src="logos/githubactions.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>GitHub Actions</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">GL</b><img src="logos/gitlab.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>GitLab</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Jk</b><img src="logos/jenkins.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Jenkins</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Ar</b><img src="logos/argocd.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Argo CD</span></div></div>
+        <div class="tools-group"><h3>Observability</h3><div class="tools-row"><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Pm</b><img src="logos/prometheus.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Prometheus</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Gf</b><img src="logos/grafana.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Grafana</span></div></div>
+        <div class="tools-group"><h3>Foundations</h3><div class="tools-row"><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Lx</b><img src="logos/linux.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Linux</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Gt</b><img src="logos/git.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Git</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Sh</b><img src="logos/bash.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Bash</span><span class="tool"><span class="tool-img"><b class="mono" aria-hidden="true">Py</b><img src="logos/python.svg" alt="" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>Python</span></div></div>
       </div>
     </div>
   </section>

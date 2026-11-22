@@ -1332,7 +1332,7 @@ body.dialog-open{overflow:hidden}
     if(!FORM_KEY){return Promise.reject(new Error('not configured'));}
     fields.access_key=FORM_KEY;fields.from_name='Simplitech Academy website';
     return fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(fields)})
-      .then(function(r){return r.json().then(function(j){if(!r.ok||j.success===false){throw new Error('failed');}return j;});});
+      .then(function(r){return r.json().then(function(j){if(!r.ok||j.success===false){throw new Error((j&&j.message)||('error '+r.status));}return j;},function(){throw new Error('error '+r.status);});},function(){throw new Error('network error');});
   }
   var cForm=document.getElementById('contactForm');
   if(cForm){
@@ -1346,7 +1346,7 @@ body.dialog-open{overflow:hidden}
       cMsg.textContent='Sending';
       sendForm({subject:'New message from the website: '+f.interest.value,name:name,email:mail,interest:f.interest.value,message:msg,botcheck:f.botcheck.checked})
         .then(function(){cForm.reset();cMsg.textContent='Thank you. We will reply to your email soon.';})
-        .catch(function(){cMsg.textContent='Sorry, the message could not be sent right now. Please try again later.';});
+        .catch(function(err){try{console.warn('contact form:',err&&err.message);}catch(x){}cMsg.textContent='Sorry, the message could not be sent right now ('+((err&&err.message)||'unknown error')+'). Please try again later.';});
     });
   }
 
@@ -1892,7 +1892,7 @@ body.dialog-open{overflow:hidden}
       setMsg(form,'Subscribing');
       sendForm({subject:'New Simplibytes subscriber',name:'Simplibytes subscriber',email:v,message:'Please add this address to the Simplibytes list.',botcheck:false})
         .then(function(){input.value='';setMsg(form,'Thank you. You are on the list.');})
-        .catch(function(){setMsg(form,'Sorry, subscribing is not available right now. Please try again later.');});
+        .catch(function(err){setMsg(form,'Sorry, subscribing is not available right now ('+((err&&err.message)||'unknown error')+'). Please try again later.');});
     });
   }
 

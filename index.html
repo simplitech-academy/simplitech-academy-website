@@ -296,6 +296,94 @@ a{color:inherit}
 .journey b{display:block;font-size:1rem}
 .journey span.d{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
 @media (max-width:700px){.journey{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.journey li::after{display:none}}
+
+/* nav dropdown */
+.nav-more{position:relative}
+.nav-more-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 12px;border:0;border-radius:6px;background:transparent;color:var(--muted);font:inherit;font-size:14.5px;cursor:pointer}
+.nav-more-btn:hover,.nav-more-btn.on,.nav-more.open .nav-more-btn{color:var(--fg)}
+.nav-more-btn.on{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:8px;text-decoration-thickness:2px}
+.nav-more-btn .chev{width:14px;height:14px;transition:transform .15s}
+.nav-more.open .chev{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:100%;left:0;min-width:170px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(8,24,40,.18);z-index:30}
+.nav-more.open .nav-menu{display:block}
+@media (hover:hover) and (min-width:881px){.nav-more:hover .nav-menu{display:block}}
+.nav-menu a{display:block;white-space:nowrap}
+.nav-menu a:hover{background:var(--surface-2)}
+@media (max-width:880px){
+  .nav-more-btn{display:none}
+  .nav-menu{display:block;position:static;min-width:0;padding:0;border:0;box-shadow:none;background:transparent}
+  .nav-menu a{padding:14px 0 14px 0}
+}
+/* practice page */
+.pr-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pr-pills a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none;font-weight:600;font-size:.92rem}
+.pr-pills a:hover{border-color:var(--accent)}
+.pr-pills .ico{width:18px;height:18px;color:var(--accent-text)}
+.paid{display:inline-block;margin-left:10px;padding:2px 10px;border-radius:999px;background:linear-gradient(135deg,var(--grad-a),var(--grad-b));color:var(--btn-ink);font:700 11px var(--font-body);letter-spacing:.04em;text-transform:uppercase;vertical-align:1px}
+.pr-note{color:var(--muted);font-size:.92rem;margin-top:12px}
+.mock-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mock-item{display:flex;gap:14px;align-items:flex-start;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.mock-item h3{font-size:1.05rem;margin:0 0 4px}
+.mock-item p{margin:0;color:var(--muted);font-size:.93rem}
+.ptest{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:22px;border:1px solid var(--accent);border-radius:14px;background:var(--bg)}
+.ptest-main{flex:1 1 260px;min-width:0}
+.ptest-main h3{font-size:1.2rem;margin:0 0 8px}
+.ptest-meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.92rem}
+.ptest-meta span{display:inline-flex;align-items:center;gap:6px}
+.ptest-meta .ico{width:16px;height:16px;color:var(--accent-text)}
+.chips.plan span{border-style:dashed}
+.labs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.lab{display:flex;flex-direction:column;gap:12px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.lab h3{font-size:1.08rem;margin:0 0 6px}
+.lab p{margin:0;color:var(--muted);font-size:.92rem}
+.lab .chips{margin-top:0}
+.lvl{display:inline-block;font:500 11px var(--font-mono);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:6px;border:1px solid var(--line);color:var(--accent-text)}
+.lvl-intermediate{color:var(--fg-soft)}
+.lvl-advanced{color:var(--fg)}
+.qsets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.qset{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--fg);font:inherit;text-align:left;cursor:pointer}
+.qset:hover,.qset:focus-visible{border-color:var(--accent)}
+.qs-t{font-weight:700;font-size:1rem;line-height:1.25}
+.qs-m{color:var(--muted);font-size:.85rem}
+.sb-callback{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:28px;padding:20px 22px;border:1px solid var(--accent);border-radius:14px;background:var(--bg)}
+.sb-callback .sb-icon{width:48px;height:48px;flex:none}
+.sb-callback div{flex:1 1 240px;min-width:0}
+.sb-callback b{display:block;font-size:1.05rem}
+.sb-callback span{color:var(--muted);font-size:.93rem}
+@media (max-width:960px){.mock-grid,.labs{grid-template-columns:minmax(0,1fr)}.qsets{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* quiz dialog */
+.qdlg{border:1px solid var(--line);border-radius:16px;padding:0;width:min(680px,calc(100vw - 24px));max-height:92vh;margin:4vh auto auto;background:var(--bg);color:var(--fg);box-shadow:0 20px 60px rgba(8,24,40,.35);overflow:auto}
+.qdlg::backdrop{background:rgba(8,24,40,.6);backdrop-filter:blur(3px)}
+.q-head{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}
+.q-head b{font-size:1.05rem}
+.q-head .q-prog{color:var(--muted);font-size:.88rem;margin-left:10px}
+.q-timer{font:600 15px var(--font-mono);font-variant-numeric:tabular-nums;padding:4px 10px;border-radius:8px;border:1px solid var(--line)}
+.q-timer.low{color:#C0392B;border-color:#C0392B}
+.q-x{border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:8px;min-height:34px;padding:0 12px;font:500 13px var(--font-body);cursor:pointer}
+.q-bar{height:4px;background:var(--line)}
+.q-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--grad-a),var(--grad-b));transition:width .2s}
+.q-body{padding:22px 20px 24px}
+.q-text{font:600 1.2rem/1.4 var(--font-display);margin:0 0 16px}
+.q-opts{display:grid;gap:10px}
+.q-opt{display:block;width:100%;text-align:left;padding:13px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--fg);font:inherit;cursor:pointer}
+.q-opt:hover:not([disabled]){border-color:var(--accent)}
+.q-opt.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.q-opt.ok{border-color:#1E8E5A;background:rgba(30,142,90,.12)}
+.q-opt.bad{border-color:#C0392B;background:rgba(192,57,43,.1)}
+.q-opt[disabled]{cursor:default}
+.q-exp{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--surface-2);color:var(--fg-soft);font-size:.95rem}
+.q-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.q-score{font:700 2.6rem/1 var(--font-display);letter-spacing:-.03em;margin:4px 0 6px}
+.q-sub{color:var(--muted);margin:0 0 18px}
+.q-topics{display:grid;gap:10px;margin:0 0 20px}
+.q-topic{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,2fr) auto;gap:12px;align-items:center;font-size:.92rem}
+.q-meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.q-meter i{display:block;height:100%;background:linear-gradient(90deg,var(--grad-a),var(--grad-b))}
+.q-miss{margin:0 0 18px;padding:0;list-style:none;display:grid;gap:10px}
+.q-miss li{padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:.93rem}
+.q-miss b{display:block;margin-bottom:4px}
+.q-miss span{display:block;color:var(--muted)}
+.q-next{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:.93rem}
 .course-list p{color:var(--muted);font-size:.92rem;margin-top:4px}
 .tag{font:500 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);white-space:nowrap}
 .tag-long{color:var(--accent-text);border-color:var(--accent)}
@@ -629,7 +717,7 @@ body.dialog-open{overflow:hidden}
   </defs>
 </svg>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 9.5 4.3 4.3 0 0 0 7 18z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol><symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 6a3 3 0 0 1 0 6M18 14c2 .7 3 2.8 3 6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol><symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></symbol><symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol><symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4 18-7z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 9.5 4.3 4.3 0 0 0 7 18z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol><symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 6a3 3 0 0 1 0 6M18 14c2 .7 3 2.8 3 6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol><symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></symbol><symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol><symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4 18-7z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol></defs></svg>
 <header class="site-header">
   <div class="wrap bar">
     <a class="logo" href="#home" aria-label="Simplitech Academy, home">
@@ -640,9 +728,15 @@ body.dialog-open{overflow:hidden}
       <a class="nav-sb" href="#simplibytes" data-nav="simplibytes">Simplibytes</a>
       <a href="#courses" data-nav="courses">Courses</a>
       <a href="#learn" data-nav="learn">Tutorials</a>
-      <a href="#blog" data-nav="blog">Blog</a>
-      <a href="#about" data-nav="about">About us</a>
-      <a href="#faq" data-nav="faq">FAQ</a>
+      <a href="#practice" data-nav="practice">Practice</a>
+      <div class="nav-more" id="navMore">
+        <button class="nav-more-btn" id="navMoreBtn" type="button" aria-expanded="false" aria-controls="navMenu">More <svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+        <div class="nav-menu" id="navMenu">
+          <a href="#about" data-nav="about">About us</a>
+          <a href="#faq" data-nav="faq">FAQ</a>
+          <a href="#blog" data-nav="blog">Blog</a>
+        </div>
+      </div>
       <a class="nav-book" href="#contact">Book a free consultation</a>
     </nav>
 <button class="srch-btn" id="searchBtn" type="button" aria-label="Search the site"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span class="t">Search</span><kbd>/</kbd></button>
@@ -1083,6 +1177,109 @@ body.dialog-open{overflow:hidden}
 </div>
 
 <!-- ABOUT -->
+<div id="view-practice" hidden>
+  <section class="about-hero">
+    <svg class="deco" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="deco-line" d="M0 330 C500 220 900 460 1400 330 S2200 200 2560 330"/>
+      <path class="deco-line" d="M0 1110 C600 1000 1000 1250 1500 1110 S2200 1000 2560 1120"/>
+      <circle class="deco-node" cx="2260" cy="250" r="12"/><circle class="deco-node" cx="2300" cy="1120" r="12"/>
+      <circle class="deco-ring" cx="2260" cy="250" r="34"/><circle class="deco-ring" cx="2300" cy="1120" r="34"/>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow">Practice</p>
+      <h1>Practise until it feels easy</h1>
+      <p class="lead">Mock interviews, tests, labs and quizzes for DevOps, cloud and SRE roles.</p>
+      <div class="pr-pills">
+        <a href="#mock-interview"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg> Mock interview</a>
+        <a href="#practice-tests"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> Practice tests</a>
+        <a href="#labs"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg> Labs and projects</a>
+        <a href="#quizzes"><svg class="ico" aria-hidden="true"><use href="#i-badge"/></svg> Quick quizzes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sec-mock">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px">
+        <p class="eyebrow">Mock interview <span class="paid">Paid service</span></p>
+        <h2>Practise the real interview</h2>
+      </div>
+      <ol class="journey" aria-label="How a mock interview works">
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg></span><b>Book</b><span class="d">Pick your target role</span></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span><b>Interview</b><span class="d">Live, one to one</span></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span><b>Feedback</b><span class="d">Written, point by point</span></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></span><b>Improve</b><span class="d">A list to work on next</span></li>
+      </ol>
+      <div class="mock-grid">
+        <div class="mock-item"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span><div><h3>Live interview</h3><p>A one-to-one session with a coach, with questions for DevOps, cloud or SRE roles.</p></div></div>
+        <div class="mock-item"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span><div><h3>Feedback</h3><p>Written feedback on your answers, with what went well and what to fix.</p></div></div>
+        <div class="mock-item"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></span><div><h3>Improvement points</h3><p>A short list of concrete steps to improve before the real interview.</p></div></div>
+      </div>
+      <p style="margin-top:28px"><a class="btn btn-primary" href="#contact" data-interest="Mock interview (paid)">Book a mock interview</a></p>
+      <p class="pr-note">Paid session. The price is confirmed when you book.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="sec-ptests">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px">
+        <p class="eyebrow">Practice tests</p>
+        <h2>Test yourself against the clock</h2>
+      </div>
+      <article class="ptest">
+        <span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span>
+        <div class="ptest-main">
+          <h3>Cloud and DevOps fundamentals test</h3>
+          <div class="ptest-meta"><span><svg class="ico" aria-hidden="true"><use href="#i-badge"/></svg> 15 questions</span><span><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 20 minutes</span><span><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg> Score by topic</span></div>
+        </div>
+        <button class="btn btn-primary" type="button" data-quiz="test">Start the test</button>
+      </article>
+      <p class="pr-note" style="margin-top:22px">Exam-style tests, planned:</p>
+      <div class="chips plan"><span>AWS Cloud Practitioner</span><span>AWS Solutions Architect Associate</span><span>AZ-900</span><span>AZ-104</span><span>Google Cloud Digital Leader</span><span>Associate Cloud Engineer</span></div>
+      <p class="pr-note"><a class="card-link" href="#contact" data-interest="Cloud certification (AWS, Azure, Google Cloud)">Tell us which exam you are preparing for</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="sec-labs">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px">
+        <p class="eyebrow">Labs and project ideas</p>
+        <h2>Build something you can show</h2>
+      </div>
+      <div class="labs">
+<article class="lab"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><div><h3>Host a static website on AWS</h3><span class="lvl lvl-beginner">Beginner</span></div><div class="chips"><span>S3</span><span>CloudFront</span><span>IAM</span></div><p><b>You will show:</b> A live site running in your own cloud account</p></article>
+<article class="lab"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg></span><div><h3>Ship a container with a CI/CD pipeline</h3><span class="lvl lvl-intermediate">Intermediate</span></div><div class="chips"><span>Docker</span><span>GitHub Actions</span></div><p><b>You will show:</b> A pipeline that builds, tests and deploys on every push</p></article>
+<article class="lab"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-server"/></svg></span><div><h3>Build a network and server with Terraform</h3><span class="lvl lvl-intermediate">Intermediate</span></div><div class="chips"><span>Terraform</span><span>AWS</span></div><p><b>You will show:</b> A VPC and a server defined entirely in code</p></article>
+<article class="lab"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg></span><div><h3>Run an app on Kubernetes</h3><span class="lvl lvl-intermediate">Intermediate</span></div><div class="chips"><span>Kubernetes</span><span>Helm</span></div><p><b>You will show:</b> A rolling update and a rollback you can demo</p></article>
+<article class="lab"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span><div><h3>Monitoring dashboard with alerts</h3><span class="lvl lvl-intermediate">Intermediate</span></div><div class="chips"><span>Prometheus</span><span>Grafana</span></div><p><b>You will show:</b> Dashboards and an alert tied to an SLO</p></article>
+<article class="lab"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg></span><div><h3>Incident drill and postmortem</h3><span class="lvl lvl-advanced">Advanced</span></div><div class="chips"><span>SLOs</span><span>Runbooks</span></div><p><b>You will show:</b> A written blameless postmortem</p></article>
+      </div>
+      <p style="margin-top:28px"><a class="btn btn-ghost" href="#contact" data-interest="Labs and projects">Do a lab with a coach</a></p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="sec-quiz">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px">
+        <p class="eyebrow">Quick quizzes</p>
+        <h2>Five questions. Two minutes.</h2>
+      </div>
+      <div class="qsets">
+<button class="qset" type="button" data-quiz="cloud"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><span class="qs-t">Cloud basics</span><span class="qs-m">5 questions</span></button>
+<button class="qset" type="button" data-quiz="devops"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg></span><span class="qs-t">DevOps and CI/CD</span><span class="qs-m">5 questions</span></button>
+<button class="qset" type="button" data-quiz="linux"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-term"/></svg></span><span class="qs-t">Linux and networking</span><span class="qs-m">5 questions</span></button>
+<button class="qset" type="button" data-quiz="containers"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg></span><span class="qs-t">Containers and Kubernetes</span><span class="qs-m">5 questions</span></button>
+<button class="qset" type="button" data-quiz="sre"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg></span><span class="qs-t">SRE and observability</span><span class="qs-m">5 questions</span></button>
+      </div>
+      <div class="sb-callback">
+        <svg class="sb-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#sb-icon"/></svg>
+        <div><b>Want one question a day?</b><span>Simplibytes has a new cue card every day, including interview questions.</span></div>
+        <a class="btn btn-primary" href="#simplibytes">Open Simplibytes</a>
+      </div>
+    </div>
+  </section>
+</div>
+
 <div id="view-about" hidden>
   <section class="about-hero">
     <svg class="deco" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -1210,6 +1407,8 @@ body.dialog-open{overflow:hidden}
               <option>DevOps Engineer path</option>
               <option>Site Reliability Engineer path</option>
               <option>Cloud certification (AWS, Azure, Google Cloud)</option>
+              <option>Mock interview (paid)</option>
+              <option>Labs and projects</option>
               <option>Something else</option>
             </select>
           </label>
@@ -1250,6 +1449,7 @@ body.dialog-open{overflow:hidden}
           <li><a href="#about">About us</a></li>
           <li><a href="#simplibytes">Simplibytes</a></li>
           <li><a href="#learn">Online tutorials</a></li>
+          <li><a href="#practice">Practice</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Book a consultation</a></li>
@@ -1259,6 +1459,12 @@ body.dialog-open{overflow:hidden}
     <p class="fine">© 2026 Simplitech Academy. All rights reserved.</p>
   </div>
 </footer>
+
+<dialog id="quizDialog" class="qdlg" aria-label="Quiz">
+  <div class="q-head"><div><b id="qTitle"></b><span class="q-prog" id="qProg"></span></div><span class="q-timer" id="qTimer" hidden></span><button class="q-x" id="qClose" type="button">Close</button></div>
+  <div class="q-bar"><i id="qBar"></i></div>
+  <div class="q-body" id="qBody" aria-live="polite"></div>
+</dialog>
 
 <dialog id="searchDialog" class="sdlg" aria-label="Search the site">
   <form class="sd-box" id="searchForm" role="search" novalidate>
@@ -1290,6 +1496,11 @@ body.dialog-open{overflow:hidden}
     courses:['home','sec-courses'],
     certifications:['home','sec-certs'],
     learn:['home','sec-learn'],
+    practice:['practice',null],
+    'mock-interview':['practice','sec-mock'],
+    'practice-tests':['practice','sec-ptests'],
+    labs:['practice','sec-labs'],
+    quizzes:['practice','sec-quiz'],
     tools:['home','sec-tools'],
     faq:['home','sec-faq'],
     blog:['blog',null],
@@ -1297,7 +1508,7 @@ body.dialog-open{overflow:hidden}
     about:['about',null],
     contact:[null,'sec-contact']
   };
-  var views={home:document.getElementById('view-home'),about:document.getElementById('view-about'),blog:document.getElementById('view-blog'),bytes:document.getElementById('view-bytes')};
+  var views={home:document.getElementById('view-home'),about:document.getElementById('view-about'),blog:document.getElementById('view-blog'),bytes:document.getElementById('view-bytes'),practice:document.getElementById('view-practice')};
   var nav=document.getElementById('nav');
   var toggle=document.getElementById('navToggle');
   var current=null;
@@ -1310,14 +1521,18 @@ body.dialog-open{overflow:hidden}
   function highlight(key,view){
     var active=null;
     if(key==='certifications'||key==='tools'){active='courses';}
-    else if(key==='courses'||key==='faq'||key==='about'||key==='blog'||key==='simplibytes'){active=key;}
+    else if(['mock-interview','practice-tests','labs','quizzes'].indexOf(key)>-1){active='practice';}
+    else if(['courses','faq','about','blog','simplibytes','learn','practice'].indexOf(key)>-1){active=key;}
     else if(view==='about'||view==='blog'){active=view;}
     else if(view==='bytes'){active='simplibytes';}
+    else if(view==='practice'){active='practice';}
     var links=nav.querySelectorAll('a[data-nav]');
     for(var i=0;i<links.length;i++){
       if(links[i].getAttribute('data-nav')===active){links[i].setAttribute('aria-current','page');}
       else{links[i].removeAttribute('aria-current');}
     }
+    var mbtn=document.getElementById('navMoreBtn');
+    if(mbtn){mbtn.classList.toggle('on',['about','faq','blog'].indexOf(active)>-1);}
   }
   function route(){
     var key=(location.hash||'').replace('#','');
@@ -1334,7 +1549,7 @@ body.dialog-open{overflow:hidden}
       target.scrollIntoView({behavior:(reduce||changed)?'auto':'smooth',block:'start'});
     }else if(isByte){
       focusByte(key.slice(5));
-    }else if(changed||key===''||key==='home'||key==='about'||key==='blog'||key==='simplibytes'){
+    }else if(changed||key===''||key==='home'||key==='about'||key==='blog'||key==='simplibytes'||key==='practice'){
       window.scrollTo(0,0);
     }
     highlight(key,view);
@@ -2049,7 +2264,7 @@ body.dialog-open{overflow:hidden}
 
   /* site search: static entries plus the loaded Simplibytes and blog posts */
   (function(){
-    var STATIC=[{"t": "Courses", "s": "Section", "h": "#courses", "k": "career path devops sre cloud"}, {"t": "DevOps Engineer path", "s": "Section", "h": "#courses", "k": "career devops ci/cd pipelines roadmap"}, {"t": "Site Reliability Engineer path", "s": "Section", "h": "#courses", "k": "career sre slo incident reliability roadmap"}, {"t": "Certification courses", "s": "Section", "h": "#certifications", "k": "exam aws azure google cloud certified"}, {"t": "Tools you will use", "s": "Section", "h": "#tools", "k": "technologies logos stack"}, {"t": "Simplibytes", "s": "Page", "h": "#simplibytes", "k": "daily cue cards fact interview question subscribe"}, {"t": "Online tutorials", "s": "Section", "h": "#learn", "k": "youtube videos free watch"}, {"t": "Blog: daily tech brief", "s": "Page", "h": "#blog", "k": "news cloud ai updates"}, {"t": "About us", "s": "Page", "h": "#about", "k": "mission team time zones"}, {"t": "Book a free consultation", "s": "Section", "h": "#contact", "k": "calendly call schedule book"}, {"t": "Send us a message", "s": "Section", "h": "#contact", "k": "contact write query form"}, {"t": "AWS Cloud Computing & AI", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "AWS Cloud Engineering & AI", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Docker & CI/CD Pipelines", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Kubernetes in Practice", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "DevOps Engineer Program", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Linux, Networking & Scripting", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Terraform & Ansible", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Monitoring & Observability", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "SRE Essentials", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Site Reliability Engineer Program", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "AWS Certified Cloud Practitioner", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified Solutions Architect Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified Developer Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified CloudOps Engineer Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified DevOps Engineer Professional", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AZ-900 Azure Fundamentals", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-104 Azure Administrator Associate", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-204 Azure Developer Associate", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-400 DevOps Engineer Expert", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-305 Azure Solutions Architect Expert", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "Google Cloud Digital Leader", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Associate Cloud Engineer", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Professional Cloud Architect", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Professional Cloud DevOps Engineer", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "AWS", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Microsoft Azure", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Google Cloud", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Docker", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Kubernetes", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Helm", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Terraform", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Ansible", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "GitHub Actions", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "GitLab", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Jenkins", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Argo CD", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Prometheus", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Grafana", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Linux", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Git", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Bash", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Python", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Do I need experience to start?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "How do the one-to-one sessions work?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "Are the courses fully online?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "What is the difference between a short course and a long program?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "Which course should I choose?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "How much does a course cost?", "s": "FAQ", "h": "#faq", "k": "question answer"}];
+    var STATIC=[{"t": "Practice", "s": "Page", "h": "#practice", "k": "mock interview tests labs quizzes"}, {"t": "Mock interview (paid)", "s": "Practice", "h": "#mock-interview", "k": "interview feedback improvement book paid"}, {"t": "Practice tests", "s": "Practice", "h": "#practice-tests", "k": "timed test exam mock"}, {"t": "Labs and project ideas", "s": "Practice", "h": "#labs", "k": "hands-on projects portfolio"}, {"t": "Quick quizzes", "s": "Practice", "h": "#quizzes", "k": "quiz questions"}, {"t": "Host a static website on AWS", "s": "Lab idea", "h": "#labs", "k": "S3 CloudFront IAM A live site running in your own cloud account"}, {"t": "Ship a container with a CI/CD pipeline", "s": "Lab idea", "h": "#labs", "k": "Docker GitHub Actions A pipeline that builds, tests and deploys on every push"}, {"t": "Build a network and server with Terraform", "s": "Lab idea", "h": "#labs", "k": "Terraform AWS A VPC and a server defined entirely in code"}, {"t": "Run an app on Kubernetes", "s": "Lab idea", "h": "#labs", "k": "Kubernetes Helm A rolling update and a rollback you can demo"}, {"t": "Monitoring dashboard with alerts", "s": "Lab idea", "h": "#labs", "k": "Prometheus Grafana Dashboards and an alert tied to an SLO"}, {"t": "Incident drill and postmortem", "s": "Lab idea", "h": "#labs", "k": "SLOs Runbooks A written blameless postmortem"}, {"t": "Quiz: Cloud basics", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: DevOps and CI/CD", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: Linux and networking", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: Containers and Kubernetes", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: SRE and observability", "s": "Quiz", "h": "#quizzes", "k": "questions practice"},{"t": "Courses", "s": "Section", "h": "#courses", "k": "career path devops sre cloud"}, {"t": "DevOps Engineer path", "s": "Section", "h": "#courses", "k": "career devops ci/cd pipelines roadmap"}, {"t": "Site Reliability Engineer path", "s": "Section", "h": "#courses", "k": "career sre slo incident reliability roadmap"}, {"t": "Certification courses", "s": "Section", "h": "#certifications", "k": "exam aws azure google cloud certified"}, {"t": "Tools you will use", "s": "Section", "h": "#tools", "k": "technologies logos stack"}, {"t": "Simplibytes", "s": "Page", "h": "#simplibytes", "k": "daily cue cards fact interview question subscribe"}, {"t": "Online tutorials", "s": "Section", "h": "#learn", "k": "youtube videos free watch"}, {"t": "Blog: daily tech brief", "s": "Page", "h": "#blog", "k": "news cloud ai updates"}, {"t": "About us", "s": "Page", "h": "#about", "k": "mission team time zones"}, {"t": "Book a free consultation", "s": "Section", "h": "#contact", "k": "calendly call schedule book"}, {"t": "Send us a message", "s": "Section", "h": "#contact", "k": "contact write query form"}, {"t": "AWS Cloud Computing & AI", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "AWS Cloud Engineering & AI", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Docker & CI/CD Pipelines", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Kubernetes in Practice", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "DevOps Engineer Program", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Linux, Networking & Scripting", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Terraform & Ansible", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Monitoring & Observability", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "SRE Essentials", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Site Reliability Engineer Program", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "AWS Certified Cloud Practitioner", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified Solutions Architect Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified Developer Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified CloudOps Engineer Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified DevOps Engineer Professional", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AZ-900 Azure Fundamentals", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-104 Azure Administrator Associate", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-204 Azure Developer Associate", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-400 DevOps Engineer Expert", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-305 Azure Solutions Architect Expert", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "Google Cloud Digital Leader", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Associate Cloud Engineer", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Professional Cloud Architect", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Professional Cloud DevOps Engineer", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "AWS", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Microsoft Azure", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Google Cloud", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Docker", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Kubernetes", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Helm", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Terraform", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Ansible", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "GitHub Actions", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "GitLab", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Jenkins", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Argo CD", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Prometheus", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Grafana", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Linux", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Git", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Bash", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Python", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Do I need experience to start?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "How do the one-to-one sessions work?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "Are the courses fully online?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "What is the difference between a short course and a long program?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "Which course should I choose?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "How much does a course cost?", "s": "FAQ", "h": "#faq", "k": "question answer"}];
     var dlg=document.getElementById('searchDialog'),inp=document.getElementById('searchInput'),list=document.getElementById('searchList'),head=document.getElementById('searchHead'),btn=document.getElementById('searchBtn');
     if(!dlg||!btn||typeof dlg.showModal!=='function'){if(btn){btn.hidden=true;}return;}
     var POPULAR=['DevOps Engineer path','Site Reliability Engineer path','Certification courses','Simplibytes','Book a free consultation'];
@@ -2106,6 +2321,123 @@ body.dialog-open{overflow:hidden}
       var typing=tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT'||(e.target&&e.target.isContentEditable);
       if((e.key==='/'&&!typing&&!e.ctrlKey&&!e.metaKey)||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k')){e.preventDefault();open();}
     });
+  })();
+
+  /* practice: quizzes, timed test, interview prefill */
+  (function(){
+    var SETS=[{"id": "cloud", "title": "Cloud basics", "icon": "cloud", "q": [{"t": "Which cloud service model gives you virtual machines and networking that you manage yourself?", "o": ["IaaS", "SaaS", "PaaS", "DaaS"], "e": "Infrastructure as a Service gives you the building blocks, such as virtual machines and networks. You manage everything above them."}, {"t": "In the shared responsibility model, who is responsible for the physical data centre?", "o": ["The cloud provider", "The customer", "Both equally", "Nobody"], "e": "The provider secures the facilities and hardware. You secure what you put in the cloud, such as data, access and configuration."}, {"t": "What is an Availability Zone?", "o": ["One or more separate data centres in a Region with independent power and networking", "A single server rack", "A billing region", "A type of virtual machine"], "e": "Spreading a workload across Availability Zones keeps it running if one data centre fails."}, {"t": "Amazon S3 is best described as:", "o": ["Object storage", "A relational database", "A virtual machine service", "A DNS service"], "e": "S3 stores objects, which are files plus metadata, in buckets. It is not a file system or a database."}, {"t": "The principle of least privilege means:", "o": ["Giving only the permissions needed to do the job", "Giving everyone admin rights", "Removing all passwords", "Using one shared account"], "e": "Small permissions limit the damage from mistakes and compromised credentials."}]}, {"id": "devops", "title": "DevOps and CI/CD", "icon": "loop", "q": [{"t": "What does CI stand for in CI/CD?", "o": ["Continuous Integration", "Cloud Infrastructure", "Container Isolation", "Code Inspection"], "e": "Continuous Integration means merging code often and checking every change automatically."}, {"t": "Which Git command creates a new branch and switches to it?", "o": ["git checkout -b feature", "git branch -d feature", "git merge feature", "git stash feature"], "e": "git checkout -b creates and switches in one step. git switch -c does the same."}, {"t": "Blue-green deployment means:", "o": ["Running two identical environments and switching traffic to the new one", "Deploying only at night", "Using two cloud providers", "Deploying without tests"], "e": "If the new environment has a problem, you switch traffic back to the old one."}, {"t": "A key benefit of infrastructure as code is:", "o": ["Repeatable, version-controlled environments", "No need for any cloud account", "Servers that never fail", "No need for testing"], "e": "Code can be reviewed, versioned and re-run, so environments match every time."}, {"t": "What is the main job of a build pipeline stage that runs unit tests?", "o": ["Catch bugs early, before deployment", "Provision servers", "Send invoices", "Encrypt the database"], "e": "Automated tests give fast feedback so broken changes do not reach production."}]}, {"id": "linux", "title": "Linux and networking", "icon": "term", "q": [{"t": "Which command lists files with details such as permissions and size?", "o": ["ls -l", "cd -l", "pwd -l", "mkdir -l"], "e": "ls -l prints a long listing: permissions, owner, size and modification time."}, {"t": "Which port does HTTPS use by default?", "o": ["443", "80", "22", "25"], "e": "HTTPS uses 443. HTTP uses 80, SSH uses 22 and SMTP uses 25."}, {"t": "What does chmod 755 file set?", "o": ["Owner read/write/execute, others read/execute", "Everyone read-only", "Owner read-only", "No permissions for anyone"], "e": "7 is rwx for the owner. 5 is r-x for the group and for others."}, {"t": "What does DNS do?", "o": ["Translates names into IP addresses", "Encrypts web traffic", "Assigns passwords", "Balances CPU load"], "e": "DNS maps names like example.com to IP addresses."}, {"t": "Which command shows running processes and updates live?", "o": ["top", "cat", "touch", "tar"], "e": "top shows CPU and memory use per process and refreshes continuously."}]}, {"id": "containers", "title": "Containers and Kubernetes", "icon": "box", "q": [{"t": "What is the smallest deployable unit in Kubernetes?", "o": ["Pod", "Node", "Cluster", "Namespace"], "e": "A Pod wraps one or more containers that share networking and storage."}, {"t": "How do containers differ from virtual machines?", "o": ["Containers share the host operating system kernel", "Containers include a full guest OS", "Containers need a hypervisor each", "Containers cannot run Linux"], "e": "Sharing the kernel makes containers lighter and faster to start than virtual machines."}, {"t": "What does a Kubernetes Deployment manage?", "o": ["Replicas of Pods and rolling updates", "Only DNS records", "Cloud billing", "Docker image storage"], "e": "A Deployment keeps the desired number of Pods running and rolls out changes gradually."}, {"t": "Which Dockerfile instruction sets the base image?", "o": ["FROM", "RUN", "COPY", "EXPOSE"], "e": "FROM is normally the first instruction. It names the image your image builds on."}, {"t": "What does kubectl get pods show?", "o": ["Pods in the current namespace", "All cloud accounts", "Docker volumes", "Git branches"], "e": "It lists Pods with their status. Add -A to include every namespace."}]}, {"id": "sre", "title": "SRE and observability", "icon": "pulse", "q": [{"t": "What is an SLO?", "o": ["A target for how well a service should perform over time", "A type of server", "A billing plan", "A deployment tool"], "e": "An example SLO: 99.9% of requests succeed over 30 days."}, {"t": "How is an error budget defined?", "o": ["The amount of unreliability allowed by the SLO", "The money spent on incidents", "The number of bugs in a backlog", "The time engineers spend on call"], "e": "If the SLO is 99.9%, the error budget is the remaining 0.1%."}, {"t": "Which are the three common pillars of observability?", "o": ["Metrics, logs and traces", "CPU, RAM and disk", "Build, test and deploy", "Plan, code and release"], "e": "Metrics show trends, logs show events and traces show a request across services."}, {"t": "What is the aim of a blameless postmortem?", "o": ["Learn what happened and prevent a repeat without blaming individuals", "Decide who is at fault", "Delete the incident record", "Skip the follow-up work"], "e": "People share what they know more openly when the focus is on systems and process."}, {"t": "Which is a good SLI (service level indicator)?", "o": ["Percentage of requests served successfully in under 300 ms", "Number of engineers on call", "Size of the codebase", "Number of meetings held"], "e": "An SLI measures what users experience, and an SLO sets the target for it."}]}];
+    var dlg=document.getElementById('quizDialog');
+    if(!dlg||typeof dlg.showModal!=='function'){return;}
+    var body=document.getElementById('qBody'),title=document.getElementById('qTitle'),prog=document.getElementById('qProg'),bar=document.getElementById('qBar'),timerEl=document.getElementById('qTimer');
+    var st=null,timer=null;
+    function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+    function mk(tag,cls,txt){var e=document.createElement(tag);if(cls){e.className=cls;}if(txt!=null){e.textContent=txt;}return e;}
+    function prep(q,topic){var opts=q.o.map(function(t,i){return {t:t,ok:i===0};});return {t:q.t,e:q.e,topic:topic,o:shuffle(opts),pick:-1};}
+    function stop(){if(timer){clearInterval(timer);timer=null;}}
+    function fmt(s){var m=Math.floor(s/60),r=s%60;return m+':'+(r<10?'0':'')+r;}
+    function start(id){
+      var qs=[],name,test=id==='test';
+      if(test){
+        SETS.forEach(function(s){shuffle(s.q).slice(0,3).forEach(function(q){qs.push(prep(q,s.title));});});
+        qs=shuffle(qs);name='Cloud and DevOps fundamentals test';
+      }else{
+        var set=SETS.filter(function(s){return s.id===id;})[0];if(!set){return;}
+        qs=shuffle(set.q).map(function(q){return prep(q,set.title);});name=set.title;
+      }
+      st={qs:qs,i:0,test:test,name:name,left:20*60};
+      title.textContent=name;stop();
+      if(test){timerEl.hidden=false;timerEl.classList.remove('low');timerEl.textContent=fmt(st.left);
+        timer=setInterval(function(){st.left--;timerEl.textContent=fmt(Math.max(st.left,0));timerEl.classList.toggle('low',st.left<=120);if(st.left<=0){finish();}},1000);
+      }else{timerEl.hidden=true;}
+      if(!dlg.open){dlg.showModal();}
+      show();
+    }
+    function show(){
+      var q=st.qs[st.i];body.textContent='';
+      prog.textContent='Question '+(st.i+1)+' of '+st.qs.length;bar.style.width=(st.i/st.qs.length*100)+'%';
+      body.appendChild(mk('p','q-text',q.t));
+      var box=mk('div','q-opts'),next=mk('button','btn btn-primary',st.i===st.qs.length-1?'Finish':'Next');next.type='button';next.disabled=true;
+      var exp=mk('div','q-exp');exp.hidden=true;
+      q.o.forEach(function(o,idx){
+        var b=mk('button','q-opt',o.t);b.type='button';
+        b.addEventListener('click',function(){
+          if(st.test){q.pick=idx;[].forEach.call(box.children,function(c,k){c.classList.toggle('sel',k===idx);});next.disabled=false;}
+          else if(q.pick<0){
+            q.pick=idx;
+            [].forEach.call(box.children,function(c,k){c.disabled=true;if(q.o[k].ok){c.classList.add('ok');}else if(k===idx){c.classList.add('bad');}});
+            exp.textContent=(o.ok?'Correct. ':'Not quite. ')+q.e;exp.hidden=false;next.disabled=false;
+          }
+        });
+        box.appendChild(b);
+      });
+      body.appendChild(box);body.appendChild(exp);
+      var act=mk('div','q-actions');act.appendChild(next);body.appendChild(act);
+      next.addEventListener('click',function(){if(st.i<st.qs.length-1){st.i++;show();}else{finish();}});
+    }
+    function finish(){
+      stop();timerEl.hidden=true;
+      var score=0,topics={},miss=[];
+      st.qs.forEach(function(q){
+        var ok=q.pick>=0&&q.o[q.pick].ok;if(ok){score++;}
+        var t=topics[q.topic]||(topics[q.topic]={n:0,ok:0});t.n++;if(ok){t.ok++;}else{miss.push(q);}
+      });
+      bar.style.width='100%';prog.textContent='Finished';body.textContent='';
+      body.appendChild(mk('div','q-score',score+' / '+st.qs.length));
+      var pct=score/st.qs.length;
+      body.appendChild(mk('p','q-sub',pct>=0.8?'Strong result. Keep the habit going.':pct>=0.5?'A solid base. Review the points below and try again.':'A good start. Review the points below and try again.'));
+      if(st.test){
+        var tp=mk('div','q-topics');
+        Object.keys(topics).forEach(function(k){
+          var r=mk('div','q-topic');r.appendChild(mk('span',null,k));var m=mk('div','q-meter'),i=mk('i');i.style.width=(topics[k].ok/topics[k].n*100)+'%';m.appendChild(i);r.appendChild(m);r.appendChild(mk('span',null,topics[k].ok+'/'+topics[k].n));tp.appendChild(r);
+        });
+        body.appendChild(tp);
+      }
+      if(miss.length){
+        body.appendChild(mk('p','q-sub','To review:'));
+        var ul=mk('ul','q-miss');
+        miss.forEach(function(q){
+          var li=mk('li');li.appendChild(mk('b',null,q.t));
+          var right=q.o.filter(function(o){return o.ok;})[0].t;
+          li.appendChild(mk('span',null,'Answer: '+right));li.appendChild(mk('span',null,q.e));ul.appendChild(li);
+        });
+        body.appendChild(ul);
+      }
+      var act=mk('div','q-actions');
+      var again=mk('button','btn btn-primary','Try again');again.type='button';again.addEventListener('click',function(){start(st.test?'test':SETS.filter(function(s){return s.title===st.name;})[0].id);});
+      var done=mk('button','btn btn-ghost','Close');done.type='button';done.addEventListener('click',function(){dlg.close();});
+      act.appendChild(again);act.appendChild(done);body.appendChild(act);
+      var nx=mk('div','q-next');
+      var a1=mk('a','card-link','Keep going with one byte a day on Simplibytes');a1.href='#simplibytes';
+      var a2=mk('a','card-link','Book a mock interview');a2.href='#contact';a2.setAttribute('data-interest','Mock interview (paid)');
+      nx.appendChild(a1);nx.appendChild(a2);body.appendChild(nx);
+    }
+    document.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('[data-quiz]');
+      if(b){start(b.getAttribute('data-quiz'));}
+    });
+    dlg.addEventListener('close',stop);
+    document.getElementById('qClose').addEventListener('click',function(){dlg.close();});
+    dlg.addEventListener('click',function(e){
+      if(e.target===dlg){dlg.close();return;}
+      var a=e.target.closest&&e.target.closest('a[href^="#"]');
+      if(a){var h=a.getAttribute('href');dlg.close();if(location.hash===h){route();}}
+    });
+  })();
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[data-interest]');
+    if(!a){return;}
+    var sel=document.querySelector('#contactForm [name=interest]');
+    if(sel){for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===a.getAttribute('data-interest')){sel.selectedIndex=i;break;}}}
+  });
+  /* nav dropdown */
+  (function(){
+    var more=document.getElementById('navMore'),mb=document.getElementById('navMoreBtn');
+    if(!more||!mb){return;}
+    function setOpen(v){more.classList.toggle('open',v);mb.setAttribute('aria-expanded',v?'true':'false');}
+    mb.addEventListener('click',function(e){e.stopPropagation();setOpen(!more.classList.contains('open'));});
+    document.addEventListener('click',function(e){if(!more.contains(e.target)){setOpen(false);}});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&more.classList.contains('open')){setOpen(false);mb.focus();}});
+    more.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a')){setOpen(false);}});
   })();
   loadBytes();
   window.Simplibytes={render:renderPng,cards:function(){return bytes.slice();}};

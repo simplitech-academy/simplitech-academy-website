@@ -1226,7 +1226,7 @@ body.dialog-open{overflow:hidden}
   /* site settings: FORM_KEY is the public Web3Forms access key, BOOKING_URL the scheduling link */
   var FORM_ENDPOINT='https://api.web3forms.com/submit';
   var FORM_KEY='';
-  var BOOKING_URL='';
+  var BOOKING_URL='https://calendly.com/cloudedsimply/30min';
   var routes={
     home:['home',null],
     courses:['home','sec-courses'],
@@ -1321,6 +1321,12 @@ body.dialog-open{overflow:hidden}
   if(bookBtn&&/^https:\/\//i.test(BOOKING_URL)){
     var a=document.createElement('a');a.className=bookBtn.className;a.id='bookBtn';a.href=BOOKING_URL;a.target='_blank';a.rel='noopener';a.textContent='Pick a time';
     bookBtn.parentNode.replaceChild(a,bookBtn);
+  }
+  if(/^https:\/\//i.test(BOOKING_URL)){
+    var bl=document.querySelectorAll('a[href="#contact"]');
+    for(var bi=0;bi<bl.length;bi++){
+      if(bl[bi].textContent.trim()==='Book a free consultation'){bl[bi].href=BOOKING_URL;bl[bi].target='_blank';bl[bi].rel='noopener';}
+    }
   }
   function sendForm(fields){
     if(!FORM_KEY){return Promise.reject(new Error('not configured'));}

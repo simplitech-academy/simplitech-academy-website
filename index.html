@@ -107,6 +107,9 @@ a{color:inherit}
 .nav{margin-left:auto;display:flex;align-items:center;gap:4px}
 .nav a{padding:8px 12px;border-radius:6px;text-decoration:none;font-size:14.5px;color:var(--muted)}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--fg)}
+.nav a.nav-sb{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:#10263a;background:linear-gradient(135deg,var(--grad-a),var(--grad-b));padding:8px 16px;border-radius:999px;box-shadow:0 2px 10px rgba(60,203,184,.4)}
+.nav a.nav-sb:hover,.nav a.nav-sb[aria-current="page"]{color:#10263a;filter:brightness(1.06);text-decoration:none}
+.nav a.nav-sb::before{content:"\2726";font-size:13px}
 .nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:8px;text-decoration-thickness:2px}
 .nav .nav-book{display:none}
 .nav-toggle{display:none;margin-left:auto;min-height:40px;padding:0 14px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--fg);font:500 14px var(--font-body);cursor:pointer}
@@ -432,6 +435,7 @@ body.dialog-open{overflow:hidden}
   .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));background:var(--bg);border-bottom:1px solid var(--line)}
   .nav.open{display:flex}
   .nav a{padding:14px 0;border-top:1px solid var(--line);border-radius:0}
+  .nav a.nav-sb{padding:12px 16px;border-radius:12px;margin:6px 0;border-top:0}
   .nav a[aria-current="page"]{text-underline-offset:6px}
   .nav .nav-book{display:block;color:var(--accent-text);font-weight:600}
 }
@@ -476,8 +480,8 @@ body.dialog-open{overflow:hidden}
       <span class="logo-text"><span class="logo-name">Simplitech</span><span class="logo-sub">Academy</span></span>
     </a>
     <nav class="nav" id="nav" aria-label="Main">
+      <a class="nav-sb" href="#simplibytes" data-nav="simplibytes">Simplibytes</a>
       <a href="#courses" data-nav="courses">Courses</a>
-      <a href="#simplibytes" data-nav="simplibytes">Simplibytes</a>
       <a href="#learn" data-nav="learn">Tutorials</a>
       <a href="#how" data-nav="how">How it works</a>
       <a href="#blog" data-nav="blog">Blog</a>

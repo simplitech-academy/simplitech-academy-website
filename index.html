@@ -190,6 +190,71 @@ a{color:inherit}
 .cert-lvl{display:inline-block;margin-top:4px;font:500 11px var(--font-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent-text)}
 .cert-note{margin-top:28px;color:var(--muted);font-size:.86rem;max-width:760px}
 @media (max-width:900px){.certs{grid-template-columns:minmax(0,1fr)}}
+
+/* visual system */
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.bub{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--grad-a),var(--grad-b));color:var(--btn-ink);flex:none}
+.bub .ico{width:26px;height:26px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.facts>div.fi{display:flex;align-items:center;gap:14px}
+.facts .fi .bub{width:44px;height:44px;border-radius:12px}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;position:relative}
+.flow li{position:relative;text-align:center;padding:0 8px}
+.flow li .bub{margin:0 auto 12px;width:64px;height:64px;border-radius:50%;position:relative;z-index:1;box-shadow:0 0 0 6px var(--bg)}
+.flow li .bub .ico{width:30px;height:30px}
+.flow li::after{content:"";position:absolute;top:32px;left:calc(50% + 40px);right:calc(-50% + 40px);height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 6px,transparent 6px 12px)}
+.flow li:last-child::after{display:none}
+.flow h3{font-size:1.05rem;margin:0}
+.flow .chips{justify-content:center}
+.loopback{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;color:var(--muted);font-size:.9rem}
+.loopback .ico{width:18px;height:18px;color:var(--accent)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.pills span{padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:.9rem}
+.goals .goal{display:flex;flex-direction:column;gap:14px}
+.goal-top{display:flex;align-items:center;gap:14px}
+.goal-top h3{margin:0}
+.goal .chips{margin:0}
+.goal .chips span{font-size:13px;padding:5px 10px}
+.goal .btn{align-self:flex-start;margin-top:auto}
+.road{list-style:none;margin:0 0 44px;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));counter-reset:rd}
+.road li{position:relative;text-align:center;padding:0 6px;counter-increment:rd}
+.road li .bub{margin:0 auto 10px;border-radius:50%;width:56px;height:56px;position:relative;z-index:1;box-shadow:0 0 0 5px var(--bg)}
+.road li::after{content:"";position:absolute;top:28px;left:calc(50% + 34px);right:calc(-50% + 34px);height:2px;background:var(--line)}
+.road li:last-child::after{display:none}
+.road li::before{content:counter(rd);position:absolute;top:-6px;left:calc(50% + 14px);z-index:2;width:20px;height:20px;border-radius:50%;background:var(--fg);color:var(--bg);font:700 11px/20px var(--font-body)}
+.road b{display:block;font-size:.92rem;line-height:1.25}
+.road-end{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:-20px 0 44px}
+.road-end span{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;border:1px solid var(--accent);font-weight:700;font-size:.92rem;background:var(--surface)}
+.road-end .ico{width:18px;height:18px;color:var(--accent-text)}
+.cards.compact .card{gap:10px;padding:22px}
+.cards.compact .course-list li{padding:10px 0}
+.cards.compact .course-head{flex-wrap:nowrap}
+.cards.compact .course-name{font-size:.97rem}
+.cert-card{position:relative;overflow:hidden;padding-top:30px}
+.cert-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--pc,var(--accent))}
+.cert-card h3{display:flex;align-items:center;gap:10px}
+.cert-list li{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cert-name{font-size:.93rem}
+.lv{display:inline-flex;gap:3px;flex:none}
+.lv i{width:8px;height:14px;border-radius:2px;background:var(--line)}
+.lv[data-l="1"] i:nth-child(-n+1),.lv[data-l="2"] i:nth-child(-n+2),.lv[data-l="3"] i:nth-child(-n+3){background:var(--pc,var(--accent))}
+.lv-key{display:flex;flex-wrap:wrap;gap:18px;margin:0 0 20px;color:var(--muted);font-size:.85rem;align-items:center}
+.lv-key .lv{margin-right:6px;vertical-align:-2px}
+.way ul.mini{list-style:none;margin:0;padding:0}
+.way ul.mini li{display:flex;align-items:center;gap:10px;padding:8px 0;border:0;font-size:.97rem}
+.way ul.mini li::before{display:none}
+.way ul.mini .ico{width:20px;height:20px;color:var(--accent-text)}
+.steps .step .bub{margin-bottom:12px}
+.steps .step p{font-size:.95rem}
+.ruled-item .bub{margin-bottom:12px}
+@media (max-width:900px){
+  .flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
+  .flow li::after{display:none}
+  .flow li:last-child{grid-column:1/-1}
+  .road{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px}
+  .road li::after{display:none}
+}
+@media (max-width:520px){.road{grid-template-columns:repeat(2,minmax(0,1fr))}.cards.compact .course-head{flex-wrap:wrap}}
 .course-list p{color:var(--muted);font-size:.92rem;margin-top:4px}
 .tag{font:500 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);white-space:nowrap}
 .tag-long{color:var(--accent-text);border-color:var(--accent)}
@@ -504,6 +569,7 @@ body.dialog-open{overflow:hidden}
   </defs>
 </svg>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 9.5 4.3 4.3 0 0 0 7 18z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol><symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 6a3 3 0 0 1 0 6M18 14c2 .7 3 2.8 3 6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol><symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></symbol><symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol><symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol></defs></svg>
 <header class="site-header">
   <div class="wrap bar">
     <a class="logo" href="#home" aria-label="Simplitech Academy, home">
@@ -541,8 +607,8 @@ body.dialog-open{overflow:hidden}
       <div class="hero-grid">
         <div>
           <p class="eyebrow">Learn DevOps, Cloud and modern technology</p>
-          <h1>Tech skills, taught <span class="grad-text">one to one.</span></h1>
-          <p class="lead">Simplitech Academy runs live online courses for people heading into DevOps, cloud engineering, infrastructure and site reliability roles. Every learner gets a personal coach, hands-on projects and a schedule that fits their time zone.</p>
+          <h1>Learn DevOps and cloud, <span class="grad-text">one to one.</span></h1>
+          <p class="lead">Live coaching for DevOps, cloud and SRE careers.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#courses">Explore courses</a>
             <a class="btn btn-ghost" href="#contact">Book a free consultation</a>
@@ -565,11 +631,28 @@ body.dialog-open{overflow:hidden}
         </div>
       </div>
       <div class="facts">
-        <div><div class="fact-v">2</div><div class="fact-l">career paths: DevOps and SRE</div></div>
-        <div><div class="fact-v">1:1</div><div class="fact-l">coaching in every course</div></div>
-        <div><div class="fact-v">Live</div><div class="fact-l">online sessions with your coach</div></div>
-        <div><div class="fact-v">Worldwide</div><div class="fact-l">learners in any time zone</div></div>
+        <div class="fi"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span><div><div class="fact-v">1:1</div><div class="fact-l">personal coach</div></div></div>
+        <div class="fi"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><div><div class="fact-v">Live</div><div class="fact-l">online sessions</div></div></div>
+        <div class="fi"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><div><div class="fact-v">3 clouds</div><div class="fact-l">AWS, Azure, Google</div></div></div>
+        <div class="fi"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></span><div><div class="fact-v">Any</div><div class="fact-l">time zone</div></div></div>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="sec-flow">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:36px">
+        <p class="eyebrow">What you will build</p>
+        <h2>The DevOps loop, hands on</h2>
+      </div>
+      <ol class="flow">
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg></span><h3>Code</h3><div class="chips"><span>Git</span><span>Linux</span></div></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg></span><h3>Build</h3><div class="chips"><span>Docker</span></div></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Test</h3><div class="chips"><span>CI</span><span>Tests</span></div></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Deploy</h3><div class="chips"><span>AWS</span><span>Terraform</span><span>K8s</span></div></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span><h3>Operate</h3><div class="chips"><span>Prometheus</span><span>Grafana</span></div></li>
+      </ol>
+      <p class="loopback"><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg> Every release feeds back into the next one</p>
     </div>
   </section>
 
@@ -581,14 +664,9 @@ body.dialog-open{overflow:hidden}
             <svg class="sb-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#sb-icon"/></svg>
             <span class="sb-text"><span class="sb-word">Simpli<b>bytes</b></span><span class="sb-by">by Simplitech Academy</span></span>
           </div>
-          <h2 style="margin-top:22px">Short on time? Learn one byte a day.</h2>
-          <p>Simplibytes are quick visual cue cards from Simplitech Academy. Each one takes under a minute to read, so even a busy day has room for it.</p>
-          <ul class="cat-list">
-            <li><b>Fact</b><span>A surprising or useful truth.</span></li>
-            <li><b>Know-how</b><span>A concept, explained simply.</span></li>
-            <li><b>Key detail</b><span>The small thing people forget.</span></li>
-            <li><b>Interview question</b><span>Practise with a sample answer.</span></li>
-          </ul>
+          <h2 style="margin-top:22px">Short on time? One byte a day.</h2>
+          <p>Quick visual cue cards. Under a minute each.</p>
+          <div class="pills"><span>Fact</span><span>Know-how</span><span>Key detail</span><span>Interview question</span></div>
           <form class="sub-form" novalidate>
         <input type="email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Your email address" required>
         <button class="btn btn-primary" type="submit">Subscribe</button>
@@ -608,125 +686,106 @@ body.dialog-open{overflow:hidden}
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Courses</p>
-        <h2>Become a DevOps Engineer or an SRE</h2>
-        <p>Every course here maps to the skills a DevOps, cloud or reliability job description asks for. Pick one skill, or follow the whole path with a personal coach.</p>
+        <h2>Pick your path</h2>
       </div>
       <div class="goals">
         <article class="goal">
-          <h3>DevOps Engineer</h3>
-          <p>Build and automate the pipelines and platforms that ship software.</p>
-          <ul><li>CI/CD pipelines and release automation</li><li>Cloud infrastructure on AWS</li><li>Containers and Kubernetes</li><li>Infrastructure as code with Terraform and Ansible</li></ul>
+          <div class="goal-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg></span><h3>DevOps Engineer</h3></div>
+          <div class="chips"><span>CI/CD</span><span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span></div>
           <a class="btn btn-primary" href="#contact">Plan my DevOps path</a>
         </article>
         <article class="goal">
-          <h3>Site Reliability Engineer</h3>
-          <p>Keep services fast, available and resilient as they grow.</p>
-          <ul><li>Monitoring, logging and alerting</li><li>SLIs, SLOs and error budgets</li><li>Incident response and post-incident reviews</li><li>Automation to remove repetitive work</li></ul>
+          <div class="goal-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg></span><h3>Site Reliability Engineer</h3></div>
+          <div class="chips"><span>SLOs</span><span>Monitoring</span><span>Incident response</span><span>Automation</span><span>Linux</span></div>
           <a class="btn btn-primary" href="#contact">Plan my SRE path</a>
         </article>
       </div>
-      <div class="sec-head">
-        <h2 style="font-size:clamp(1.4rem,2.6vw,1.9rem);margin-top:0">The career path, step by step</h2>
-        <p>A typical route from first commands to a DevOps or SRE role. Your coach adjusts the order and pace to your background.</p>
-      </div>
-      <ol class="path">
-        <li><h4>Linux, networking and scripting</h4><p>The base every infrastructure role starts from.</p><div class="chips"><span>Linux</span><span>TCP/IP</span><span>DNS</span><span>Bash</span><span>Python</span></div></li>
-        <li><h4>Cloud on AWS</h4><p>Compute, storage, networking and identity in the cloud.</p><div class="chips"><span>EC2</span><span>S3</span><span>VPC</span><span>IAM</span><span>RDS</span></div></li>
-        <li><h4>Containers and orchestration</h4><p>Package apps and run them reliably at scale.</p><div class="chips"><span>Docker</span><span>Kubernetes</span><span>Helm</span></div></li>
-        <li><h4>Infrastructure as code</h4><p>Build and change environments from version-controlled code.</p><div class="chips"><span>Terraform</span><span>Ansible</span><span>Git</span></div></li>
-        <li><h4>CI/CD and release automation</h4><p>Ship changes safely, many times a day.</p><div class="chips"><span>GitHub Actions</span><span>Jenkins</span><span>ArgoCD</span></div></li>
-        <li><h4>Observability and reliability</h4><p>Measure, alert, respond and learn from incidents.</p><div class="chips"><span>Prometheus</span><span>Grafana</span><span>SLOs</span><span>Runbooks</span></div></li>
+      <ol class="road" aria-label="Career path">
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-term"/></svg></span><b>Linux and scripting</b></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><b>Cloud on AWS</b></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg></span><b>Containers</b></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg></span><b>Infrastructure as code</b></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg></span><b>CI/CD</b></li>
+        <li><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span><b>Observability</b></li>
       </ol>
-      <div class="cards">
+      <div class="road-end"><span><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg> DevOps Engineer</span><span><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg> Site Reliability Engineer</span></div>
+      <div class="cards compact">
         <article class="card">
-          <div class="card-top"><span class="mono-tag" aria-hidden="true">CLD</span><h3>Cloud engineering</h3></div>
-          <p class="intro">Learn to design, build and run infrastructure on AWS.</p>
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Cloud engineering</h3></div>
           <ul class="course-list">
-            <li><div class="course-head"><span class="course-name">AWS Cloud Computing &amp; AI</span><span class="tag">Short course</span></div><p>Core AWS services and how to use AI in the cloud.</p></li>
-            <li><div class="course-head"><span class="course-name">AWS Cloud Engineering &amp; AI</span><span class="tag tag-long">Long program</span></div><p>Build and run cloud infrastructure on AWS, in an extended program.</p></li>
+            <li><div class="course-head"><span class="course-name">AWS Cloud Computing &amp; AI</span><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><span class="course-name">AWS Cloud Engineering &amp; AI</span><span class="tag tag-long">Long program</span></div></li>
           </ul>
-          <div class="card-foot"><a class="card-link" href="#contact">Ask about these courses</a></div>
         </article>
         <article class="card">
-          <div class="card-top"><span class="mono-tag" aria-hidden="true">OPS</span><h3>DevOps and automation</h3></div>
-          <p class="intro">Containers, pipelines and the tools DevOps teams use daily.</p>
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg></span><h3>DevOps and automation</h3></div>
           <ul class="course-list">
-            <li><div class="course-head"><span class="course-name">Docker &amp; CI/CD Pipelines</span><span class="tag">Short course</span></div><p>Containerise applications and automate build, test and deploy.</p></li>
-            <li><div class="course-head"><span class="course-name">Kubernetes in Practice</span><span class="tag">Short course</span></div><p>Deploy, scale and troubleshoot workloads on Kubernetes.</p></li>
-            <li><div class="course-head"><span class="course-name">DevOps Engineer Program</span><span class="tag tag-long">Long program</span></div><p>The full path from foundations to a job-ready DevOps portfolio.</p></li>
+            <li><div class="course-head"><span class="course-name">Docker &amp; CI/CD Pipelines</span><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><span class="course-name">Kubernetes in Practice</span><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><span class="course-name">DevOps Engineer Program</span><span class="tag tag-long">Long program</span></div></li>
           </ul>
-          <div class="card-foot"><a class="card-link" href="#contact">Ask about these courses</a></div>
         </article>
         <article class="card">
-          <div class="card-top"><span class="mono-tag" aria-hidden="true">INF</span><h3>Infrastructure</h3></div>
-          <p class="intro">The foundations and the code that defines your environments.</p>
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-server"/></svg></span><h3>Infrastructure</h3></div>
           <ul class="course-list">
-            <li><div class="course-head"><span class="course-name">Linux, Networking &amp; Scripting</span><span class="tag">Short course</span></div><p>Command line, networking basics, Bash and Python for operations.</p></li>
-            <li><div class="course-head"><span class="course-name">Terraform &amp; Ansible</span><span class="tag">Short course</span></div><p>Provision and configure infrastructure as version-controlled code.</p></li>
+            <li><div class="course-head"><span class="course-name">Linux, Networking &amp; Scripting</span><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><span class="course-name">Terraform &amp; Ansible</span><span class="tag">Short course</span></div></li>
           </ul>
-          <div class="card-foot"><a class="card-link" href="#contact">Ask about these courses</a></div>
         </article>
         <article class="card">
-          <div class="card-top"><span class="mono-tag" aria-hidden="true">SRE</span><h3>Reliability and SRE</h3></div>
-          <p class="intro">Measure reliability and respond when things break.</p>
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg></span><h3>Reliability and SRE</h3></div>
           <ul class="course-list">
-            <li><div class="course-head"><span class="course-name">Monitoring &amp; Observability</span><span class="tag">Short course</span></div><p>Metrics, logs, traces and dashboards with Prometheus and Grafana.</p></li>
-            <li><div class="course-head"><span class="course-name">SRE Essentials</span><span class="tag">Short course</span></div><p>SLOs, error budgets, on-call and incident response.</p></li>
-            <li><div class="course-head"><span class="course-name">Site Reliability Engineer Program</span><span class="tag tag-long">Long program</span></div><p>The full path to an SRE role, with hands-on incident practice.</p></li>
+            <li><div class="course-head"><span class="course-name">Monitoring &amp; Observability</span><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><span class="course-name">SRE Essentials</span><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><span class="course-name">Site Reliability Engineer Program</span><span class="tag tag-long">Long program</span></div></li>
           </ul>
-          <div class="card-foot"><a class="card-link" href="#contact">Ask about these courses</a></div>
         </article>
       </div>
-      <p class="also"><b>Also taught:</b> AI and automation, data, and UX/UI design. <a class="card-link" href="#contact">Ask about these</a> &nbsp;&middot;&nbsp; <b>Cloud exams:</b> see <a class="card-link" href="#certifications">certification courses</a></p>
-      <p class="also" style="margin-top:14px;border-style:solid">Not sure where to start? Your coach will place you on the path in a free consultation. <a class="card-link" href="#contact">Book a free consultation</a></p>
+      <p class="also"><b>Also taught:</b> AI and automation, data, UX/UI design. <a class="card-link" href="#contact">Ask about these</a></p>
+      <p style="margin-top:22px"><a class="btn btn-primary" href="#contact">Book a free consultation</a></p>
     </div>
   </section>
 
   <section class="section section-alt" id="sec-certs">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head" style="margin-bottom:28px">
         <p class="eyebrow">Certification courses</p>
         <h2>Get certified on AWS, Azure and Google Cloud</h2>
-        <p>One-to-one exam preparation with a personal coach. You get a study plan, hands-on labs, practice questions and mock exams, and you book the exam yourself with the provider.</p>
+        <p>One-to-one exam prep with labs and mock exams.</p>
       </div>
+      <div class="lv-key"><span><span class="lv" data-l="1"><i></i><i></i><i></i></span>Foundational</span><span><span class="lv" data-l="2"><i></i><i></i><i></i></span>Associate</span><span><span class="lv" data-l="3"><i></i><i></i><i></i></span>Professional or Expert</span></div>
       <div class="certs">
-        <article class="cert-card">
-          <h3>AWS certifications</h3>
-          <p class="intro">From first steps to the DevOps professional level.</p>
+        <article class="cert-card" style="--pc:#FF9900">
+          <h3>AWS</h3>
           <ul class="cert-list">
-            <li><span class="cert-name">AWS Certified Cloud Practitioner</span><span class="cert-lvl">Foundational</span></li>
-            <li><span class="cert-name">AWS Certified Solutions Architect - Associate</span><span class="cert-lvl">Associate</span></li>
-            <li><span class="cert-name">AWS Certified Developer - Associate</span><span class="cert-lvl">Associate</span></li>
-            <li><span class="cert-name">AWS Certified CloudOps Engineer - Associate</span><span class="cert-lvl">Associate</span></li>
-            <li><span class="cert-name">AWS Certified DevOps Engineer - Professional</span><span class="cert-lvl">Professional</span></li>
+            <li><span class="cert-name">Cloud Practitioner</span><span class="lv" data-l="1" role="img" aria-label="Foundational"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">Solutions Architect</span><span class="lv" data-l="2" role="img" aria-label="Associate"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">Developer</span><span class="lv" data-l="2" role="img" aria-label="Associate"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">CloudOps Engineer</span><span class="lv" data-l="2" role="img" aria-label="Associate"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">DevOps Engineer</span><span class="lv" data-l="3" role="img" aria-label="Professional"><i></i><i></i><i></i></span></li>
           </ul>
-          <a class="card-link" href="#contact">Ask about AWS prep</a>
         </article>
-        <article class="cert-card">
-          <h3>Azure certifications</h3>
-          <p class="intro">Admin and DevOps routes on Microsoft Azure.</p>
+        <article class="cert-card" style="--pc:#0078D4">
+          <h3>Azure</h3>
           <ul class="cert-list">
-            <li><span class="cert-name">Azure Fundamentals (AZ-900)</span><span class="cert-lvl">Fundamentals</span></li>
-            <li><span class="cert-name">Azure Administrator Associate (AZ-104)</span><span class="cert-lvl">Associate</span></li>
-            <li><span class="cert-name">Azure Developer Associate (AZ-204)</span><span class="cert-lvl">Associate</span></li>
-            <li><span class="cert-name">DevOps Engineer Expert (AZ-400)</span><span class="cert-lvl">Expert</span></li>
-            <li><span class="cert-name">Azure Solutions Architect Expert (AZ-305)</span><span class="cert-lvl">Expert</span></li>
+            <li><span class="cert-name">AZ-900 Fundamentals</span><span class="lv" data-l="1" role="img" aria-label="Foundational"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">AZ-104 Administrator</span><span class="lv" data-l="2" role="img" aria-label="Associate"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">AZ-204 Developer</span><span class="lv" data-l="2" role="img" aria-label="Associate"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">AZ-400 DevOps Engineer</span><span class="lv" data-l="3" role="img" aria-label="Expert"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">AZ-305 Solutions Architect</span><span class="lv" data-l="3" role="img" aria-label="Expert"><i></i><i></i><i></i></span></li>
           </ul>
-          <a class="card-link" href="#contact">Ask about Azure prep</a>
         </article>
-        <article class="cert-card">
-          <h3>Google Cloud certifications</h3>
-          <p class="intro">From cloud basics to the DevOps professional level.</p>
+        <article class="cert-card" style="--pc:#4285F4">
+          <h3>Google Cloud</h3>
           <ul class="cert-list">
-            <li><span class="cert-name">Cloud Digital Leader</span><span class="cert-lvl">Foundational</span></li>
-            <li><span class="cert-name">Associate Cloud Engineer</span><span class="cert-lvl">Associate</span></li>
-            <li><span class="cert-name">Professional Cloud Architect</span><span class="cert-lvl">Professional</span></li>
-            <li><span class="cert-name">Professional Cloud DevOps Engineer</span><span class="cert-lvl">Professional</span></li>
+            <li><span class="cert-name">Cloud Digital Leader</span><span class="lv" data-l="1" role="img" aria-label="Foundational"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">Associate Cloud Engineer</span><span class="lv" data-l="2" role="img" aria-label="Associate"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">Professional Cloud Architect</span><span class="lv" data-l="3" role="img" aria-label="Professional"><i></i><i></i><i></i></span></li>
+            <li><span class="cert-name">Professional Cloud DevOps Engineer</span><span class="lv" data-l="3" role="img" aria-label="Professional"><i></i><i></i><i></i></span></li>
           </ul>
-          <a class="card-link" href="#contact">Ask about Google prep</a>
         </article>
       </div>
-      <p class="cert-note">Exam fees are paid to the provider and are not part of the coaching. Passing is up to you on the day, so we do not promise results. Exam names and requirements change, and your coach will check the current exam guide with you. AWS, Microsoft Azure and Google Cloud are trademarks of their owners. Simplitech Academy is not affiliated with or endorsed by them.</p>
+      <p class="cert-note">Exam fees go to the provider. We cannot promise a pass. AWS, Microsoft Azure and Google Cloud are trademarks of their owners; Simplitech Academy is not affiliated with them.</p>
       <p style="margin-top:20px"><a class="btn btn-primary" href="#contact">Book a free consultation</a></p>
     </div>
   </section>
@@ -735,34 +794,23 @@ body.dialog-open{overflow:hidden}
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Learn your way</p>
-        <h2>Online tutorials, or a coach of your own</h2>
-        <p>Start free on our YouTube channel, or work one to one with a coach who builds the plan around you.</p>
+        <h2>Free tutorials or a personal coach</h2>
       </div>
       <div class="ways">
         <article class="way">
-          <div class="card-top"><span class="mono-tag" aria-hidden="true">YT</span><h3>Online tutorials</h3></div>
-          <p class="intro">Free video lessons on the Simplitech Academy YouTube channel.</p>
-          <ul>
-            <li>Watch at your own pace, any time</li>
-            <li>Topics from our four course areas: AI, data, software and cloud, design</li>
-            <li>A good way to try a subject before booking a coach</li>
-          </ul>
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><h3>Online tutorials</h3></div>
+          <ul class="mini"><li><svg class="ico" aria-hidden="true"><use href="#i-badge"/></svg> Free on YouTube</li><li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> Watch any time</li></ul>
           <a class="btn btn-ghost" href="https://www.youtube.com/channel/UCfg70o1GIURH0ud9kliMgJw" target="_blank" rel="noopener" data-yt>Watch on YouTube</a>
         </article>
         <article class="way way-feature">
-          <div class="card-top"><span class="mono-tag" aria-hidden="true">1:1</span><h3>Personal online training</h3></div>
-          <p class="intro">Live sessions with your own coach, built around your goal.</p>
-          <ul>
-            <li>One learner, one coach, live online</li>
-            <li>A plan matched to your level and your goal</li>
-            <li>Questions answered as you work, not after the video ends</li>
-          </ul>
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span><h3>Personal online training</h3></div>
+          <ul class="mini"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg> Live, one to one</li><li><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg> A plan built around you</li></ul>
           <a class="btn btn-primary" href="#contact">Book a free consultation</a>
         </article>
       </div>
       <div class="latest vgal" id="vgal">
         <h3>Watch our tutorials</h3>
-        <p>Pick any video from the strip and it plays right here. Swipe or use the arrows to browse the channel.</p>
+        <p>Pick a video. It plays here.</p>
         <div class="player"><div id="ytPlayer"></div></div>
         <div class="now" id="vNow" aria-live="polite"></div>
         <div class="vstrip-wrap">
@@ -782,10 +830,10 @@ body.dialog-open{overflow:hidden}
         <h2>From first call to your next role</h2>
       </div>
       <ol class="steps">
-        <li class="step"><span class="step-n">01</span><h3>Talk to us</h3><p>A free consultation to cover your goal, your background and the time you can commit each week.</p></li>
-        <li class="step"><span class="step-n">02</span><h3>Get your plan</h3><p>We pick the course and write a study plan around your level and your schedule.</p></li>
-        <li class="step"><span class="step-n">03</span><h3>Learn with your coach</h3><p>Live one-to-one sessions, hands-on projects and feedback on the work you build.</p></li>
-        <li class="step"><span class="step-n">04</span><h3>Show your work</h3><p>A final project review, plus CV and interview coaching, to help you land your next role.</p></li>
+        <li class="step"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span><h3>Talk to us</h3><p>Free consultation</p></li>
+        <li class="step"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></span><h3>Get your plan</h3><p>Course and schedule</p></li>
+        <li class="step"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span><h3>Learn with your coach</h3><p>Live sessions, real projects</p></li>
+        <li class="step"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-brief"/></svg></span><h3>Show your work</h3><p>Project review, CV, interviews</p></li>
       </ol>
     </div>
   </section>
@@ -794,13 +842,13 @@ body.dialog-open{overflow:hidden}
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Why Simplitech</p>
-        <h2>Built around the learner</h2>
+        <h2>Built around you</h2>
       </div>
       <div class="ruled">
-        <div class="ruled-item"><h3>One to one, every session</h3><p>Your coach teaches at your pace. You never wait for a class to catch up or sit through material you already know.</p></div>
-        <div class="ruled-item"><h3>Projects before slides</h3><p>You practise on real tools and build projects you can show to employers.</p></div>
-        <div class="ruled-item"><h3>Your time zone</h3><p>Sessions are scheduled around your local time, whether you study before work or after it.</p></div>
-        <div class="ruled-item"><h3>Career support</h3><p>CV reviews and mock interviews help you turn new skills into a job offer.</p></div>
+        <div class="ruled-item"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span><h3>One to one</h3><p>Your pace, every session</p></div>
+        <div class="ruled-item"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span><h3>Projects first</h3><p>Real tools, real portfolio</p></div>
+        <div class="ruled-item"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></span><h3>Your time zone</h3><p>Study when it suits you</p></div>
+        <div class="ruled-item"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-brief"/></svg></span><h3>Career support</h3><p>CV and mock interviews</p></div>
       </div>
     </div>
   </section>

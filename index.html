@@ -480,6 +480,25 @@ body.dialog-open{overflow:hidden}
 .contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:start}
 .contact h2{font-size:clamp(1.75rem,3.4vw,2.5rem);margin-top:14px}
 .contact .lead{margin-top:16px}
+
+/* contact: two ways */
+.contact-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:20px;align-items:stretch}
+.cbox{display:flex;flex-direction:column;gap:14px;padding:28px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.cbox-main{border-color:var(--accent)}
+.cbox h3{font-size:1.35rem;margin:0}
+.cbox p{color:var(--muted);margin:0}
+.cbox .btn{align-self:flex-start;margin-top:auto}
+.cbox .btn[disabled]{opacity:.55;cursor:not-allowed}
+.cform{display:grid;gap:12px}
+.cform label{display:grid;gap:6px;font-size:.88rem;color:var(--muted)}
+.cform input,.cform select,.cform textarea{width:100%;min-height:46px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:400 15px var(--font-body)}
+.cform textarea{min-height:120px;resize:vertical}
+.cform input:focus-visible,.cform select:focus-visible,.cform textarea:focus-visible{outline:2px solid var(--accent-text);outline-offset:2px}
+.cform .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cform .btn{justify-self:start}
+.cmsg{min-height:1.4em;font-size:.92rem;color:var(--muted)}
+@media (max-width:900px){.contact-two{grid-template-columns:minmax(0,1fr)}.cform .row{grid-template-columns:minmax(0,1fr)}}
 .email-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
 .email{font:500 15px var(--font-mono);overflow-wrap:anywhere;min-width:0}
 .include{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:0}
@@ -569,7 +588,7 @@ body.dialog-open{overflow:hidden}
   </defs>
 </svg>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 9.5 4.3 4.3 0 0 0 7 18z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol><symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 6a3 3 0 0 1 0 6M18 14c2 .7 3 2.8 3 6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol><symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></symbol><symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol><symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 9.5 4.3 4.3 0 0 0 7 18z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol><symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 6a3 3 0 0 1 0 6M18 14c2 .7 3 2.8 3 6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol><symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></symbol><symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol><symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4 18-7z"/></symbol></defs></svg>
 <header class="site-header">
   <div class="wrap bar">
     <a class="logo" href="#home" aria-label="Simplitech Academy, home">
@@ -1119,25 +1138,39 @@ body.dialog-open{overflow:hidden}
 <!-- CONTACT (shared) -->
 <section class="contact" id="sec-contact">
   <div class="wrap">
-    <div class="contact-grid">
-      <div>
-        <p class="eyebrow">Get started</p>
-        <h2>Book a free consultation</h2>
-        <p class="lead">Tell us which course you are interested in and what you want to achieve. We will reply with a plan and a suggested schedule.</p>
-        <div class="email-row">
-          <span class="email" id="emailText">simplitech.consultants@gmail.com</span>
-          <button class="btn btn-ghost btn-sm" id="copyEmail" type="button">Copy email</button>
-        </div>
-      </div>
-      <div>
-        <p class="label">Include in your message</p>
-        <ul class="include">
-          <li>The course you are interested in</li>
-          <li>Your current level and background</li>
-          <li>Your goal, such as a new role or a career change</li>
-          <li>Your preferred hours, with your time zone</li>
-        </ul>
-      </div>
+    <div class="sec-head" style="margin-bottom:28px">
+      <p class="eyebrow">Get started</p>
+      <h2>Two ways to reach us</h2>
+    </div>
+    <div class="contact-two">
+      <article class="cbox cbox-main">
+        <span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg></span>
+        <h3>Book a free consultation</h3>
+        <p>Pick a time for a short call to plan your path.</p>
+        <button class="btn btn-primary" id="bookBtn" type="button" disabled>Booking opens soon</button>
+      </article>
+      <article class="cbox">
+        <span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-send"/></svg></span>
+        <h3>Send us a message</h3>
+        <form class="cform" id="contactForm" novalidate>
+          <div class="row">
+            <label>Name<input name="name" autocomplete="name" required></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <label>I am interested in
+            <select name="interest">
+              <option>DevOps Engineer path</option>
+              <option>Site Reliability Engineer path</option>
+              <option>Cloud certification (AWS, Azure, Google Cloud)</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>Your message<textarea name="message" required></textarea></label>
+          <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="cmsg" id="contactMsg" role="status" aria-live="polite"></p>
+        </form>
+      </article>
     </div>
   </div>
 </section>
@@ -1190,6 +1223,10 @@ body.dialog-open{overflow:hidden}
 
 <script>
 (function(){
+  /* site settings: FORM_KEY is the public Web3Forms access key, BOOKING_URL the scheduling link */
+  var FORM_ENDPOINT='https://api.web3forms.com/submit';
+  var FORM_KEY='';
+  var BOOKING_URL='';
   var routes={
     home:['home',null],
     courses:['home','sec-courses'],
@@ -1279,33 +1316,33 @@ body.dialog-open{overflow:hidden}
   tick();
   setInterval(tick,30000);
 
-  /* contact: copy email */
-  var btn=document.getElementById('copyEmail');
-  var txt=document.getElementById('emailText');
-  var timer=null;
-  function flash(msg){
-    btn.textContent=msg;
-    clearTimeout(timer);
-    timer=setTimeout(function(){btn.textContent='Copy email';},2200);
+  /* contact: booking link and message form (no email address is ever shown) */
+  var bookBtn=document.getElementById('bookBtn');
+  if(bookBtn&&/^https:\/\//i.test(BOOKING_URL)){
+    var a=document.createElement('a');a.className=bookBtn.className;a.id='bookBtn';a.href=BOOKING_URL;a.target='_blank';a.rel='noopener';a.textContent='Pick a time';
+    bookBtn.parentNode.replaceChild(a,bookBtn);
   }
-  function selectText(){
-    try{
-      var range=document.createRange();
-      range.selectNodeContents(txt);
-      var sel=window.getSelection();
-      sel.removeAllRanges();
-      sel.addRange(range);
-    }catch(err){}
-    flash('Selected, press copy');
+  function sendForm(fields){
+    if(!FORM_KEY){return Promise.reject(new Error('not configured'));}
+    fields.access_key=FORM_KEY;fields.from_name='Simplitech Academy website';
+    return fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(fields)})
+      .then(function(r){return r.json().then(function(j){if(!r.ok||j.success===false){throw new Error('failed');}return j;});});
   }
-  btn.addEventListener('click',function(){
-    var value=txt.textContent.trim();
-    try{
-      if(navigator.clipboard&&navigator.clipboard.writeText){
-        navigator.clipboard.writeText(value).then(function(){flash('Copied');},selectText);
-      }else{selectText();}
-    }catch(err){selectText();}
-  });
+  var cForm=document.getElementById('contactForm');
+  if(cForm){
+    var cMsg=document.getElementById('contactMsg');
+    cForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      var f=cForm.elements;
+      var name=f.name.value.trim(),mail=f.email.value.trim(),msg=f.message.value.trim();
+      if(!name||!msg){cMsg.textContent='Please add your name and a message.';return;}
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){cMsg.textContent='Please enter a valid email address.';f.email.focus();return;}
+      cMsg.textContent='Sending';
+      sendForm({subject:'New message from the website: '+f.interest.value,name:name,email:mail,interest:f.interest.value,message:msg,botcheck:f.botcheck.checked})
+        .then(function(){cForm.reset();cMsg.textContent='Thank you. We will reply to your email soon.';})
+        .catch(function(){cMsg.textContent='Sorry, the message could not be sent right now. Please try again later.';});
+    });
+  }
 
   /* blog: posts.json is updated by a daily scheduled task */
   var postList=document.getElementById('postList');
@@ -1454,8 +1491,6 @@ body.dialog-open{overflow:hidden}
   }
 
   /* simplibytes: cards load from simplibytes.json */
-  var SUBSCRIBE_ENDPOINT='';
-  var CONTACT_EMAIL='simplitech.consultants@gmail.com';
   var SITE_DOMAIN='simplitechacademy.com';
   var CAT={
     fact:{label:'Fact',c1:'#2BB0A4',c2:'#3CCBB8',ink:'#16766D'},
@@ -1848,19 +1883,10 @@ body.dialog-open{overflow:hidden}
       var input=form.querySelector('input');
       var v=(input.value||'').trim();
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){setMsg(form,'Please enter a valid email address.');input.focus();return;}
-      if(/^https:\/\//i.test(SUBSCRIBE_ENDPOINT)){
-        setMsg(form,'Subscribing');
-        fetch(SUBSCRIBE_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:v,source:'simplibytes'})})
-          .then(function(r){
-            if(!r.ok){throw new Error('status '+r.status);}
-            input.value='';
-            setMsg(form,'Thank you. You are on the list.');
-          })
-          .catch(function(){setMsg(form,'Sorry, that did not work. Please try again, or write to '+CONTACT_EMAIL+'.');});
-      }else{
-        setMsg(form,'Your email app should open with a ready message. If it does not, write to '+CONTACT_EMAIL+'.');
-        location.href='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Subscribe me to Simplibytes')+'&body='+encodeURIComponent('Please add '+v+' to the Simplibytes list.');
-      }
+      setMsg(form,'Subscribing');
+      sendForm({subject:'New Simplibytes subscriber',name:'Simplibytes subscriber',email:v,message:'Please add this address to the Simplibytes list.',botcheck:false})
+        .then(function(){input.value='';setMsg(form,'Thank you. You are on the list.');})
+        .catch(function(){setMsg(form,'Sorry, subscribing is not available right now. Please try again later.');});
     });
   }
 

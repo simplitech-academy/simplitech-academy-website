@@ -212,6 +212,13 @@ a{color:inherit}
 .byte-area{font:500 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:auto}
 .byte-btn{min-height:34px;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--fg);font:500 13px var(--font-body);cursor:pointer}
 .byte-btn:hover{border-color:var(--accent)}
+.share{position:relative}
+.share>summary{list-style:none;display:inline-flex;align-items:center}
+.share>summary::-webkit-details-marker{display:none}
+.share-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:20;width:min(270px,82vw);display:flex;flex-direction:column;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(11,34,57,.18)}
+.share-menu a,.share-menu button{display:block;width:100%;text-align:left;padding:9px 10px;border:0;border-radius:8px;background:transparent;color:var(--fg);font:500 14px var(--font-body);text-decoration:none;cursor:pointer}
+.share-menu a:hover,.share-menu button:hover{background:var(--surface-2)}
+.share-sep{margin:4px 0 0;padding:8px 10px 2px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;line-height:1.4}
 .byte-focus .byte-card{outline:3px solid var(--accent);outline-offset:3px}
 .hook-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
 .hook-copy h2{font-size:clamp(1.75rem,3.4vw,2.5rem);margin-top:14px;max-width:18ch}
@@ -1288,6 +1295,66 @@ a{color:inherit}
     var u=document.createElementNS(ns,'use');u.setAttribute('href','#sga-icon');
     s.appendChild(u);return s;
   }
+  function buildShare(b){
+    var d=el('details','share');
+    var s=document.createElement('summary');
+    s.className='byte-btn';s.textContent='Share';
+    d.appendChild(s);
+    var menu=el('div','share-menu');
+    var url=byteUrl(b);
+    var title='Simplibyte No. '+pad2(b.n)+': '+(b.title||'');
+    var message=title+'\n\n'+(b.body||'')+'\n\n'+url;
+    function link(label,href,external){
+      var a=el('a',null,label);
+      a.href=href;
+      if(external){a.target='_blank';a.rel='noopener';}
+      a.addEventListener('click',function(){setTimeout(function(){d.open=false;},0);});
+      menu.appendChild(a);
+    }
+    function action(label,fn){
+      var bt=el('button',null,label);bt.type='button';
+      bt.addEventListener('click',function(){fn(bt);});
+      menu.appendChild(bt);
+    }
+    var canFiles=false;
+    try{canFiles=!!(navigator.canShare&&navigator.canShare({files:[new File([''],'a.png',{type:'image/png'})]}));}catch(err){}
+    if(canFiles){
+      action('Share the image (apps on this device)',function(){
+        renderPng(b).then(function(blob){
+          var f=new File([blob],'simplibyte-'+pad2(b.n)+'-'+b.id+'.png',{type:'image/png'});
+          return navigator.share({files:[f],title:title,text:title+'\n'+url});
+        }).catch(function(){});
+        d.open=false;
+      });
+    }else if(navigator.share){
+      action('Share the link (apps on this device)',function(){
+        try{navigator.share({title:title,text:b.title||'',url:url}).catch(function(){});}catch(err){}
+        d.open=false;
+      });
+    }
+    link('WhatsApp','https://wa.me/?text='+encodeURIComponent(message),true);
+    link('LinkedIn','https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(url),true);
+    link('Facebook','https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url),true);
+    link('X','https://x.com/intent/post?text='+encodeURIComponent(title)+'&url='+encodeURIComponent(url),true);
+    link('Telegram','https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(title),true);
+    link('Email','mailto:?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(message),false);
+    menu.appendChild(el('p','share-sep','Instagram and YouTube do not accept links from websites. Save the image, then post it in the app.'));
+    action('Instagram: save the image',function(bt){saveImage(b,bt);});
+    action('YouTube: save the image',function(bt){saveImage(b,bt);});
+    d.appendChild(menu);
+    return d;
+  }
+  document.addEventListener('click',function(e){
+    var open=document.querySelectorAll('details.share[open]');
+    for(var i=0;i<open.length;i++){if(!open[i].contains(e.target)){open[i].removeAttribute('open');}}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){
+      var open=document.querySelectorAll('details.share[open]');
+      for(var i=0;i<open.length;i++){open[i].removeAttribute('open');}
+    }
+  });
+
   function buildByte(b,withId){
     var c=CAT[b.cat]||CAT.fact;
     var art=el('article','byte');
@@ -1319,13 +1386,7 @@ a{color:inherit}
     var save=el('button','byte-btn','Save image');save.type='button';
     save.addEventListener('click',function(){saveImage(b,save);});
     act.appendChild(save);
-    if(navigator.share){
-      var sh=el('button','byte-btn','Share');sh.type='button';
-      sh.addEventListener('click',function(){
-        try{navigator.share({title:'Simplibyte: '+(b.title||''),text:b.title||'',url:byteUrl(b)}).catch(function(){});}catch(err){}
-      });
-      act.appendChild(sh);
-    }
+    act.appendChild(buildShare(b));
     art.appendChild(act);
     return art;
   }

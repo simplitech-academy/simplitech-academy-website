@@ -261,6 +261,27 @@ a{color:inherit}
 @media (max-width:980px){.moments{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:860px){.sb-hero-grid{grid-template-columns:minmax(0,1fr)}.sb-fan{max-width:420px}}
 @media (max-width:600px){.moments{grid-template-columns:minmax(0,1fr)}.sb-lockup-lg .sb-icon{width:58px;height:58px}.sb-lockup-lg .sb-word{font-size:36px}}
+.byte-card{transition:transform .25s ease,box-shadow .25s ease;cursor:zoom-in}
+.byte-big .byte-card{cursor:default}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .byte:not(.byte-big) .byte-card:hover{transform:translateY(-6px) scale(1.035);box-shadow:0 20px 44px rgba(11,34,57,.22)}
+}
+.byte-card:focus-visible{outline:3px solid var(--accent-text);outline-offset:3px}
+.bd-stage .byte-btn{background:var(--surface);border-color:rgba(255,255,255,.4);color:var(--fg)}
+.bd-stage .byte-area{color:#CFE0EE}
+body.dialog-open{overflow:hidden}
+.byte-dialog{border:0;padding:0;margin:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100dvh;color:var(--fg)}
+.byte-dialog::backdrop{background:rgba(8,24,40,.66);backdrop-filter:blur(4px)}
+.bd-wrap{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;height:100%;padding:56px 12px 16px;overflow:auto}
+.bd-stage{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0}
+.bd-stage .byte{width:min(540px,calc(100vw - 112px),calc((100dvh - 190px)*.8))}
+.bd-stage .share-menu{top:auto;bottom:calc(100% + 6px)}
+.bd-count{color:#E7F1F8;font:500 12px/1 var(--font-mono);letter-spacing:.06em}
+.bd-btn{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);color:#fff;font:400 24px/1 var(--font-body);cursor:pointer}
+.bd-btn:hover:not(:disabled){background:rgba(255,255,255,.28)}
+.bd-btn:disabled{opacity:.3;cursor:default}
+.bd-close{position:absolute;top:max(10px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px))}
+@media (max-width:600px){.bd-wrap{gap:6px;padding-inline:6px}.bd-stage .byte{width:min(540px,calc(100vw - 104px),calc((100dvh - 190px)*.8))}.bd-btn{width:40px;height:40px}}
 .byte-focus .byte-card{outline:3px solid var(--accent);outline-offset:3px}
 .hook-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
 .hook-copy h2{font-size:clamp(1.75rem,3.4vw,2.5rem);margin-top:14px;max-width:18ch}
@@ -997,6 +1018,15 @@ a{color:inherit}
   </div>
 </footer>
 
+<dialog id="byteDialog" class="byte-dialog" aria-label="Simplibyte, enlarged">
+  <div class="bd-wrap" id="bdWrap">
+    <button class="bd-btn bd-close" id="bdClose" type="button" aria-label="Close">&times;</button>
+    <button class="bd-btn" id="bdPrev" type="button" aria-label="Previous card">&#8249;</button>
+    <div class="bd-stage"><div id="byteDialogBody"></div><span class="bd-count" id="bdCount" aria-live="polite"></span></div>
+    <button class="bd-btn" id="bdNext" type="button" aria-label="Next card">&#8250;</button>
+  </div>
+</dialog>
+
 <script>
 (function(){
   var routes={
@@ -1276,6 +1306,52 @@ a{color:inherit}
   var moreBytes=document.getElementById('moreBytes');
   var byteToday=document.getElementById('byteToday');
   var byteFan=document.getElementById('byteFan');
+  var bDialog=document.getElementById('byteDialog');
+  var bdBody=document.getElementById('byteDialogBody');
+  var bdPrev=document.getElementById('bdPrev');
+  var bdNext=document.getElementById('bdNext');
+  var bdList=[],bdIndex=0;
+  function showBig(){
+    var b=bdList[bdIndex];
+    bdBody.textContent='';
+    bdBody.appendChild(buildByte(b,false,false,true));
+    document.getElementById('bdCount').textContent=(bdIndex+1)+' of '+bdList.length;
+    bdPrev.disabled=bdIndex<=0;
+    bdNext.disabled=bdIndex>=bdList.length-1;
+  }
+  function stepBig(d){
+    var n=bdIndex+d;
+    if(n<0||n>=bdList.length){return;}
+    bdIndex=n;showBig();
+  }
+  function openByte(b){
+    if(!bDialog||typeof bDialog.showModal!=='function'){return;}
+    var list=filtered(),idx=-1,i;
+    for(i=0;i<list.length;i++){if(list[i].id===b.id){idx=i;}}
+    if(idx<0){
+      list=bytes.slice();
+      for(i=0;i<list.length;i++){if(list[i].id===b.id){idx=i;}}
+    }
+    bdList=list;bdIndex=idx<0?0:idx;
+    showBig();
+    if(!bDialog.open){
+      bDialog.showModal();
+      document.body.classList.add('dialog-open');
+    }
+  }
+  if(bDialog){
+    document.getElementById('bdClose').addEventListener('click',function(){bDialog.close();});
+    bdPrev.addEventListener('click',function(){stepBig(-1);});
+    bdNext.addEventListener('click',function(){stepBig(1);});
+    bDialog.addEventListener('close',function(){document.body.classList.remove('dialog-open');bdBody.textContent='';});
+    bDialog.addEventListener('click',function(e){
+      if(e.target===bDialog||e.target.id==='bdWrap'){bDialog.close();}
+    });
+    bDialog.addEventListener('keydown',function(e){
+      if(e.key==='ArrowLeft'){stepBig(-1);}
+      else if(e.key==='ArrowRight'){stepBig(1);}
+    });
+  }
   var bCat='all',bArea='all',bShown=0,BPAGE=12;
 
   function pad2(n){n=String(n);return n.length<2?'0'+n:n;}
@@ -1480,7 +1556,7 @@ a{color:inherit}
     }
   });
 
-  function buildByte(b,withId,bare){
+  function buildByte(b,withId,bare,big){
     var c=CAT[b.cat]||CAT.fact;
     var art=el('article','byte');
     art.setAttribute('data-cat',CAT[b.cat]?b.cat:'fact');
@@ -1505,6 +1581,17 @@ a{color:inherit}
     foot.appendChild(brand);
     foot.appendChild(el('span','byte-site',SITE_DOMAIN));
     card.appendChild(foot);
+    if(!big){
+      card.addEventListener('click',function(){openByte(b);});
+      if(!bare){
+        card.tabIndex=0;
+        card.setAttribute('role','button');
+        card.setAttribute('aria-label','Open Simplibyte No. '+pad2(b.n)+' larger: '+(b.title||''));
+        card.addEventListener('keydown',function(e){
+          if(e.key==='Enter'||e.key===' '){e.preventDefault();openByte(b);}
+        });
+      }
+    }else{art.classList.add('byte-big');}
     art.appendChild(card);
     if(bare){return art;}
     var act=el('div','byte-actions');

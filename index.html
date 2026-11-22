@@ -181,6 +181,20 @@ a{color:inherit}
 .player{position:relative;aspect-ratio:16/9;max-width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface-2)}
 .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .latest .more{display:inline-block;margin-top:14px}
+.vgal{margin-top:6px}
+.vgal .now{font:600 1rem var(--font-body);margin:12px 0 4px}
+.vstrip-wrap{position:relative;margin-top:14px}
+.vstrip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scroll-behavior:smooth;padding:4px 2px 10px;scrollbar-width:thin}
+.vcard{flex:0 0 min(220px,62vw);scroll-snap-align:start;text-align:left;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:0;color:var(--fg);font:inherit;cursor:pointer;overflow:hidden}
+.vcard:hover{border-color:var(--accent)}
+.vcard[aria-current="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.vcard img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--line)}
+.vcard span{display:block;padding:8px 10px 10px;font-size:.85rem;line-height:1.35;min-height:3.4em}
+.varrow{position:absolute;top:calc(50% - 28px);width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:600 18px var(--font-body);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);z-index:2}
+.varrow:hover{border-color:var(--accent)}
+.varrow.l{left:-8px}.varrow.r{right:-8px}
+@media (max-width:600px){.varrow{display:none}}
+
 @media (max-width:760px){.ways{grid-template-columns:minmax(0,1fr)}.way{padding:22px}}
 
 /* simplibytes */
@@ -639,10 +653,16 @@ body.dialog-open{overflow:hidden}
           <a class="btn btn-primary" href="#contact">Book a free consultation</a>
         </article>
       </div>
-      <div class="latest">
-        <h3>Latest videos</h3>
-        <p>The newest tutorials from our channel play here, newest first.</p>
-        <div class="player"><iframe title="Simplitech Academy latest videos" src="https://www.youtube-nocookie.com/embed/videoseries?list=UUfg70o1GIURH0ud9kliMgJw" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="latest vgal" id="vgal">
+        <h3>Watch our tutorials</h3>
+        <p>Pick any video from the strip and it plays right here. Swipe or use the arrows to browse the channel.</p>
+        <div class="player"><div id="ytPlayer"></div></div>
+        <div class="now" id="vNow" aria-live="polite"></div>
+        <div class="vstrip-wrap">
+          <button class="varrow l" type="button" id="vPrev" aria-label="Scroll videos left">&#8249;</button>
+          <div class="vstrip" id="vStrip" role="list" aria-label="Channel videos"></div>
+          <button class="varrow r" type="button" id="vNext" aria-label="Scroll videos right">&#8250;</button>
+        </div>
         <a class="card-link more" href="https://www.youtube.com/channel/UCfg70o1GIURH0ud9kliMgJw" target="_blank" rel="noopener" data-yt>See all videos on YouTube</a>
       </div>
     </div>
@@ -1727,6 +1747,72 @@ body.dialog-open{overflow:hidden}
       if(byteGrid){byteGrid.textContent='';byteGrid.appendChild(el('p','empty','Simplibytes could not be loaded right now. Please try again later.'));}
     });
   }
+
+  /* tutorials: embedded player with a horizontal video strip */
+  (function(){
+    var UPLOADS='UUfg70o1GIURH0ud9kliMgJw', box=document.getElementById('vgal');
+    if(!box) return;
+    var strip=document.getElementById('vStrip'), now=document.getElementById('vNow'), player=null, ids=[], titles={}, started=false;
+    function fallback(){
+      var p=box.querySelector('.player');
+      p.innerHTML='<iframe title="Simplitech Academy videos" src="https://www.youtube-nocookie.com/embed/videoseries?list='+UPLOADS+'" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+      box.querySelector('.vstrip-wrap').hidden=true;
+    }
+    function label(i){return titles[ids[i]]||('Video '+(i+1));}
+    function mark(i){
+      [].forEach.call(strip.children,function(c,k){if(k===i)c.setAttribute('aria-current','true');else c.removeAttribute('aria-current');});
+      now.textContent=label(i);
+    }
+    function build(){
+      strip.innerHTML='';
+      ids.forEach(function(id,i){
+        var b=document.createElement('button');b.type='button';b.className='vcard';b.setAttribute('role','listitem');
+        var im=document.createElement('img');im.loading='lazy';im.alt='';im.src='https://i.ytimg.com/vi/'+id+'/mqdefault.jpg';
+        var t=document.createElement('span');t.textContent=label(i);
+        b.appendChild(im);b.appendChild(t);
+        b.addEventListener('click',function(){player.playVideoAt(i);mark(i);b.scrollIntoView({behavior:'smooth',inline:'nearest',block:'nearest'});});
+        strip.appendChild(b);
+      });
+      mark(0);
+    }
+    function names(){
+      ids.forEach(function(id,i){
+        if(titles[id]) return;
+        fetch('https://www.youtube.com/oembed?format=json&url='+encodeURIComponent('https://www.youtube.com/watch?v='+id))
+          .then(function(r){return r.json();}).then(function(j){
+            titles[id]=j.title;var c=strip.children[i];if(c){c.lastChild.textContent=j.title;}
+            if(player&&ids[player.getPlaylistIndex&&player.getPlaylistIndex()]===id)now.textContent=j.title;
+          }).catch(function(){});
+      });
+    }
+    function ready(){
+      var tries=0;
+      (function poll(){
+        var l=player.getPlaylist&&player.getPlaylist();
+        if(l&&l.length){ids=l.slice(0,30);build();names();return;}
+        if(++tries>20){fallback();return;}
+        setTimeout(poll,300);
+      })();
+    }
+    function start(){
+      if(started) return;started=true;
+      var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';s.onerror=fallback;document.head.appendChild(s);
+      var prev=window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady=function(){
+        if(prev)try{prev();}catch(e){}
+        player=new YT.Player('ytPlayer',{host:'https://www.youtube-nocookie.com',playerVars:{listType:'playlist',list:UPLOADS,rel:0,playsinline:1},
+          events:{onReady:ready,onError:function(){if(!ids.length)fallback();},
+            onStateChange:function(){var i=player.getPlaylistIndex();if(i>=0&&ids.length)mark(i);}}});
+      };
+      setTimeout(function(){if(!ids.length&&!document.querySelector('#vgal iframe[src*="videoseries"]'))fallback();},9000);
+    }
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();start();}},{rootMargin:'300px'}).observe(box);
+    }else start();
+    function by(d){strip.scrollBy({left:d*strip.clientWidth*0.8,behavior:'smooth'});}
+    document.getElementById('vPrev').addEventListener('click',function(){by(-1);});
+    document.getElementById('vNext').addEventListener('click',function(){by(1);});
+  })();
   loadBytes();
   window.Simplibytes={render:renderPng,cards:function(){return bytes.slice();}};
 

@@ -178,6 +178,18 @@ a{color:inherit}
 .also b{color:var(--fg)}
 @media (max-width:900px){.path{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.path,.goals{grid-template-columns:minmax(0,1fr)}.goal{padding:20px}}
+
+/* certifications */
+.certs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cert-card{display:flex;flex-direction:column;gap:12px;padding:26px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.cert-card h3{font-size:1.25rem;margin:0}
+.cert-card .intro{color:var(--muted);margin:0}
+.cert-list{list-style:none;margin:0;padding:0}
+.cert-list li{padding:11px 0;border-top:1px solid var(--line)}
+.cert-name{font-weight:600;font-size:.98rem;display:block}
+.cert-lvl{display:inline-block;margin-top:4px;font:500 11px var(--font-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent-text)}
+.cert-note{margin-top:28px;color:var(--muted);font-size:.86rem;max-width:760px}
+@media (max-width:900px){.certs{grid-template-columns:minmax(0,1fr)}}
 .course-list p{color:var(--muted);font-size:.92rem;margin-top:4px}
 .tag{font:500 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);white-space:nowrap}
 .tag-long{color:var(--accent-text);border-color:var(--accent)}
@@ -665,8 +677,57 @@ body.dialog-open{overflow:hidden}
           <div class="card-foot"><a class="card-link" href="#contact">Ask about these courses</a></div>
         </article>
       </div>
-      <p class="also"><b>Also taught:</b> AI and automation, data, and UX/UI design. <a class="card-link" href="#contact">Ask about these</a></p>
+      <p class="also"><b>Also taught:</b> AI and automation, data, and UX/UI design. <a class="card-link" href="#contact">Ask about these</a> &nbsp;&middot;&nbsp; <b>Cloud exams:</b> see <a class="card-link" href="#certifications">certification courses</a></p>
       <p class="also" style="margin-top:14px;border-style:solid">Not sure where to start? Your coach will place you on the path in a free consultation. <a class="card-link" href="#contact">Book a free consultation</a></p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="sec-certs">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Certification courses</p>
+        <h2>Get certified on AWS, Azure and Google Cloud</h2>
+        <p>One-to-one exam preparation with a personal coach. You get a study plan, hands-on labs, practice questions and mock exams, and you book the exam yourself with the provider.</p>
+      </div>
+      <div class="certs">
+        <article class="cert-card">
+          <h3>AWS certifications</h3>
+          <p class="intro">From first steps to the DevOps professional level.</p>
+          <ul class="cert-list">
+            <li><span class="cert-name">AWS Certified Cloud Practitioner</span><span class="cert-lvl">Foundational</span></li>
+            <li><span class="cert-name">AWS Certified Solutions Architect - Associate</span><span class="cert-lvl">Associate</span></li>
+            <li><span class="cert-name">AWS Certified Developer - Associate</span><span class="cert-lvl">Associate</span></li>
+            <li><span class="cert-name">AWS Certified CloudOps Engineer - Associate</span><span class="cert-lvl">Associate</span></li>
+            <li><span class="cert-name">AWS Certified DevOps Engineer - Professional</span><span class="cert-lvl">Professional</span></li>
+          </ul>
+          <a class="card-link" href="#contact">Ask about AWS prep</a>
+        </article>
+        <article class="cert-card">
+          <h3>Azure certifications</h3>
+          <p class="intro">Admin and DevOps routes on Microsoft Azure.</p>
+          <ul class="cert-list">
+            <li><span class="cert-name">Azure Fundamentals (AZ-900)</span><span class="cert-lvl">Fundamentals</span></li>
+            <li><span class="cert-name">Azure Administrator Associate (AZ-104)</span><span class="cert-lvl">Associate</span></li>
+            <li><span class="cert-name">Azure Developer Associate (AZ-204)</span><span class="cert-lvl">Associate</span></li>
+            <li><span class="cert-name">DevOps Engineer Expert (AZ-400)</span><span class="cert-lvl">Expert</span></li>
+            <li><span class="cert-name">Azure Solutions Architect Expert (AZ-305)</span><span class="cert-lvl">Expert</span></li>
+          </ul>
+          <a class="card-link" href="#contact">Ask about Azure prep</a>
+        </article>
+        <article class="cert-card">
+          <h3>Google Cloud certifications</h3>
+          <p class="intro">From cloud basics to the DevOps professional level.</p>
+          <ul class="cert-list">
+            <li><span class="cert-name">Cloud Digital Leader</span><span class="cert-lvl">Foundational</span></li>
+            <li><span class="cert-name">Associate Cloud Engineer</span><span class="cert-lvl">Associate</span></li>
+            <li><span class="cert-name">Professional Cloud Architect</span><span class="cert-lvl">Professional</span></li>
+            <li><span class="cert-name">Professional Cloud DevOps Engineer</span><span class="cert-lvl">Professional</span></li>
+          </ul>
+          <a class="card-link" href="#contact">Ask about Google prep</a>
+        </article>
+      </div>
+      <p class="cert-note">Exam fees are paid to the provider and are not part of the coaching. Passing is up to you on the day, so we do not promise results. Exam names and requirements change, and your coach will check the current exam guide with you. AWS, Microsoft Azure and Google Cloud are trademarks of their owners. Simplitech Academy is not affiliated with or endorsed by them.</p>
+      <p style="margin-top:20px"><a class="btn btn-primary" href="#contact">Book a free consultation</a></p>
     </div>
   </section>
 
@@ -1051,6 +1112,7 @@ body.dialog-open{overflow:hidden}
           <li><a href="#courses">SRE path</a></li>
           <li><a href="#courses">Cloud engineering</a></li>
           <li><a href="#courses">Infrastructure</a></li>
+          <li><a href="#certifications">Cloud certifications</a></li>
         </ul>
       </div>
       <div>
@@ -1083,6 +1145,7 @@ body.dialog-open{overflow:hidden}
   var routes={
     home:['home',null],
     courses:['home','sec-courses'],
+    certifications:['home','sec-certs'],
     learn:['home','sec-learn'],
     how:['home','sec-how'],
     faq:['home','sec-faq'],
@@ -1103,7 +1166,8 @@ body.dialog-open{overflow:hidden}
   }
   function highlight(key,view){
     var active=null;
-    if(key==='courses'||key==='how'||key==='faq'||key==='about'||key==='blog'||key==='simplibytes'){active=key;}
+    if(key==='certifications'){active='courses';}
+    else if(key==='courses'||key==='how'||key==='faq'||key==='about'||key==='blog'||key==='simplibytes'){active=key;}
     else if(view==='about'||view==='blog'){active=view;}
     else if(view==='bytes'){active='simplibytes';}
     var links=nav.querySelectorAll('a[data-nav]');

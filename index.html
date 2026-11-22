@@ -219,6 +219,48 @@ a{color:inherit}
 .share-menu a,.share-menu button{display:block;width:100%;text-align:left;padding:9px 10px;border:0;border-radius:8px;background:transparent;color:var(--fg);font:500 14px var(--font-body);text-decoration:none;cursor:pointer}
 .share-menu a:hover,.share-menu button:hover{background:var(--surface-2)}
 .share-sep{margin:4px 0 0;padding:8px 10px 2px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;line-height:1.4}
+.sb-lockup{display:inline-flex;align-items:center;gap:14px}
+.sb-icon{display:block;flex:none;width:48px;height:48px;filter:drop-shadow(0 6px 14px rgba(60,203,184,.35))}
+.sb-text{display:flex;flex-direction:column;gap:7px}
+.sb-word{font:700 30px/1 var(--font-display);letter-spacing:-.04em;color:var(--logo-ink)}
+.sb-word b{font-weight:700;background:linear-gradient(90deg,var(--grad-text-a),var(--grad-text-b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sb-by{font:500 9.5px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:var(--logo-teal)}
+.sb-lockup-lg{gap:18px}
+.sb-lockup-lg .sb-icon{width:76px;height:76px}
+.sb-lockup-lg .sb-word{font-size:48px}
+.sb-lockup-lg .sb-by{font-size:11px}
+.sb-grad{background:linear-gradient(90deg,var(--grad-text-a),var(--grad-text-b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.byte-no{display:inline-flex;align-items:center;gap:1.6cqw}
+.byte-mark{display:block;width:5cqw;height:5cqw}
+.sb-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center}
+.about-hero.sb-hero h1{font-size:clamp(2.5rem,5.8vw,4.3rem);max-width:12ch;margin-top:26px}
+.sb-hero .lead{max-width:46ch}
+.sb-chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:22px 0;padding:0}
+.sb-chips li{padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.86rem;font-weight:500}
+.sb-chips li:first-child{border-color:var(--accent);color:var(--accent-text);font-weight:600}
+.sb-fan{position:relative;width:100%;max-width:540px;margin-inline:auto;aspect-ratio:1/1}
+.sb-fan .byte{position:absolute;top:9%;width:58%;transition:transform .35s ease}
+.sb-fan .byte-card{box-shadow:0 18px 40px rgba(11,34,57,.18)}
+.sb-fan .byte:nth-child(1){left:0;transform:rotate(-8deg) translateY(7%);z-index:1}
+.sb-fan .byte:nth-child(2){left:21%;transform:translateY(-4%);z-index:3}
+.sb-fan .byte:nth-child(3){left:42%;transform:rotate(8deg) translateY(7%);z-index:2}
+@media (prefers-reduced-motion:no-preference){
+  .sb-fan:hover .byte:nth-child(1){transform:rotate(-12deg) translate(-4%,7%)}
+  .sb-fan:hover .byte:nth-child(2){transform:translateY(-7%)}
+  .sb-fan:hover .byte:nth-child(3){transform:rotate(12deg) translate(4%,7%)}
+}
+.moments{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.moment{display:flex;flex-direction:column;gap:10px;padding:22px;background:var(--bg);border:1px solid var(--line);border-radius:14px}
+.moment-time{align-self:flex-start;font:500 12px/1 var(--font-mono);letter-spacing:.04em;color:var(--accent-text);border:1px solid var(--accent);border-radius:6px;padding:6px 8px}
+.moment h3{font-size:1.1rem}
+.moment p{color:var(--muted);font-size:.93rem}
+.sb-cta{text-align:center;max-width:640px;margin-inline:auto}
+.sb-cta h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+.sb-cta p{color:var(--muted);margin-top:14px}
+.sb-cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+@media (max-width:980px){.moments{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.sb-hero-grid{grid-template-columns:minmax(0,1fr)}.sb-fan{max-width:420px}}
+@media (max-width:600px){.moments{grid-template-columns:minmax(0,1fr)}.sb-lockup-lg .sb-icon{width:58px;height:58px}.sb-lockup-lg .sb-word{font-size:36px}}
 .byte-focus .byte-card{outline:3px solid var(--accent);outline-offset:3px}
 .hook-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
 .hook-copy h2{font-size:clamp(1.75rem,3.4vw,2.5rem);margin-top:14px;max-width:18ch}
@@ -387,6 +429,8 @@ a{color:inherit}
       <rect x="62" y="105" width="78" height="30" fill="#fff"/>
       <path d="M100 112C112 92 134 92 134 112C134 132 112 132 100 112C88 92 66 92 66 112C66 132 88 132 100 112Z" fill="none" stroke="url(#sga-g2)" stroke-width="9" stroke-linejoin="round"/>
     </g>
+    <linearGradient id="sb-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3CCBB8"/><stop offset="1" stop-color="#4C8DF0"/></linearGradient>
+    <g id="sb-icon"><rect width="100" height="100" rx="26" fill="url(#sb-g)"/><rect x="58.5" y="16.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="1.0"/><rect x="44.5" y="16.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.95"/><rect x="30.5" y="16.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.9"/><rect x="30.5" y="30.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.85"/><rect x="30.5" y="44.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.8"/><rect x="44.5" y="44.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.75"/><rect x="58.5" y="44.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.7"/><rect x="58.5" y="58.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.65"/><rect x="58.5" y="72.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.6"/><rect x="44.5" y="72.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.55"/><rect x="30.5" y="72.5" width="11" height="11" rx="3" fill="#fff" fill-opacity="0.5"/></g>
   </defs>
 </svg>
 
@@ -463,9 +507,12 @@ a{color:inherit}
     <div class="wrap">
       <div class="hook-grid">
         <div class="hook-copy">
-          <p class="eyebrow">Simplibytes</p>
-          <h2>One small idea a day. Easy to read, hard to forget.</h2>
-          <p>Simplibytes are quick visual cue cards from Simplitech Academy. Each one takes under a minute to read and gives you something you can use.</p>
+          <div class="sb-lockup" role="img" aria-label="Simplibytes by Simplitech Academy">
+            <svg class="sb-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#sb-icon"/></svg>
+            <span class="sb-text"><span class="sb-word">Simpli<b>bytes</b></span><span class="sb-by">by Simplitech Academy</span></span>
+          </div>
+          <h2 style="margin-top:22px">Short on time? Learn one byte a day.</h2>
+          <p>Simplibytes are quick visual cue cards from Simplitech Academy. Each one takes under a minute to read, so even a busy day has room for it.</p>
           <ul class="cat-list">
             <li><b>Fact</b><span>A surprising or useful truth.</span></li>
             <li><b>Know-how</b><span>A concept, explained simply.</span></li>
@@ -675,27 +722,73 @@ a{color:inherit}
 
 <!-- SIMPLIBYTES -->
 <div id="view-bytes" hidden>
-  <section class="about-hero">
+  <section class="about-hero sb-hero">
     <svg class="deco" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <path class="deco-line" d="M0 330 C500 220 900 460 1400 330 S2200 200 2560 330"/>
       <path class="deco-line" d="M0 1110 C600 1000 1000 1250 1500 1110 S2200 1000 2560 1120"/>
       <circle class="deco-node" cx="2260" cy="250" r="12"/><circle class="deco-node" cx="2300" cy="1120" r="12"/>
       <circle class="deco-ring" cx="2260" cy="250" r="34"/><circle class="deco-ring" cx="2300" cy="1120" r="34"/>
     </svg>
-    <div class="wrap">
-      <p class="eyebrow">Simplibytes</p>
-      <h1>Learn one small thing at a time.</h1>
-      <p class="lead">Quick visual cue cards: a fact, a how-to, a key detail or an interview question. Read one in under a minute, share it, and come back for the next.</p>
-      <form class="sub-form" novalidate>
+    <div class="wrap sb-hero-grid">
+      <div class="sb-hero-copy">
+        <div class="sb-lockup sb-lockup-lg" role="img" aria-label="Simplibytes by Simplitech Academy">
+            <svg class="sb-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#sb-icon"/></svg>
+            <span class="sb-text"><span class="sb-word">Simpli<b>bytes</b></span><span class="sb-by">by Simplitech Academy</span></span>
+          </div>
+        <h1>Big skills. <span class="sb-grad">One byte at a time.</span></h1>
+        <p class="lead">Short on time? Good. A Simplibyte is a visual cue card you can read in under a minute: a fact, a how-to, a key detail or an interview question. One card a day adds up.</p>
+        <ul class="sb-chips">
+          <li>Under 1 minute</li>
+          <li>A new card every day</li>
+          <li>AI, data, software, cloud, design</li>
+        </ul>
+        <form class="sub-form" novalidate>
         <input type="email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Your email address" required>
         <button class="btn btn-primary" type="submit">Subscribe</button>
         <p class="sub-msg" role="status" aria-live="polite"></p>
       </form>
+      </div>
+      <div class="sb-fan" id="byteFan" aria-hidden="true"></div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:40px">
+  <section class="section section-alt" id="sec-fits">
     <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Made for busy days</p>
+        <h2>You have a minute. That is enough.</h2>
+        <p>Most people want to learn but cannot find a free evening. Simplibytes fit into the gaps in your day, so learning stops waiting for the perfect time.</p>
+      </div>
+      <ul class="moments">
+        <li class="moment"><span class="moment-time">30 sec</span><h3>While the coffee brews</h3><p>Read one fact and take it with you.</p></li>
+        <li class="moment"><span class="moment-time">1 min</span><h3>On the way to work</h3><p>Pick up a how-to or a key detail on your phone.</p></li>
+        <li class="moment"><span class="moment-time">5 min</span><h3>Before an interview</h3><p>Run through a handful of interview questions with sample answers.</p></li>
+        <li class="moment"><span class="moment-time">1 min</span><h3>Between two tasks</h3><p>Reset with something useful instead of another feed.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Small habit, real progress</h2>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="step-n">01</span><h3>Get a card</h3><p>Open this page or subscribe. A fresh card is waiting every day.</p></li>
+        <li class="step"><span class="step-n">02</span><h3>Read it in a minute</h3><p>One idea per card, in plain words, with the logo and a link back here.</p></li>
+        <li class="step"><span class="step-n">03</span><h3>Keep it or share it</h3><p>Save the image, copy the link, or send it to a friend who is learning too.</p></li>
+        <li class="step"><span class="step-n">04</span><h3>Go deeper when ready</h3><p>Found a topic you love? A coach can build a full plan around it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:24px">
+        <p class="eyebrow">The cards</p>
+        <h2>Pick a type, pick a topic</h2>
+      </div>
       <div class="byte-filters">
         <div class="filters" role="group" aria-label="Filter by type" style="margin-bottom:0">
           <span class="label" style="margin-right:6px">Type</span>
@@ -718,6 +811,17 @@ a{color:inherit}
       <div class="byte-grid" id="byteGrid" aria-live="polite"><p class="empty">Loading Simplibytes.</p></div>
       <button class="btn btn-ghost more" id="moreBytes" type="button" hidden>Show more</button>
       <p class="byte-note">Every card has its own link and a picture you can save, and every card carries the Simplitech Academy logo. Share them with anyone who is learning.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap sb-cta">
+      <h2>Liked the taste? Get the full meal.</h2>
+      <p>Simplibytes show you what is possible in a minute. A Simplitech coach builds the plan that takes you from curious to confident, one to one and live online.</p>
+      <div class="sb-cta-row">
+        <a class="btn btn-primary" href="#contact">Book a free consultation</a>
+        <a class="btn btn-ghost" href="#courses">Explore courses</a>
+      </div>
     </div>
   </section>
 </div>
@@ -1171,6 +1275,7 @@ a{color:inherit}
   var byteGrid=document.getElementById('byteGrid');
   var moreBytes=document.getElementById('moreBytes');
   var byteToday=document.getElementById('byteToday');
+  var byteFan=document.getElementById('byteFan');
   var bCat='all',bArea='all',bShown=0,BPAGE=12;
 
   function pad2(n){n=String(n);return n.length<2?'0'+n:n;}
@@ -1221,6 +1326,23 @@ a{color:inherit}
     img.onerror=function(){cb(null);};
     img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
   }
+  function drawSbIcon(x,px,py,size){
+    var k=size/100;
+    var g=x.createLinearGradient(px,py,px+size,py+size);g.addColorStop(0,'#3CCBB8');g.addColorStop(1,'#4C8DF0');
+    x.fillStyle=g;roundRect(x,px,py,size,size,26*k);x.fill();
+    var order=[[0,2],[0,1],[0,0],[1,0],[2,0],[2,1],[2,2],[3,2],[4,2],[4,1],[4,0]];
+    for(var i=0;i<order.length;i++){
+      x.fillStyle='rgba(255,255,255,'+(1-0.05*i).toFixed(2)+')';
+      roundRect(x,px+(30.5+14*order[i][1])*k,py+(16.5+14*order[i][0])*k,11*k,11*k,3*k);x.fill();
+    }
+  }
+  function svgMark(){
+    var ns='http://www.w3.org/2000/svg';
+    var s=document.createElementNS(ns,'svg');
+    s.setAttribute('class','byte-mark');s.setAttribute('viewBox','0 0 100 100');s.setAttribute('aria-hidden','true');
+    var u=document.createElementNS(ns,'use');u.setAttribute('href','#sb-icon');
+    s.appendChild(u);return s;
+  }
   function renderPng(b){
     return new Promise(function(resolve,reject){
       var ready=(document.fonts&&document.fonts.load)?Promise.all([document.fonts.load('700 40px Inter'),document.fonts.load('600 40px Inter'),document.fonts.load('400 40px Inter')]).catch(function(){}):Promise.resolve();
@@ -1239,7 +1361,10 @@ a{color:inherit}
             var cw=x.measureText(label).width+48;
             roundRect(x,P,98,cw,58,29);x.lineWidth=3;x.strokeStyle=c.ink;x.stroke();
             x.fillStyle=c.ink;x.fillText(label,P+24,137);
-            x.textAlign='right';x.fillStyle='#53687F';x.font='500 30px '+FONT;x.fillText('No. '+pad2(b.n),W-P,137);x.textAlign='left';
+            x.textAlign='right';x.fillStyle='#53687F';x.font='500 30px '+FONT;x.fillText('No. '+pad2(b.n),W-P,137);
+            var noW=x.measureText('No. '+pad2(b.n)).width;
+            x.textAlign='left';
+            drawSbIcon(x,W-P-noW-16-42,106,42);
             var size=96,lines;
             for(;;){
               x.font='700 '+size+'px '+FONT;
@@ -1355,7 +1480,7 @@ a{color:inherit}
     }
   });
 
-  function buildByte(b,withId){
+  function buildByte(b,withId,bare){
     var c=CAT[b.cat]||CAT.fact;
     var art=el('article','byte');
     art.setAttribute('data-cat',CAT[b.cat]?b.cat:'fact');
@@ -1364,7 +1489,10 @@ a{color:inherit}
     card.appendChild(el('span','byte-bar'));
     var top=el('div','byte-top');
     top.appendChild(el('span','byte-chip',c.label));
-    top.appendChild(el('span','byte-no','No. '+pad2(b.n)));
+    var no=el('span','byte-no');
+    no.appendChild(svgMark());
+    no.appendChild(document.createTextNode('No. '+pad2(b.n)));
+    top.appendChild(no);
     card.appendChild(top);
     card.appendChild(el('h3','byte-title',b.title||''));
     if(b.cat==='interview'){card.appendChild(el('p','byte-lab','Sample answer'));}
@@ -1378,6 +1506,7 @@ a{color:inherit}
     foot.appendChild(el('span','byte-site',SITE_DOMAIN));
     card.appendChild(foot);
     art.appendChild(card);
+    if(bare){return art;}
     var act=el('div','byte-actions');
     act.appendChild(el('span','byte-area',AREA[b.area]||''));
     var copy=el('button','byte-btn','Copy link');copy.type='button';
@@ -1496,6 +1625,14 @@ a{color:inherit}
       if(!bytes.length){throw new Error('empty');}
       byteToday.textContent='';
       byteToday.appendChild(buildByte(pickToday(),false));
+      if(byteFan){
+        byteFan.textContent='';
+        ['detail','fact','knowhow'].forEach(function(cat){
+          var pick=bytes[0];
+          for(var k=0;k<bytes.length;k++){if(bytes[k].cat===cat){pick=bytes[k];break;}}
+          byteFan.appendChild(buildByte(pick,false,true));
+        });
+      }
       renderBytes(true);
       if(pendingByte){focusByte(pendingByte);}
     }).catch(function(){

@@ -183,6 +183,58 @@ a{color:inherit}
 .latest .more{display:inline-block;margin-top:14px}
 @media (max-width:760px){.ways{grid-template-columns:minmax(0,1fr)}.way{padding:22px}}
 
+/* simplibytes */
+.bfilter{min-height:38px;padding:0 14px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--fg);font:500 14px var(--font-body);cursor:pointer}
+.bfilter:hover{border-color:var(--accent)}
+.bfilter[aria-pressed="true"]{background:var(--surface-2);border-color:var(--accent);color:var(--fg)}
+.byte-filters{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.byte-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 22px}
+.byte{--c1:#2BB0A4;--c2:#3CCBB8;--ink:#16766D;container-type:inline-size;display:flex;flex-direction:column;gap:12px;min-width:0;scroll-margin-top:96px}
+.byte[data-cat="knowhow"]{--c1:#3A6FDC;--c2:#4C8DF0;--ink:#2A55B5}
+.byte[data-cat="detail"]{--c1:#2F4A66;--c2:#53687F;--ink:#2F4A66}
+.byte[data-cat="interview"]{--c1:#1E9C90;--c2:#3A6FDC;--ink:#2A55B5}
+.byte-card{position:relative;aspect-ratio:4/5;display:flex;flex-direction:column;padding:8cqw 7cqw 6cqw;background:#fff;color:#2F4A66;border:1px solid rgba(47,74,102,.15);border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(47,74,102,.06)}
+.byte-bar{position:absolute;inset:0 0 auto;height:2.4cqw;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.byte-top{display:flex;align-items:center;justify-content:space-between;gap:3cqw}
+.byte-chip{font:600 3cqw/1 var(--font-body);letter-spacing:.05em;text-transform:uppercase;color:var(--ink);border:.3cqw solid var(--ink);border-radius:5cqw;padding:1.6cqw 3.2cqw;white-space:nowrap}
+.byte-no{font:500 3cqw/1 var(--font-mono);color:#53687F}
+.byte-title{font:700 7.2cqw/1.13 var(--font-display);letter-spacing:-.03em;color:#2F4A66;margin-top:7cqw;text-wrap:balance}
+.byte-lab{font:600 2.7cqw/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-top:4.5cqw}
+.byte-body{font:400 4.4cqw/1.45 var(--font-body);color:#3F5A76;margin-top:3.6cqw}
+.byte-lab+.byte-body{margin-top:1.6cqw}
+.byte-foot{margin-top:auto;display:flex;align-items:center;gap:2.6cqw;padding-top:3.4cqw;border-top:.25cqw solid rgba(47,74,102,.15)}
+.byte-logo{display:block;flex:none;width:9.5cqw;height:9.5cqw}
+.byte-brand{display:flex;flex-direction:column;gap:1.2cqw}
+.byte-brand b{font:700 5cqw/1 var(--font-display);letter-spacing:-.03em;color:#2F4A66}
+.byte-brand i{font:500 1.8cqw/1 var(--font-body);font-style:normal;letter-spacing:.42em;text-transform:uppercase;color:#16766D}
+.byte-site{margin-left:auto;font:500 2.8cqw/1 var(--font-body);color:#53687F}
+.byte-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.byte-area{font:500 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:auto}
+.byte-btn{min-height:34px;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--fg);font:500 13px var(--font-body);cursor:pointer}
+.byte-btn:hover{border-color:var(--accent)}
+.byte-focus .byte-card{outline:3px solid var(--accent);outline-offset:3px}
+.hook-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.hook-copy h2{font-size:clamp(1.75rem,3.4vw,2.5rem);margin-top:14px;max-width:18ch}
+.hook-copy>p{color:var(--muted);margin-top:14px;max-width:52ch}
+.hook-card{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.hook-card .byte{width:100%;max-width:400px;margin-inline:auto}
+.hook-card .label{text-align:center}
+.cat-list{list-style:none;margin:22px 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cat-list li{padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;background:var(--surface);font-size:.88rem;line-height:1.4}
+.cat-list li:nth-child(2){border-left-color:#4C8DF0}
+.cat-list li:nth-child(3){border-left-color:var(--fg)}
+.cat-list li:nth-child(4){border-left-color:#3A6FDC}
+.cat-list b{display:block;font-size:.95rem}
+.cat-list span{color:var(--muted)}
+.sub-form{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;max-width:520px}
+.sub-form input{flex:1 1 220px;min-width:0;min-height:46px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:400 15px var(--font-body)}
+.sub-form input:focus-visible{outline:2px solid var(--accent-text);outline-offset:2px}
+.sub-msg{flex:1 1 100%;min-height:1.4em;color:var(--muted);font-size:.9rem}
+.byte-note{color:var(--muted);font-size:.92rem;margin-top:28px;max-width:62ch}
+@media (max-width:980px){.byte-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.hook-grid{grid-template-columns:minmax(0,1fr);gap:36px}}
+@media (max-width:600px){.byte-grid{grid-template-columns:minmax(0,1fr)}.cat-list{grid-template-columns:minmax(0,1fr)}.byte-card{max-width:440px;width:100%;margin-inline:auto}}
+
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;list-style:none;margin:0;padding:0}
 .step{padding-top:20px;border-top:1px solid var(--line)}
@@ -339,6 +391,7 @@ a{color:inherit}
     </a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#courses" data-nav="courses">Courses</a>
+      <a href="#simplibytes" data-nav="simplibytes">Simplibytes</a>
       <a href="#learn" data-nav="learn">Tutorials</a>
       <a href="#how" data-nav="how">How it works</a>
       <a href="#blog" data-nav="blog">Blog</a>
@@ -395,6 +448,34 @@ a{color:inherit}
         <div><div class="fact-v">1:1</div><div class="fact-l">coaching in every course</div></div>
         <div><div class="fact-v">Live</div><div class="fact-l">online sessions with your coach</div></div>
         <div><div class="fact-v">Worldwide</div><div class="fact-l">learners in any time zone</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt bytes-hook" id="sec-bytes">
+    <div class="wrap">
+      <div class="hook-grid">
+        <div class="hook-copy">
+          <p class="eyebrow">Simplibytes</p>
+          <h2>One small idea a day. Easy to read, hard to forget.</h2>
+          <p>Simplibytes are quick visual cue cards from Simplitech Academy. Each one takes under a minute to read and gives you something you can use.</p>
+          <ul class="cat-list">
+            <li><b>Fact</b><span>A surprising or useful truth.</span></li>
+            <li><b>Know-how</b><span>A concept, explained simply.</span></li>
+            <li><b>Key detail</b><span>The small thing people forget.</span></li>
+            <li><b>Interview question</b><span>Practise with a sample answer.</span></li>
+          </ul>
+          <form class="sub-form" novalidate>
+        <input type="email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Your email address" required>
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+        <p class="sub-msg" role="status" aria-live="polite"></p>
+      </form>
+          <p style="margin-top:14px"><a class="card-link" href="#simplibytes">Browse all Simplibytes</a></p>
+        </div>
+        <div class="hook-card">
+          <p class="label">Today's Simplibyte</p>
+          <div id="byteToday"><p class="empty">Loading today's card.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -585,6 +666,55 @@ a{color:inherit}
   </section>
 </div>
 
+<!-- SIMPLIBYTES -->
+<div id="view-bytes" hidden>
+  <section class="about-hero">
+    <svg class="deco" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="deco-line" d="M0 330 C500 220 900 460 1400 330 S2200 200 2560 330"/>
+      <path class="deco-line" d="M0 1110 C600 1000 1000 1250 1500 1110 S2200 1000 2560 1120"/>
+      <circle class="deco-node" cx="2260" cy="250" r="12"/><circle class="deco-node" cx="2300" cy="1120" r="12"/>
+      <circle class="deco-ring" cx="2260" cy="250" r="34"/><circle class="deco-ring" cx="2300" cy="1120" r="34"/>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow">Simplibytes</p>
+      <h1>Learn one small thing at a time.</h1>
+      <p class="lead">Quick visual cue cards: a fact, a how-to, a key detail or an interview question. Read one in under a minute, share it, and come back for the next.</p>
+      <form class="sub-form" novalidate>
+        <input type="email" name="email" placeholder="you@example.com" autocomplete="email" aria-label="Your email address" required>
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+        <p class="sub-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="wrap">
+      <div class="byte-filters">
+        <div class="filters" role="group" aria-label="Filter by type" style="margin-bottom:0">
+          <span class="label" style="margin-right:6px">Type</span>
+          <button class="bfilter" type="button" data-bf="cat" data-v="all" aria-pressed="true">All</button>
+          <button class="bfilter" type="button" data-bf="cat" data-v="fact" aria-pressed="false">Fact</button>
+          <button class="bfilter" type="button" data-bf="cat" data-v="knowhow" aria-pressed="false">Know-how</button>
+          <button class="bfilter" type="button" data-bf="cat" data-v="detail" aria-pressed="false">Key detail</button>
+          <button class="bfilter" type="button" data-bf="cat" data-v="interview" aria-pressed="false">Interview question</button>
+        </div>
+        <div class="filters" role="group" aria-label="Filter by topic" style="margin-bottom:0">
+          <span class="label" style="margin-right:6px">Topic</span>
+          <button class="bfilter" type="button" data-bf="area" data-v="all" aria-pressed="true">All</button>
+          <button class="bfilter" type="button" data-bf="area" data-v="ai" aria-pressed="false">AI</button>
+          <button class="bfilter" type="button" data-bf="area" data-v="data" aria-pressed="false">Data</button>
+          <button class="bfilter" type="button" data-bf="area" data-v="software" aria-pressed="false">Software</button>
+          <button class="bfilter" type="button" data-bf="area" data-v="cloud" aria-pressed="false">Cloud</button>
+          <button class="bfilter" type="button" data-bf="area" data-v="design" aria-pressed="false">Design</button>
+        </div>
+      </div>
+      <div class="byte-grid" id="byteGrid" aria-live="polite"><p class="empty">Loading Simplibytes.</p></div>
+      <button class="btn btn-ghost more" id="moreBytes" type="button" hidden>Show more</button>
+      <p class="byte-note">Every card has its own link and a picture you can save, and every card carries the Simplitech Academy logo. Share them with anyone who is learning.</p>
+    </div>
+  </section>
+</div>
+
 <!-- ABOUT -->
 <div id="view-about" hidden>
   <section class="about-hero">
@@ -744,6 +874,7 @@ a{color:inherit}
         <p class="label">Academy</p>
         <ul class="foot-links">
           <li><a href="#about">About us</a></li>
+          <li><a href="#simplibytes">Simplibytes</a></li>
           <li><a href="#learn">Online tutorials</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -764,10 +895,11 @@ a{color:inherit}
     how:['home','sec-how'],
     faq:['home','sec-faq'],
     blog:['blog',null],
+    simplibytes:['bytes',null],
     about:['about',null],
     contact:[null,'sec-contact']
   };
-  var views={home:document.getElementById('view-home'),about:document.getElementById('view-about'),blog:document.getElementById('view-blog')};
+  var views={home:document.getElementById('view-home'),about:document.getElementById('view-about'),blog:document.getElementById('view-blog'),bytes:document.getElementById('view-bytes')};
   var nav=document.getElementById('nav');
   var toggle=document.getElementById('navToggle');
   var current=null;
@@ -779,8 +911,9 @@ a{color:inherit}
   }
   function highlight(key,view){
     var active=null;
-    if(key==='courses'||key==='how'||key==='faq'||key==='about'||key==='blog'){active=key;}
+    if(key==='courses'||key==='how'||key==='faq'||key==='about'||key==='blog'||key==='simplibytes'){active=key;}
     else if(view==='about'||view==='blog'){active=view;}
+    else if(view==='bytes'){active='simplibytes';}
     var links=nav.querySelectorAll('a[data-nav]');
     for(var i=0;i<links.length;i++){
       if(links[i].getAttribute('data-nav')===active){links[i].setAttribute('aria-current','page');}
@@ -789,7 +922,8 @@ a{color:inherit}
   }
   function route(){
     var key=(location.hash||'').replace('#','');
-    var r=routes[key]||routes.home;
+    var isByte=/^byte-[a-z0-9-]+$/.test(key);
+    var r=isByte?['bytes',null]:(routes[key]||routes.home);
     var view=r[0]||current||'home';
     var changed=view!==current;
     if(changed){
@@ -799,7 +933,9 @@ a{color:inherit}
     var target=r[1]?document.getElementById(r[1]):null;
     if(target){
       target.scrollIntoView({behavior:(reduce||changed)?'auto':'smooth',block:'start'});
-    }else if(changed||key===''||key==='home'||key==='about'||key==='blog'){
+    }else if(isByte){
+      focusByte(key.slice(5));
+    }else if(changed||key===''||key==='home'||key==='about'||key==='blog'||key==='simplibytes'){
       window.scrollTo(0,0);
     }
     highlight(key,view);
@@ -1012,6 +1148,302 @@ a{color:inherit}
       postList.appendChild(el('p','empty','The blog could not be loaded right now. Please try again later.'));
     });
   }
+
+  /* simplibytes: cards load from simplibytes.json */
+  var SUBSCRIBE_ENDPOINT='';
+  var CONTACT_EMAIL='simplitech.consultants@gmail.com';
+  var SITE_DOMAIN='simplitechacademy.com';
+  var CAT={
+    fact:{label:'Fact',c1:'#2BB0A4',c2:'#3CCBB8',ink:'#16766D'},
+    knowhow:{label:'Know-how',c1:'#3A6FDC',c2:'#4C8DF0',ink:'#2A55B5'},
+    detail:{label:'Key detail',c1:'#2F4A66',c2:'#53687F',ink:'#2F4A66'},
+    interview:{label:'Interview question',c1:'#1E9C90',c2:'#3A6FDC',ink:'#2A55B5'}
+  };
+  var AREA={ai:'AI',data:'Data',software:'Software',cloud:'Cloud',design:'Design'};
+  var bytes=[];
+  var byteGrid=document.getElementById('byteGrid');
+  var moreBytes=document.getElementById('moreBytes');
+  var byteToday=document.getElementById('byteToday');
+  var bCat='all',bArea='all',bShown=0,BPAGE=12;
+
+  function pad2(n){n=String(n);return n.length<2?'0'+n:n;}
+  function byteUrl(b){return location.href.split('#')[0]+'#byte-'+b.id;}
+  function flashBtn(btn,msg){
+    var old=btn.getAttribute('data-label')||btn.textContent;
+    btn.setAttribute('data-label',old);
+    btn.textContent=msg;
+    setTimeout(function(){btn.textContent=old;},2000);
+  }
+  function copyText(text,btn){
+    function fallback(){
+      try{
+        var ta=document.createElement('textarea');
+        ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';
+        document.body.appendChild(ta);ta.select();
+        var ok=document.execCommand('copy');
+        document.body.removeChild(ta);
+        flashBtn(btn,ok?'Link copied':'Copy the address bar');
+      }catch(err){flashBtn(btn,'Copy the address bar');}
+    }
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){flashBtn(btn,'Link copied');},fallback);
+      }else{fallback();}
+    }catch(err){fallback();}
+  }
+
+  /* image export: draws the card on a 1080 x 1350 canvas, with the logo */
+  function roundRect(x,px,py,w,h,r){
+    x.beginPath();x.moveTo(px+r,py);x.lineTo(px+w-r,py);x.arc(px+w-r,py+r,r,-Math.PI/2,0);
+    x.lineTo(px+w,py+h-r);x.arc(px+w-r,py+h-r,r,0,Math.PI/2);x.lineTo(px+r,py+h);
+    x.arc(px+r,py+h-r,r,Math.PI/2,Math.PI);x.lineTo(px,py+r);x.arc(px+r,py+r,r,Math.PI,Math.PI*1.5);x.closePath();
+  }
+  function wrapLines(x,text,maxW){
+    var words=String(text).split(/\s+/),lines=[],line='';
+    for(var i=0;i<words.length;i++){
+      var test=line?line+' '+words[i]:words[i];
+      if(x.measureText(test).width>maxW&&line){lines.push(line);line=words[i];}else{line=test;}
+    }
+    if(line){lines.push(line);}
+    return lines;
+  }
+  function iconImage(cb){
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 8 184 184" width="416" height="416"><defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3CCBB8"/><stop offset="1" stop-color="#4C8DF0"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2BB8A8"/><stop offset="1" stop-color="#4C7DF0"/></linearGradient></defs><rect x="8" y="8" width="184" height="184" rx="46" fill="url(#a)"/><circle cx="62" cy="105" r="30" fill="#fff"/><circle cx="100" cy="82" r="38" fill="#fff"/><circle cx="140" cy="108" r="28" fill="#fff"/><rect x="62" y="105" width="78" height="30" fill="#fff"/><path d="M100 112C112 92 134 92 134 112C134 132 112 132 100 112C88 92 66 92 66 112C66 132 88 132 100 112Z" fill="none" stroke="url(#b)" stroke-width="9" stroke-linejoin="round"/></svg>';
+    var img=new Image();
+    img.onload=function(){cb(img);};
+    img.onerror=function(){cb(null);};
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+  }
+  function renderPng(b){
+    return new Promise(function(resolve,reject){
+      var ready=(document.fonts&&document.fonts.load)?Promise.all([document.fonts.load('700 40px Inter'),document.fonts.load('600 40px Inter'),document.fonts.load('400 40px Inter')]).catch(function(){}):Promise.resolve();
+      Promise.race([ready,new Promise(function(r){setTimeout(r,2000);})]).then(function(){
+        iconImage(function(icon){
+          try{
+            var W=1080,H=1350,P=90,c=CAT[b.cat]||CAT.fact;
+            var FONT="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif";
+            var cv=document.createElement('canvas');cv.width=W;cv.height=H;
+            var x=cv.getContext('2d');
+            x.fillStyle='#FFFFFF';x.fillRect(0,0,W,H);
+            var g=x.createLinearGradient(0,0,W,0);g.addColorStop(0,c.c1);g.addColorStop(1,c.c2);
+            x.fillStyle=g;x.fillRect(0,0,W,26);
+            var label=c.label.toUpperCase();
+            x.font='600 28px '+FONT;
+            var cw=x.measureText(label).width+48;
+            roundRect(x,P,98,cw,58,29);x.lineWidth=3;x.strokeStyle=c.ink;x.stroke();
+            x.fillStyle=c.ink;x.fillText(label,P+24,137);
+            x.textAlign='right';x.fillStyle='#53687F';x.font='500 30px '+FONT;x.fillText('No. '+pad2(b.n),W-P,137);x.textAlign='left';
+            var size=96,lines;
+            for(;;){
+              x.font='700 '+size+'px '+FONT;
+              lines=wrapLines(x,b.title,W-2*P);
+              if(lines.length<=4||size<=56){break;}
+              size-=4;
+            }
+            var y=250;
+            x.fillStyle='#2F4A66';
+            for(var i=0;i<lines.length;i++){x.fillText(lines[i],P,y+size*0.82);y+=size*1.14;}
+            y+=36;
+            var fy=H-210;
+            if(b.cat==='interview'){x.font='600 26px '+FONT;x.fillStyle=c.ink;x.fillText('SAMPLE ANSWER',P,y+24);y+=54;}
+            var bs=44,bl;
+            for(;;){
+              x.font='400 '+bs+'px '+FONT;
+              bl=wrapLines(x,b.body,W-2*P);
+              if(y+bl.length*bs*1.45<=fy-30||bs<=30){break;}
+              bs-=2;
+            }
+            x.fillStyle='#3F5A76';
+            for(var j=0;j<bl.length;j++){x.fillText(bl[j],P,y+bs*0.9);y+=bs*1.45;}
+            x.fillStyle='rgba(47,74,102,0.15)';x.fillRect(P,fy,W-2*P,2);
+            if(icon){x.drawImage(icon,P,fy+40,104,104);}
+            x.fillStyle='#2F4A66';x.font='700 56px '+FONT;x.fillText('Simplitech',P+128,fy+92);
+            x.fillStyle='#16766D';x.font='500 22px '+FONT;
+            if('letterSpacing' in x){x.letterSpacing='9px';}
+            x.fillText('ACADEMY',P+130,fy+130);
+            if('letterSpacing' in x){x.letterSpacing='0px';}
+            x.textAlign='right';x.fillStyle='#53687F';x.font='500 30px '+FONT;x.fillText(SITE_DOMAIN,W-P,fy+104);x.textAlign='left';
+            cv.toBlob(function(bl2){if(bl2){resolve(bl2);}else{reject(new Error('no image'));}},'image/png');
+          }catch(err){reject(err);}
+        });
+      });
+    });
+  }
+  function saveImage(b,btn){
+    flashBtn(btn,'Preparing');
+    renderPng(b).then(function(blob){
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');
+      a.href=url;a.download='simplibyte-'+pad2(b.n)+'-'+b.id+'.png';
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(url);},5000);
+      flashBtn(btn,'Saved');
+    }).catch(function(){flashBtn(btn,'Could not save');});
+  }
+
+  function svgLogo(){
+    var ns='http://www.w3.org/2000/svg';
+    var s=document.createElementNS(ns,'svg');
+    s.setAttribute('class','byte-logo');s.setAttribute('viewBox','8 8 184 184');s.setAttribute('aria-hidden','true');
+    var u=document.createElementNS(ns,'use');u.setAttribute('href','#sga-icon');
+    s.appendChild(u);return s;
+  }
+  function buildByte(b,withId){
+    var c=CAT[b.cat]||CAT.fact;
+    var art=el('article','byte');
+    art.setAttribute('data-cat',CAT[b.cat]?b.cat:'fact');
+    if(withId){art.id='byte-'+b.id;}
+    var card=el('div','byte-card');
+    card.appendChild(el('span','byte-bar'));
+    var top=el('div','byte-top');
+    top.appendChild(el('span','byte-chip',c.label));
+    top.appendChild(el('span','byte-no','No. '+pad2(b.n)));
+    card.appendChild(top);
+    card.appendChild(el('h3','byte-title',b.title||''));
+    if(b.cat==='interview'){card.appendChild(el('p','byte-lab','Sample answer'));}
+    card.appendChild(el('p','byte-body',b.body||''));
+    var foot=el('div','byte-foot');
+    foot.appendChild(svgLogo());
+    var brand=el('span','byte-brand');
+    brand.appendChild(el('b',null,'Simplitech'));
+    brand.appendChild(el('i',null,'Academy'));
+    foot.appendChild(brand);
+    foot.appendChild(el('span','byte-site',SITE_DOMAIN));
+    card.appendChild(foot);
+    art.appendChild(card);
+    var act=el('div','byte-actions');
+    act.appendChild(el('span','byte-area',AREA[b.area]||''));
+    var copy=el('button','byte-btn','Copy link');copy.type='button';
+    copy.addEventListener('click',function(){copyText(byteUrl(b),copy);});
+    act.appendChild(copy);
+    var save=el('button','byte-btn','Save image');save.type='button';
+    save.addEventListener('click',function(){saveImage(b,save);});
+    act.appendChild(save);
+    if(navigator.share){
+      var sh=el('button','byte-btn','Share');sh.type='button';
+      sh.addEventListener('click',function(){
+        try{navigator.share({title:'Simplibyte: '+(b.title||''),text:b.title||'',url:byteUrl(b)}).catch(function(){});}catch(err){}
+      });
+      act.appendChild(sh);
+    }
+    art.appendChild(act);
+    return art;
+  }
+
+  function filtered(){
+    return bytes.filter(function(b){
+      return (bCat==='all'||b.cat===bCat)&&(bArea==='all'||b.area===bArea);
+    });
+  }
+  function renderBytes(reset){
+    if(!byteGrid){return;}
+    var list=filtered();
+    if(reset){bShown=0;byteGrid.textContent='';}
+    if(!list.length){
+      byteGrid.textContent='';
+      byteGrid.appendChild(el('p','empty','No Simplibytes in this group yet. Try another filter.'));
+      moreBytes.hidden=true;
+      return;
+    }
+    var end=Math.min(list.length,bShown+BPAGE);
+    for(var i=bShown;i<end;i++){byteGrid.appendChild(buildByte(list[i],true));}
+    bShown=end;
+    moreBytes.hidden=bShown>=list.length;
+  }
+  function setPressed(kind,val){
+    var btns=document.querySelectorAll('.bfilter[data-bf="'+kind+'"]');
+    for(var i=0;i<btns.length;i++){btns[i].setAttribute('aria-pressed',btns[i].getAttribute('data-v')===val?'true':'false');}
+  }
+  var bfBtns=document.querySelectorAll('.bfilter');
+  for(var q=0;q<bfBtns.length;q++){
+    bfBtns[q].addEventListener('click',function(){
+      var kind=this.getAttribute('data-bf'),val=this.getAttribute('data-v');
+      if(kind==='cat'){bCat=val;}else{bArea=val;}
+      setPressed(kind,val);
+      renderBytes(true);
+    });
+  }
+  if(moreBytes){moreBytes.addEventListener('click',function(){renderBytes(false);});}
+
+  var pendingByte;
+  function focusByte(id){
+    pendingByte=id;
+    if(!bytes||!bytes.length){return;}
+    var n=document.getElementById('byte-'+id);
+    if(!n){
+      bCat='all';bArea='all';setPressed('cat','all');setPressed('area','all');
+      var list=filtered(),idx=-1;
+      for(var i=0;i<list.length;i++){if(list[i].id===id){idx=i;}}
+      if(idx<0){pendingByte=null;return;}
+      renderBytes(true);
+      while(!document.getElementById('byte-'+id)&&bShown<list.length){renderBytes(false);}
+      n=document.getElementById('byte-'+id);
+    }
+    if(n){
+      pendingByte=null;
+      n.scrollIntoView({behavior:'auto',block:'center'});
+      n.classList.add('byte-focus');
+      setTimeout(function(){n.classList.remove('byte-focus');},2600);
+    }
+  }
+  function berlinToday(){
+    try{
+      var p=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+      return p;
+    }catch(err){return new Date().toISOString().slice(0,10);}
+  }
+  function pickToday(){
+    var t=berlinToday();
+    for(var i=0;i<bytes.length;i++){if(bytes[i].date===t){return bytes[i];}}
+    var day=Math.floor(Date.now()/86400000);
+    return bytes[day%bytes.length];
+  }
+
+  var subForms=document.querySelectorAll('.sub-form');
+  function setMsg(form,text){var m=form.querySelector('.sub-msg');if(m){m.textContent=text;}}
+  for(var sf=0;sf<subForms.length;sf++){
+    subForms[sf].addEventListener('submit',function(e){
+      e.preventDefault();
+      var form=this;
+      var input=form.querySelector('input');
+      var v=(input.value||'').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){setMsg(form,'Please enter a valid email address.');input.focus();return;}
+      if(/^https:\/\//i.test(SUBSCRIBE_ENDPOINT)){
+        setMsg(form,'Subscribing');
+        fetch(SUBSCRIBE_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:v,source:'simplibytes'})})
+          .then(function(r){
+            if(!r.ok){throw new Error('status '+r.status);}
+            input.value='';
+            setMsg(form,'Thank you. You are on the list.');
+          })
+          .catch(function(){setMsg(form,'Sorry, that did not work. Please try again, or write to '+CONTACT_EMAIL+'.');});
+      }else{
+        setMsg(form,'Your email app should open with a ready message. If it does not, write to '+CONTACT_EMAIL+'.');
+        location.href='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Subscribe me to Simplibytes')+'&body='+encodeURIComponent('Please add '+v+' to the Simplibytes list.');
+      }
+    });
+  }
+
+  function loadBytes(){
+    fetch('simplibytes.json',{cache:'no-store'}).then(function(r){
+      if(!r.ok){throw new Error('status '+r.status);}
+      return r.json();
+    }).then(function(data){
+      var ok=Array.isArray(data)?data.filter(function(b){return b&&b.id&&/^[a-z0-9-]+$/.test(b.id)&&b.title&&b.body;}):[];
+      ok.sort(function(a,b){return (b.n||0)-(a.n||0);});
+      bytes=ok;
+      if(!bytes.length){throw new Error('empty');}
+      byteToday.textContent='';
+      byteToday.appendChild(buildByte(pickToday(),false));
+      renderBytes(true);
+      if(pendingByte){focusByte(pendingByte);}
+    }).catch(function(){
+      if(byteToday){byteToday.textContent='';byteToday.appendChild(el('p','empty','Simplibytes could not be loaded right now. Please try again later.'));}
+      if(byteGrid){byteGrid.textContent='';byteGrid.appendChild(el('p','empty','Simplibytes could not be loaded right now. Please try again later.'));}
+    });
+  }
+  loadBytes();
+
   loadPosts();
 })();
 </script>

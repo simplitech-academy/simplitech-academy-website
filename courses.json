@@ -1075,5 +1075,916 @@
   ],
   "sessions": 80,
   "hours": 80
+ },
+ {
+  "slug": "azure-cloud-computing",
+  "title": "Azure Cloud Computing",
+  "group": "Azure cloud",
+  "type": "short",
+  "level": "Beginner",
+  "weeks": 8,
+  "tagline": "Core Azure services, identity, networking and governance, ending with AZ-900 preparation.",
+  "who": [
+   "Beginners starting a cloud career on Microsoft Azure",
+   "IT staff moving workloads from on-premises Windows or Linux to Azure",
+   "Learners preparing for the AZ-900 exam"
+  ],
+  "prereq": "None. Basic computer skills are enough.",
+  "outcomes": [
+   "Explain cloud models and the shared responsibility model",
+   "Create and organise Azure subscriptions, resource groups and budgets",
+   "Deploy virtual machines and web apps and put them behind a load balancer",
+   "Design a virtual network with subnets and security groups",
+   "Store data in Blob Storage and Azure SQL",
+   "Control access with Microsoft Entra ID and role-based access control",
+   "Monitor resources and set up alerts"
+  ],
+  "modules": [
+   {
+    "t": "Cloud concepts and Azure basics",
+    "topics": [
+     "IaaS, PaaS and SaaS",
+     "Shared responsibility model",
+     "Regions and availability zones",
+     "Azure portal and Azure CLI",
+     "Subscriptions, resource groups and cost management"
+    ],
+    "lab": "Set up a subscription with budgets and a sensible resource group layout."
+   },
+   {
+    "t": "Identity and access",
+    "topics": [
+     "Microsoft Entra ID basics",
+     "Users, groups and role-based access control",
+     "Least privilege and MFA",
+     "Conditional access at a high level"
+    ],
+    "lab": "Give a small team the minimum access they need."
+   },
+   {
+    "t": "Compute",
+    "topics": [
+     "Virtual machines and disks",
+     "Scale sets and availability sets",
+     "App Service",
+     "Containers in Azure at a high level"
+    ],
+    "lab": "Deploy a web app on a virtual machine and again on App Service."
+   },
+   {
+    "t": "Networking",
+    "topics": [
+     "Virtual networks, subnets and peering",
+     "Network security groups",
+     "Load balancer and Application Gateway",
+     "DNS and VPN at a high level"
+    ],
+    "lab": "Build a two-tier network with a public front end and a private back end."
+   },
+   {
+    "t": "Storage and databases",
+    "topics": [
+     "Blob, file and disk storage",
+     "Redundancy options",
+     "Azure SQL Database",
+     "Backups and recovery"
+    ],
+    "lab": "Host a static site in Blob Storage and connect an app to a database."
+   },
+   {
+    "t": "Governance, monitoring and exam preparation",
+    "topics": [
+     "Azure Policy and resource locks",
+     "Azure Monitor and alerts",
+     "Pricing and the Well-Architected Framework",
+     "Practice questions and AZ-900 review"
+    ],
+    "lab": "Add alerts to your app and review its cost."
+   }
+  ],
+  "tools": [
+   "Azure portal",
+   "Azure CLI",
+   "Virtual Machines",
+   "App Service",
+   "Blob Storage",
+   "Azure SQL",
+   "Microsoft Entra ID",
+   "Azure Monitor"
+  ],
+  "projects": [
+   "A secured, load-balanced web application on Azure",
+   "A governed subscription with budgets, policy and alerts"
+  ],
+  "prepares": [
+   "Microsoft Azure Fundamentals (AZ-900)"
+  ],
+  "next": [
+   "azure-administrator",
+   "docker-cicd-pipelines"
+  ],
+  "sessions": 16,
+  "hours": 16
+ },
+ {
+  "slug": "azure-administrator",
+  "title": "Azure Administrator",
+  "group": "Azure cloud",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 8,
+  "tagline": "Run Azure day to day: identity, networks, compute, storage, backups and monitoring, ending with AZ-104 preparation.",
+  "who": [
+   "Cloud and systems administrators working with Azure",
+   "Learners who finished Azure Cloud Computing",
+   "Engineers preparing for the AZ-104 exam"
+  ],
+  "prereq": "Basic Azure knowledge, such as the Azure Cloud Computing course, and Linux or Windows administration basics.",
+  "outcomes": [
+   "Manage identities, groups and role assignments at scale",
+   "Configure virtual networks, peering, DNS and secure access",
+   "Deploy and resize virtual machines and scale sets",
+   "Manage storage accounts, access and lifecycle rules",
+   "Run containers on App Service and Azure Container Apps",
+   "Back up and restore workloads",
+   "Monitor with Azure Monitor and Log Analytics and act on alerts"
+  ],
+  "modules": [
+   {
+    "t": "Identities and governance",
+    "topics": [
+     "Entra ID users, groups and devices",
+     "Role-based access control in depth",
+     "Management groups, policy and tags",
+     "Cost management and budgets"
+    ],
+    "lab": "Design the access and policy model for a three-team subscription."
+   },
+   {
+    "t": "Virtual networking",
+    "topics": [
+     "Virtual networks, subnets and routing",
+     "Network security groups and Azure Firewall basics",
+     "Peering and VPN gateways",
+     "Private endpoints and DNS"
+    ],
+    "lab": "Connect two networks and restrict traffic between them."
+   },
+   {
+    "t": "Virtual machines",
+    "topics": [
+     "Images, sizes and disks",
+     "Scale sets and autoscaling",
+     "Availability and update management",
+     "Access with Bastion and managed identities"
+    ],
+    "lab": "Deploy a scale set that grows and shrinks with load."
+   },
+   {
+    "t": "Storage",
+    "topics": [
+     "Storage accounts and redundancy",
+     "Shared access signatures and keys",
+     "Lifecycle management",
+     "Azure Files and sync"
+    ],
+    "lab": "Secure a storage account and automate its lifecycle."
+   },
+   {
+    "t": "Containers and web apps",
+    "topics": [
+     "App Service plans and slots",
+     "Azure Container Registry",
+     "Azure Container Apps",
+     "Deployment slots and rollbacks"
+    ],
+    "lab": "Deploy a containerised app with a staging slot swap."
+   },
+   {
+    "t": "Backup, monitoring and exam preparation",
+    "topics": [
+     "Azure Backup and recovery vaults",
+     "Azure Monitor, Log Analytics and alerts",
+     "Automating tasks with Azure CLI and ARM or Bicep templates",
+     "Practice questions and AZ-104 review"
+    ],
+    "lab": "Restore a deleted machine from backup and alert on failures."
+   }
+  ],
+  "tools": [
+   "Azure CLI",
+   "Microsoft Entra ID",
+   "Virtual Networks",
+   "Virtual Machines",
+   "Storage Accounts",
+   "App Service",
+   "Azure Monitor",
+   "Bicep"
+  ],
+  "projects": [
+   "A governed, monitored multi-tier environment on Azure",
+   "A backup and restore runbook"
+  ],
+  "prepares": [
+   "Microsoft Azure Administrator Associate (AZ-104)"
+  ],
+  "next": [
+   "terraform-ansible",
+   "kubernetes-in-practice"
+  ],
+  "sessions": 16,
+  "hours": 16
+ },
+ {
+  "slug": "google-cloud-computing",
+  "title": "Google Cloud Computing",
+  "group": "Google Cloud",
+  "type": "short",
+  "level": "Beginner",
+  "weeks": 8,
+  "tagline": "Core Google Cloud services, IAM, networking and data, with a first look at AI and Cloud Digital Leader preparation.",
+  "who": [
+   "Beginners starting a cloud career on Google Cloud",
+   "Developers and analysts moving workloads to Google Cloud",
+   "Learners preparing for the Cloud Digital Leader exam"
+  ],
+  "prereq": "None. Basic computer skills are enough.",
+  "outcomes": [
+   "Explain cloud models and how Google Cloud is organised",
+   "Create projects, billing budgets and alerts",
+   "Run applications on Compute Engine, Cloud Run and App Engine",
+   "Create secure access with IAM and service accounts",
+   "Design a VPC network with firewall rules",
+   "Store data in Cloud Storage, Cloud SQL and BigQuery",
+   "Use managed AI services in a simple application"
+  ],
+  "modules": [
+   {
+    "t": "Cloud concepts and Google Cloud basics",
+    "topics": [
+     "IaaS, PaaS and SaaS",
+     "Organisation, folders and projects",
+     "Regions and zones",
+     "Console, Cloud Shell and the gcloud CLI",
+     "Billing and budgets"
+    ],
+    "lab": "Set up a project with a budget alert."
+   },
+   {
+    "t": "Identity and security",
+    "topics": [
+     "IAM roles and policies",
+     "Service accounts",
+     "Least privilege and MFA",
+     "Encryption and Cloud KMS basics"
+    ],
+    "lab": "Give a team and an application only the access they need."
+   },
+   {
+    "t": "Compute",
+    "topics": [
+     "Compute Engine and persistent disks",
+     "Managed instance groups and load balancing",
+     "Cloud Run and App Engine",
+     "Containers on Google Cloud at a high level"
+    ],
+    "lab": "Deploy the same app on a VM and on Cloud Run and compare them."
+   },
+   {
+    "t": "Networking",
+    "topics": [
+     "VPC networks and subnets",
+     "Firewall rules",
+     "Cloud DNS and Cloud Load Balancing",
+     "Hybrid connectivity at a high level"
+    ],
+    "lab": "Build a VPC with public and private workloads."
+   },
+   {
+    "t": "Storage, data and AI",
+    "topics": [
+     "Cloud Storage classes and lifecycle",
+     "Cloud SQL",
+     "BigQuery basics",
+     "Vertex AI and managed AI services at a high level"
+    ],
+    "lab": "Load data into BigQuery and query it."
+   },
+   {
+    "t": "Operations and exam preparation",
+    "topics": [
+     "Cloud Monitoring and Logging",
+     "Pricing and cost control",
+     "Digital transformation concepts",
+     "Practice questions and Cloud Digital Leader review"
+    ],
+    "lab": "Set up dashboards and alerts for your app."
+   }
+  ],
+  "tools": [
+   "Google Cloud console",
+   "gcloud CLI",
+   "Compute Engine",
+   "Cloud Run",
+   "Cloud Storage",
+   "BigQuery",
+   "IAM",
+   "Cloud Monitoring"
+  ],
+  "projects": [
+   "A secured web application on Google Cloud",
+   "A small data analysis in BigQuery"
+  ],
+  "prepares": [
+   "Google Cloud Digital Leader"
+  ],
+  "next": [
+   "google-cloud-engineer",
+   "docker-cicd-pipelines"
+  ],
+  "sessions": 16,
+  "hours": 16
+ },
+ {
+  "slug": "google-cloud-engineer",
+  "title": "Google Cloud Engineer",
+  "group": "Google Cloud",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 8,
+  "tagline": "Deploy, secure and operate workloads on Google Cloud, ending with Associate Cloud Engineer preparation.",
+  "who": [
+   "Engineers working on or moving to Google Cloud",
+   "Learners who finished Google Cloud Computing",
+   "Candidates preparing for the Associate Cloud Engineer exam"
+  ],
+  "prereq": "Basic Google Cloud knowledge, such as the Google Cloud Computing course, and Linux command line basics.",
+  "outcomes": [
+   "Plan projects, billing and IAM for a team",
+   "Deploy and scale applications on Compute Engine, Cloud Run and GKE",
+   "Build and secure VPC networks across projects",
+   "Choose between storage and database options",
+   "Automate deployments with gcloud and Terraform",
+   "Monitor, log and alert on workloads",
+   "Troubleshoot common deployment problems"
+  ],
+  "modules": [
+   {
+    "t": "Projects, billing and access",
+    "topics": [
+     "Resource hierarchy and organisation policies",
+     "IAM, groups and service account best practice",
+     "Budgets and quotas",
+     "Audit logs"
+    ],
+    "lab": "Design the project and access layout for a small company."
+   },
+   {
+    "t": "Compute and containers",
+    "topics": [
+     "Compute Engine templates and instance groups",
+     "Cloud Run revisions and traffic splitting",
+     "Google Kubernetes Engine fundamentals",
+     "Artifact Registry"
+    ],
+    "lab": "Deploy an app on Cloud Run and on GKE."
+   },
+   {
+    "t": "Networking",
+    "topics": [
+     "VPC design, shared VPC and peering",
+     "Firewall rules and Cloud NAT",
+     "Load balancing options",
+     "Private Google access"
+    ],
+    "lab": "Build a private network with controlled outbound access."
+   },
+   {
+    "t": "Storage and databases",
+    "topics": [
+     "Cloud Storage security and lifecycle",
+     "Cloud SQL, Firestore and Spanner at a glance",
+     "BigQuery access and cost control",
+     "Backups and exports"
+    ],
+    "lab": "Pick the right database for three sample applications and justify it."
+   },
+   {
+    "t": "Automation and delivery",
+    "topics": [
+     "gcloud scripting",
+     "Terraform on Google Cloud",
+     "Cloud Build pipelines",
+     "Deployment rollbacks"
+    ],
+    "lab": "Provision an environment with Terraform and deploy it with Cloud Build."
+   },
+   {
+    "t": "Operations and exam preparation",
+    "topics": [
+     "Cloud Monitoring, Logging and alerting",
+     "Troubleshooting deployments and permissions",
+     "Cost optimisation",
+     "Practice questions and Associate Cloud Engineer review"
+    ],
+    "lab": "Find and fix three planted problems in a broken environment."
+   }
+  ],
+  "tools": [
+   "gcloud CLI",
+   "Compute Engine",
+   "Cloud Run",
+   "GKE",
+   "Cloud Build",
+   "Terraform",
+   "Cloud Monitoring",
+   "BigQuery"
+  ],
+  "projects": [
+   "A containerised application delivered with Cloud Build",
+   "An environment defined with Terraform"
+  ],
+  "prepares": [
+   "Google Cloud Associate Cloud Engineer"
+  ],
+  "next": [
+   "kubernetes-in-practice",
+   "terraform-ansible"
+  ],
+  "sessions": 16,
+  "hours": 16
+ },
+ {
+  "slug": "aws-solutions-architect",
+  "title": "AWS Solutions Architect",
+  "group": "AWS cloud",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 8,
+  "tagline": "Design secure, resilient, cost-aware architectures on AWS, ending with Solutions Architect Associate preparation.",
+  "who": [
+   "Engineers who finished AWS Cloud Computing & AI",
+   "Developers and administrators designing systems on AWS",
+   "Candidates preparing for the Solutions Architect Associate exam"
+  ],
+  "prereq": "Basic AWS knowledge, such as the AWS Cloud Computing & AI course.",
+  "outcomes": [
+   "Design highly available and fault-tolerant architectures",
+   "Choose the right compute, storage and database services",
+   "Design secure networks and access across accounts",
+   "Decouple applications with queues, topics and event buses",
+   "Plan backup, recovery and disaster recovery",
+   "Estimate and reduce cost",
+   "Review a design against the Well-Architected Framework"
+  ],
+  "modules": [
+   {
+    "t": "Resilient architecture",
+    "topics": [
+     "Multi-AZ and multi-region patterns",
+     "Load balancing and Auto Scaling",
+     "Decoupling with SQS, SNS and EventBridge",
+     "Disaster recovery strategies"
+    ],
+    "lab": "Make a single-server app survive the loss of an Availability Zone."
+   },
+   {
+    "t": "Secure architecture",
+    "topics": [
+     "IAM across accounts and AWS Organizations",
+     "Network security: security groups, NACLs and endpoints",
+     "Encryption with KMS and Secrets Manager",
+     "Logging with CloudTrail and Config"
+    ],
+    "lab": "Lock down a multi-account setup."
+   },
+   {
+    "t": "Compute and containers",
+    "topics": [
+     "EC2 purchasing options",
+     "Lambda patterns",
+     "ECS and Fargate overview",
+     "Choosing between them"
+    ],
+    "lab": "Compare three compute choices for the same workload."
+   },
+   {
+    "t": "Storage and databases",
+    "topics": [
+     "S3 design and performance",
+     "Block and file storage",
+     "RDS, Aurora and DynamoDB design",
+     "Caching with ElastiCache and CloudFront"
+    ],
+    "lab": "Choose and justify the data layer for three applications."
+   },
+   {
+    "t": "Performance and cost",
+    "topics": [
+     "Right-sizing and savings plans",
+     "Cost Explorer and budgets",
+     "Performance monitoring",
+     "Trade-offs between cost, speed and resilience"
+    ],
+    "lab": "Cut the monthly cost of a sample architecture without lowering availability."
+   },
+   {
+    "t": "Design practice and exam preparation",
+    "topics": [
+     "Reading exam-style scenarios",
+     "Well-Architected review",
+     "Whiteboard a design and defend it",
+     "Practice questions and exam review"
+    ],
+    "lab": "Present an architecture and answer questions on it."
+   }
+  ],
+  "tools": [
+   "EC2",
+   "S3",
+   "VPC",
+   "RDS and Aurora",
+   "DynamoDB",
+   "SQS and SNS",
+   "CloudFront",
+   "CloudTrail"
+  ],
+  "projects": [
+   "A multi-AZ architecture with a written design review",
+   "A disaster recovery plan for a sample application"
+  ],
+  "prepares": [
+   "AWS Certified Solutions Architect - Associate"
+  ],
+  "next": [
+   "terraform-ansible",
+   "aws-cloud-engineering-ai"
+  ],
+  "sessions": 16,
+  "hours": 16
+ },
+ {
+  "slug": "python-for-devops",
+  "title": "Python for DevOps",
+  "group": "DevOps and automation",
+  "type": "short",
+  "level": "Beginner to intermediate",
+  "weeks": 5,
+  "tagline": "Use Python to automate infrastructure, call cloud APIs and build small operations tools.",
+  "who": [
+   "Aspiring DevOps and cloud engineers",
+   "System administrators moving from Bash to Python",
+   "Anyone who wants to automate cloud work"
+  ],
+  "prereq": "Basic Linux command line. Programming experience is not needed.",
+  "outcomes": [
+   "Write clear Python scripts with functions and error handling",
+   "Work with files, JSON and YAML",
+   "Call REST APIs and handle responses",
+   "Automate AWS, Azure or Google Cloud tasks with their Python libraries",
+   "Write tests for your scripts",
+   "Package a tool others can run"
+  ],
+  "modules": [
+   {
+    "t": "Python essentials",
+    "topics": [
+     "Variables, loops and functions",
+     "Virtual environments and pip",
+     "Reading and writing files",
+     "Errors and logging"
+    ],
+    "lab": "Write a script that cleans and summarises a log file."
+   },
+   {
+    "t": "Data formats and APIs",
+    "topics": [
+     "JSON and YAML",
+     "The requests library",
+     "Authentication and pagination",
+     "Retries and timeouts"
+    ],
+    "lab": "Pull data from a public API and produce a report."
+   },
+   {
+    "t": "Automating the cloud",
+    "topics": [
+     "Cloud SDKs: boto3 and equivalents",
+     "Listing and tagging resources",
+     "Scheduled clean-up of unused resources",
+     "Handling credentials safely"
+    ],
+    "lab": "Write a tool that finds and reports untagged cloud resources."
+   },
+   {
+    "t": "Testing and quality",
+    "topics": [
+     "Unit tests with pytest",
+     "Linting and formatting",
+     "Running tests in CI",
+     "Command line interfaces with argparse"
+    ],
+    "lab": "Add tests and a CI check to your tool."
+   },
+   {
+    "t": "Operations tools",
+    "topics": [
+     "Small web services with Flask or FastAPI",
+     "Health checks and webhooks",
+     "Packaging and releasing a tool",
+     "Capstone review"
+    ],
+    "lab": "Present a working operations tool and explain how it is tested."
+   }
+  ],
+  "tools": [
+   "Python",
+   "pytest",
+   "Git",
+   "GitHub Actions",
+   "REST APIs",
+   "boto3"
+  ],
+  "projects": [
+   "A cloud resource report tool with tests",
+   "A small health-check service"
+  ],
+  "prepares": [],
+  "next": [
+   "docker-cicd-pipelines",
+   "terraform-ansible"
+  ],
+  "sessions": 10,
+  "hours": 10
+ },
+ {
+  "slug": "jenkins-gitlab-ci",
+  "title": "CI/CD with Jenkins & GitLab CI",
+  "group": "DevOps and automation",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 5,
+  "tagline": "Build and run pipelines in the two CI/CD systems most teams still use.",
+  "who": [
+   "DevOps engineers who work in teams that use Jenkins or GitLab",
+   "Learners who finished Docker & CI/CD Pipelines",
+   "Engineers moving between CI/CD tools"
+  ],
+  "prereq": "Docker and Git basics, such as the Docker & CI/CD Pipelines course.",
+  "outcomes": [
+   "Install and secure a Jenkins server",
+   "Write declarative Jenkins pipelines with a Jenkinsfile",
+   "Use agents, credentials and shared libraries",
+   "Write GitLab CI pipelines with stages, jobs and runners",
+   "Build, test and publish container images in both tools",
+   "Deploy with approvals and rollbacks",
+   "Choose between GitHub Actions, Jenkins and GitLab CI"
+  ],
+  "modules": [
+   {
+    "t": "Jenkins fundamentals",
+    "topics": [
+     "Installing Jenkins and plugins",
+     "Users, roles and security",
+     "Jobs and pipelines",
+     "Agents and nodes"
+    ],
+    "lab": "Run Jenkins in a container and secure it."
+   },
+   {
+    "t": "Jenkins pipelines",
+    "topics": [
+     "Declarative Jenkinsfile",
+     "Credentials and secrets",
+     "Shared libraries",
+     "Webhooks and multibranch pipelines"
+    ],
+    "lab": "Write a Jenkinsfile that builds, tests and publishes an image."
+   },
+   {
+    "t": "GitLab CI fundamentals",
+    "topics": [
+     ".gitlab-ci.yml, stages and jobs",
+     "Runners and variables",
+     "Artifacts and caching",
+     "Merge request pipelines"
+    ],
+    "lab": "Build a pipeline that tests every merge request."
+   },
+   {
+    "t": "Delivery and deployment",
+    "topics": [
+     "Container registry",
+     "Environments and manual approvals",
+     "Review apps and rollbacks",
+     "Deploying to Kubernetes or a cloud server"
+    ],
+    "lab": "Deploy to a staging and a production environment with an approval step."
+   },
+   {
+    "t": "Comparing tools and capstone",
+    "topics": [
+     "Strengths and limits of each tool",
+     "Migrating a pipeline between tools",
+     "Pipeline security and speed",
+     "Capstone review"
+    ],
+    "lab": "Rebuild the same pipeline in two tools and compare the results."
+   }
+  ],
+  "tools": [
+   "Jenkins",
+   "GitLab CI",
+   "Docker",
+   "Git",
+   "Kubernetes",
+   "Container registries"
+  ],
+  "projects": [
+   "The same application delivered through Jenkins and through GitLab CI"
+  ],
+  "prepares": [],
+  "next": [
+   "kubernetes-in-practice",
+   "devsecops-essentials"
+  ],
+  "sessions": 10,
+  "hours": 10
+ },
+ {
+  "slug": "devsecops-essentials",
+  "title": "DevSecOps Essentials",
+  "group": "DevOps and automation",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 5,
+  "tagline": "Build security into pipelines, containers, infrastructure code and cloud accounts.",
+  "who": [
+   "DevOps and cloud engineers who need to ship securely",
+   "Developers adding security checks to their delivery process",
+   "Learners who finished a CI/CD course"
+  ],
+  "prereq": "Docker and CI/CD basics, such as the Docker & CI/CD Pipelines course.",
+  "outcomes": [
+   "Explain where security fits across the delivery lifecycle",
+   "Scan code, dependencies and container images in a pipeline",
+   "Manage secrets without putting them in code",
+   "Check infrastructure code for risky settings",
+   "Apply least privilege in cloud accounts and Kubernetes",
+   "Respond to a vulnerability report with a clear process"
+  ],
+  "modules": [
+   {
+    "t": "Security in the delivery lifecycle",
+    "topics": [
+     "Shift-left security",
+     "Threat modelling basics",
+     "The OWASP Top 10 at a high level",
+     "Security responsibilities in a team"
+    ],
+    "lab": "Threat-model a small web application."
+   },
+   {
+    "t": "Code and dependency security",
+    "topics": [
+     "Static analysis (SAST)",
+     "Dependency and licence scanning",
+     "Software bills of materials",
+     "Fixing findings without slowing delivery"
+    ],
+    "lab": "Add code and dependency scanning to a pipeline."
+   },
+   {
+    "t": "Container and secrets security",
+    "topics": [
+     "Image scanning and hardening",
+     "Running as non-root",
+     "Secrets managers and rotation",
+     "Signing images"
+    ],
+    "lab": "Harden a container image and move its secrets to a manager."
+   },
+   {
+    "t": "Infrastructure and cloud security",
+    "topics": [
+     "Scanning Terraform and Kubernetes files",
+     "Least-privilege IAM",
+     "Network policy basics",
+     "Audit logging"
+    ],
+    "lab": "Find and fix risky settings in a sample Terraform project."
+   },
+   {
+    "t": "Operating securely",
+    "topics": [
+     "Vulnerability management process",
+     "Incident response basics",
+     "Security metrics",
+     "Capstone review"
+    ],
+    "lab": "Handle a simulated vulnerability report from alert to fix."
+   }
+  ],
+  "tools": [
+   "Trivy",
+   "Semgrep",
+   "Gitleaks",
+   "Docker",
+   "Terraform",
+   "GitHub Actions",
+   "Vault or cloud secrets managers"
+  ],
+  "projects": [
+   "A pipeline that scans code, dependencies, images and infrastructure files"
+  ],
+  "prepares": [],
+  "next": [
+   "kubernetes-in-practice",
+   "sre-essentials"
+  ],
+  "sessions": 10,
+  "hours": 10
+ },
+ {
+  "slug": "gitops-helm-argocd",
+  "title": "GitOps with Helm & Argo CD",
+  "group": "DevOps and automation",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 4,
+  "tagline": "Package applications with Helm and deliver them to Kubernetes from Git with Argo CD.",
+  "who": [
+   "Engineers who already run applications on Kubernetes",
+   "Learners who finished Kubernetes in Practice",
+   "Platform and DevOps engineers moving to GitOps"
+  ],
+  "prereq": "Kubernetes basics, such as the Kubernetes in Practice course.",
+  "outcomes": [
+   "Explain the GitOps model and its benefits",
+   "Package an application as a Helm chart",
+   "Manage values for several environments",
+   "Install and use Argo CD",
+   "Deploy, sync and roll back applications from Git",
+   "Handle secrets in a GitOps workflow"
+  ],
+  "modules": [
+   {
+    "t": "GitOps principles",
+    "topics": [
+     "Declarative and versioned delivery",
+     "Pull versus push deployments",
+     "Repository layout for apps and environments",
+     "Drift and reconciliation"
+    ],
+    "lab": "Design a repository layout for three environments."
+   },
+   {
+    "t": "Helm",
+    "topics": [
+     "Charts, templates and values",
+     "Dependencies",
+     "Releases and upgrades",
+     "Testing and linting charts"
+    ],
+    "lab": "Package an application as a Helm chart."
+   },
+   {
+    "t": "Argo CD",
+    "topics": [
+     "Installing and securing Argo CD",
+     "Applications and sync policies",
+     "Health, drift and rollbacks",
+     "App of apps and ApplicationSets"
+    ],
+    "lab": "Deploy your chart to a cluster from a Git repository."
+   },
+   {
+    "t": "Environments, secrets and capstone",
+    "topics": [
+     "Promoting between environments",
+     "Sealed Secrets or External Secrets",
+     "Progressive delivery at a high level",
+     "Capstone review"
+    ],
+    "lab": "Promote a change from development to production through Git only."
+   }
+  ],
+  "tools": [
+   "Kubernetes",
+   "Helm",
+   "Argo CD",
+   "Git",
+   "GitHub"
+  ],
+  "projects": [
+   "An application delivered to three environments through Argo CD"
+  ],
+  "prepares": [],
+  "next": [
+   "sre-essentials",
+   "devops-engineer-program"
+  ],
+  "sessions": 8,
+  "hours": 8
  }
 ]

@@ -72,6 +72,7 @@ li{margin:2px 0}
 </div>
 ${c.prepares && c.prepares.length ? `<h2>Certification path</h2>${list(c.prepares)}<p class="note">This course helps you prepare. Exams are taken separately with the provider, and we cannot promise a pass.</p>` : ''}
 ${next ? `<h2>Next steps</h2><p style="margin:0">${next}</p>` : ''}
+<h2>Included when you enroll</h2>${list(["E-learning material: recorded lessons, notes and exercises for every module","GitHub repository: starter code, configuration and solutions for each lab","Hands-on labs and project work, reviewed by your coach",`${c.sessions} live one-to-one sessions of 60 minutes`])}<p class="note" style="margin-top:8px">Access to the e-learning material, the GitHub repository and the labs is released upon enrollment.</p>
 <div class="note">Durations assume two one-hour live sessions per week plus practice time between sessions. Your coach confirms the plan and schedule with you in a free consultation, and details may be adjusted to your background and goals.</div>
 <div class="foot"><span><b>Book a free consultation</b> at simplitechacademy.com</span><span>Simplitech Academy</span></div>
 </body></html>`;

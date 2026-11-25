@@ -390,6 +390,14 @@ a.course-name{color:var(--fg);text-decoration:none}
 a.course-name::after{content:" \2192";color:var(--accent-text);opacity:0;transition:opacity .15s}
 a.course-name:hover,a.course-name:focus-visible{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
 @media (hover:none){a.course-name::after{opacity:.7}}
+.c-incl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.c-incl>div{border:1px solid var(--border);border-radius:14px;background:var(--surface);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.c-incl b{font-size:.98rem}.c-incl p{margin:0;color:var(--muted);font-size:.9rem}
+.c-incl .lock{margin-top:auto;font:500 11px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.c-incl-note{margin:14px 0 0;color:var(--muted);font-size:.92rem}
+.c-enrollnote{margin:14px 0 0;color:var(--muted);font-size:.92rem;max-width:60ch}
+@media (max-width:900px){.c-incl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.c-incl{grid-template-columns:minmax(0,1fr)}}
 a.course-name:hover::after,a.course-name:focus-visible::after{opacity:1}
 .crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:.9rem;margin:0 0 18px}
 .crumb a{color:var(--accent-text);text-decoration:none;font-weight:600}
@@ -944,17 +952,36 @@ body.dialog-open{overflow:hidden}
       <div class="road-end"><span><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg> DevOps Engineer</span><span><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg> Site Reliability Engineer</span></div>
       <div class="cards compact">
         <article class="card">
-          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Cloud engineering</h3></div>
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>AWS</h3></div>
           <ul class="course-list">
             <li><div class="course-head"><a class="course-name" href="#course-aws-cloud-computing-ai">AWS Cloud Computing &amp; AI</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-aws-solutions-architect">AWS Solutions Architect</a><span class="tag">Short course</span></div></li>
             <li><div class="course-head"><a class="course-name" href="#course-aws-cloud-engineering-ai">AWS Cloud Engineering &amp; AI</a><span class="tag tag-long">Long program</span></div></li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Azure</h3></div>
+          <ul class="course-list">
+            <li><div class="course-head"><a class="course-name" href="#course-azure-cloud-computing">Azure Cloud Computing</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-azure-administrator">Azure Administrator</a><span class="tag">Short course</span></div></li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Google Cloud</h3></div>
+          <ul class="course-list">
+            <li><div class="course-head"><a class="course-name" href="#course-google-cloud-computing">Google Cloud Computing</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-google-cloud-engineer">Google Cloud Engineer</a><span class="tag">Short course</span></div></li>
           </ul>
         </article>
         <article class="card">
           <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg></span><h3>DevOps and automation</h3></div>
           <ul class="course-list">
+            <li><div class="course-head"><a class="course-name" href="#course-python-for-devops">Python for DevOps</a><span class="tag">Short course</span></div></li>
             <li><div class="course-head"><a class="course-name" href="#course-docker-cicd-pipelines">Docker &amp; CI/CD Pipelines</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-jenkins-gitlab-ci">CI/CD with Jenkins &amp; GitLab CI</a><span class="tag">Short course</span></div></li>
             <li><div class="course-head"><a class="course-name" href="#course-kubernetes-in-practice">Kubernetes in Practice</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-gitops-helm-argocd">GitOps with Helm &amp; Argo CD</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-devsecops-essentials">DevSecOps Essentials</a><span class="tag">Short course</span></div></li>
             <li><div class="course-head"><a class="course-name" href="#course-devops-engineer-program">DevOps Engineer Program</a><span class="tag tag-long">Long program</span></div></li>
           </ul>
         </article>
@@ -1357,9 +1384,11 @@ body.dialog-open{overflow:hidden}
       <h1 id="cTitle"></h1>
       <p class="lead" id="cTag"></p>
       <div class="c-actions">
-        <a class="btn btn-primary" href="#contact">Book a free consultation</a>
+        <a class="btn btn-primary" id="cEnroll" href="#contact" data-interest="Course enrollment">Enroll now</a>
+        <a class="btn btn-ghost" href="#contact">Book a free consultation</a>
         <a class="btn btn-ghost" id="cDl" href="syllabi/" download><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Download syllabus (PDF)</a>
       </div>
+      <p class="c-enrollnote"><svg class="ico" aria-hidden="true" style="width:1em;height:1em;vertical-align:-2px;margin-right:6px"><use href="#i-check"/></svg>Enroll to unlock the e-learning material, the GitHub repository and the labs. Access is released upon enrollment.</p>
       <div class="cfacts" id="cFacts"></div>
     </div>
   </section>
@@ -1490,6 +1519,7 @@ body.dialog-open{overflow:hidden}
           </div>
           <label>I am interested in
             <select name="interest">
+              <option>Course enrollment</option>
               <option>DevOps Engineer path</option>
               <option>Site Reliability Engineer path</option>
               <option>Cloud certification (AWS, Azure, Google Cloud)</option>
@@ -1649,11 +1679,12 @@ body.dialog-open{overflow:hidden}
       if(!c){
         document.getElementById('cTitle').textContent='Course not found';document.getElementById('cTag').textContent='This course page is not available. Browse all courses instead.';
         document.getElementById('cGroup').textContent='';document.getElementById('cFacts').textContent='';
-        var dl0=document.getElementById('cDl');dl0.hidden=true;
+        var dl0=document.getElementById('cDl');dl0.hidden=true;document.getElementById('cEnroll').hidden=true;
         var s0=csec(false);var a0=cel('a','btn btn-primary','See all courses');a0.href='#courses';s0.w.appendChild(a0);root.appendChild(s0.s);
         return;
       }
       document.getElementById('cDl').hidden=false;
+      var en=document.getElementById('cEnroll');en.hidden=false;en.setAttribute('data-prefill','I would like to enroll in '+c.title+'.');
       document.title=c.title+' | Simplitech Academy';
       document.getElementById('cGroup').textContent=c.group;
       document.getElementById('cTitle').textContent=c.title;
@@ -1690,6 +1721,13 @@ body.dialog-open{overflow:hidden}
         for(var j=0;j<ds.length;j++){ds[j].open=open;}
         all.textContent=open?'Collapse all':'Expand all';
       });
+      // included on enrollment
+      var inc=csec(true,'Included when you enroll');var ig=cel('div','c-incl');
+      [['play','E-learning material','Recorded lessons, notes and exercises for every module.'],['code','GitHub repository','Starter code, configuration and solutions for each lab.'],['flask','Hands-on labs','Guided labs and project work, reviewed by your coach.'],['users','Live one-to-one sessions',c.sessions+' live sessions of 60 minutes with your coach.']].forEach(function(x){
+        var d=cel('div');d.appendChild(cbub(x[0]));d.appendChild(cel('b',null,x[1]));d.appendChild(cel('p',null,x[2]));
+        if(x[0]!=='users'){d.appendChild(cel('span','lock','Released upon enrollment'));}
+        ig.appendChild(d);});
+      inc.w.appendChild(ig);inc.w.appendChild(cel('p','c-incl-note','You do not get access to the material, repository or labs until you enroll. Send an enrollment request and your coach confirms the start date and schedule with you.'));root.appendChild(inc.s);
       // tools and projects
       var tp=csec(false);var two=cel('div','c-two');
       var c1=cel('div','c-card');c1.appendChild(cel('h3',null,'Tools you will use'));var ch=cel('div','chips');c.tools.forEach(function(t){ch.appendChild(cel('span',null,t));});c1.appendChild(ch);
@@ -1718,7 +1756,7 @@ body.dialog-open{overflow:hidden}
       var act=cel('div','c-actions');
       var b1=cel('a','btn btn-primary','Book a free consultation');b1.href=/^https:\/\//i.test(BOOKING_URL)?BOOKING_URL:'#contact';if(/^https:\/\//i.test(BOOKING_URL)){b1.target='_blank';b1.rel='noopener';}
       var b2=cel('a','btn btn-ghost','Download syllabus (PDF)');b2.href='syllabi/'+c.slug+'.pdf';b2.setAttribute('download',c.slug+'-syllabus.pdf');
-      act.appendChild(b1);act.appendChild(b2);box.appendChild(act);
+      var b0=cel('a','btn btn-primary','Enroll now');b0.href='#contact';b0.setAttribute('data-interest','Course enrollment');b0.setAttribute('data-prefill','I would like to enroll in '+c.title+'.');b1.className='btn btn-ghost';act.appendChild(b0);act.appendChild(b1);act.appendChild(b2);box.appendChild(act);
       box.appendChild(cel('p','c-note','Durations assume two one-hour live sessions per week plus practice time. Your coach confirms the plan with you.'));
       fin.w.appendChild(box);root.appendChild(fin.s);
     });
@@ -2620,6 +2658,8 @@ body.dialog-open{overflow:hidden}
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a[data-interest]');
     if(!a){return;}
+    var pf=a.getAttribute('data-prefill'),ta=document.querySelector('#contactForm [name=message]');
+    if(ta&&pf&&(!ta.value||/^I would like to enroll in /.test(ta.value))){ta.value=pf;}
     var sel=document.querySelector('#contactForm [name=interest]');
     if(sel){for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===a.getAttribute('data-interest')){sel.selectedIndex=i;break;}}}
   });

@@ -36,3 +36,10 @@ This needs Playwright with Chromium, like `tools/render-bytes.js`.
 
 The durations are drafts: they assume two one-hour live sessions a week, so
 `sessions` is `weeks x 2`. Change `weeks` and `sessions` together.
+
+## Learner accounts
+
+The Log in button opens `#account`: sign up, log in, password reset, and a dashboard
+with My courses (with material), Invoices, Messages and Profile. Data lives in Supabase.
+Until `SUPA_URL` and `SUPA_KEY` are filled in at the top of the script, the page shows
+"coming soon". Setup steps and the database schema are in `supabase/`.

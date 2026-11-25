@@ -391,13 +391,52 @@ a.course-name::after{content:" \2192";color:var(--accent-text);opacity:0;transit
 a.course-name:hover,a.course-name:focus-visible{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
 @media (hover:none){a.course-name::after{opacity:.7}}
 .c-incl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.c-incl>div{border:1px solid var(--border);border-radius:14px;background:var(--surface);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.c-incl>div{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .c-incl b{font-size:.98rem}.c-incl p{margin:0;color:var(--muted);font-size:.9rem}
 .c-incl .lock{margin-top:auto;font:500 11px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
 .c-incl-note{margin:14px 0 0;color:var(--muted);font-size:.92rem}
 .c-enrollnote{margin:14px 0 0;color:var(--muted);font-size:.92rem;max-width:60ch}
 @media (max-width:900px){.c-incl{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.c-incl{grid-template-columns:minmax(0,1fr)}}
+.login-btn,.cta-head{white-space:nowrap}
+@media (min-width:881px) and (max-width:1260px){.srch-btn .t{display:none}}
+.nav .nav-login{display:none}
+.acc-card{max-width:560px;margin:0 auto;padding:28px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.acc-card.wide{max-width:none;margin:0}
+.acc-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 22px;padding:5px;border:1px solid var(--line);border-radius:14px;background:var(--surface);width:max-content;max-width:100%}
+.acc-tab{min-height:40px;padding:0 16px;border-radius:10px;border:0;background:transparent;color:var(--fg);font:500 14px var(--font-body);cursor:pointer}
+.acc-tab[aria-selected="true"]{background:linear-gradient(135deg,var(--grad-a),var(--grad-b));color:var(--btn-ink);font-weight:600}
+.acc-tab:focus-visible{outline:2px solid var(--accent-text);outline-offset:2px}
+.acc-card h2{margin:0 0 6px;font-size:1.35rem}
+.acc-muted{color:var(--muted);margin:0 0 16px}
+.acc-msg{min-height:1.4em;margin:0;font-size:.92rem;color:var(--muted)}
+.acc-msg.err{color:#B3261E}
+.acc-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px;font-size:.9rem}
+.acc-link{background:none;border:0;padding:0;color:var(--accent-text);font:500 .9rem var(--font-body);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.acc-list{display:grid;gap:14px}
+.acc-course{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--surface);display:grid;gap:12px;min-width:0}
+.acc-course h3{margin:0;font-size:1.1rem}
+.acc-course h3 a{color:var(--fg);text-decoration:none}
+.acc-course h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.acc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.acc-chip{display:inline-block;padding:3px 10px;border-radius:999px;border:1px solid var(--accent);color:var(--accent-text);font:500 11.5px var(--font-mono);letter-spacing:.06em;text-transform:uppercase}
+.acc-chip.wait{border-color:var(--line);color:var(--muted)}
+.acc-mats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.acc-mats a{display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;color:var(--fg);text-decoration:none;font-weight:500;font-size:.95rem}
+.acc-mats a:hover{border-color:var(--accent)}
+.acc-mats .bub{flex:none}
+.acc-empty{text-align:center;padding:36px 20px}
+.acc-empty .bub{margin:0 auto 12px}
+.acc-table{width:100%;border-collapse:collapse;font-size:.93rem}
+.acc-table th,.acc-table td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.acc-table th{font:500 11.5px var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.acc-scroll{overflow-x:auto;max-width:100%}
+.acc-thread{display:grid;gap:10px;max-height:420px;overflow-y:auto;padding:4px 2px 14px;margin-bottom:12px}
+.acc-bub{max-width:min(520px,88%);padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);white-space:pre-wrap;overflow-wrap:anywhere}
+.acc-bub.me{justify-self:end;background:var(--surface-2)}
+.acc-bub small{display:block;margin-top:4px;color:var(--muted);font-size:.78rem}
+.acc-note{margin:16px 0 0;color:var(--muted);font-size:.9rem}
+@media (max-width:880px){.login-btn{display:none}.nav .nav-login{display:block;font-weight:600}}
 a.course-name:hover::after,a.course-name:focus-visible::after{opacity:1}
 .crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:.9rem;margin:0 0 18px}
 .crumb a{color:var(--accent-text);text-decoration:none;font-weight:600}
@@ -808,9 +847,11 @@ body.dialog-open{overflow:hidden}
           <a href="#blog" data-nav="blog">Blog</a>
         </div>
       </div>
+      <a class="nav-login" href="#account" data-login>Log in</a>
       <a class="nav-book" href="#contact">Book a free consultation</a>
     </nav>
 <button class="srch-btn" id="searchBtn" type="button" aria-label="Search the site"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span class="t">Search</span><kbd>/</kbd></button>
+    <a class="btn btn-ghost btn-sm login-btn" id="loginBtn" href="#account" data-login>Log in</a>
     <a class="btn btn-primary btn-sm cta-head" href="#contact">Book a free consultation</a>
     <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
@@ -1395,6 +1436,22 @@ body.dialog-open{overflow:hidden}
   <div id="courseBody"></div>
 </div>
 
+<div id="view-account" hidden>
+  <section class="about-hero">
+    <svg class="deco" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="deco-line" d="M0 330 C500 220 900 460 1400 330 S2200 200 2560 330"/>
+      <path class="deco-line" d="M0 1110 C600 1000 1000 1250 1500 1110 S2200 1000 2560 1120"/>
+      <circle class="deco-node" cx="2260" cy="250" r="12"/><circle class="deco-ring" cx="2260" cy="250" r="34"/>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow">Learner account</p>
+      <h1 id="acTitle">Your account</h1>
+      <p class="lead" id="acLead"></p>
+    </div>
+  </section>
+  <section class="section"><div class="wrap" id="acBody" aria-live="polite"></div></section>
+</div>
+
 <div id="view-about" hidden>
   <section class="about-hero">
     <svg class="deco" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -1606,6 +1663,8 @@ body.dialog-open{overflow:hidden}
   /* site settings: FORM_KEY is the public Web3Forms access key, BOOKING_URL the scheduling link */
   var FORM_ENDPOINT='https://api.web3forms.com/submit';
   var FORM_KEY='24637163-f880-4ee2-9766-bf869523aca0';
+  var SUPA_URL='';  /* Supabase project URL, see supabase/README.md */
+  var SUPA_KEY='';  /* Supabase anon (public) key */
   var BOOKING_URL='https://calendly.com/cloudedsimply/30min';
   var routes={
     home:['home',null],
@@ -1622,9 +1681,10 @@ body.dialog-open{overflow:hidden}
     blog:['blog',null],
     simplibytes:['bytes',null],
     about:['about',null],
+    account:['account',null],
     contact:[null,'sec-contact']
   };
-  var views={home:document.getElementById('view-home'),about:document.getElementById('view-about'),blog:document.getElementById('view-blog'),bytes:document.getElementById('view-bytes'),practice:document.getElementById('view-practice'),course:document.getElementById('view-course')};
+  var views={home:document.getElementById('view-home'),about:document.getElementById('view-about'),blog:document.getElementById('view-blog'),bytes:document.getElementById('view-bytes'),practice:document.getElementById('view-practice'),course:document.getElementById('view-course'),account:document.getElementById('view-account')};
   var nav=document.getElementById('nav');
   var toggle=document.getElementById('navToggle');
   var current=null;
@@ -2672,6 +2732,249 @@ body.dialog-open{overflow:hidden}
     document.addEventListener('click',function(e){if(!more.contains(e.target)){setOpen(false);}});
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&more.classList.contains('open')){setOpen(false);mb.focus();}});
     more.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a')){setOpen(false);}});
+  })();
+
+  /* learner accounts (Supabase). See supabase/README.md */
+  (function(){
+    var vw=document.getElementById('view-account');
+    if(!vw){return;}
+    var body=document.getElementById('acBody'),lead=document.getElementById('acLead'),ttl=document.getElementById('acTitle');
+    var cfg=!!(SUPA_URL&&SUPA_KEY);
+    var sb=null,libP=null,session=null,ready=false,recovery=false,mode='login',tab='courses',timer=null;
+    function isAcc(){return location.hash==='#account';}
+    function back(){return location.origin+location.pathname+'#account';}
+    function loadLib(){
+      if(libP){return libP;}
+      libP=new Promise(function(res,rej){
+        if(window.supabase){res();return;}
+        var s=document.createElement('script');
+        s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js';
+        s.onload=res;s.onerror=function(){libP=null;rej(new Error('Could not load the sign-in service. Please check your connection and try again.'));};
+        document.head.appendChild(s);
+      }).then(function(){
+        if(!sb){sb=window.supabase.createClient(SUPA_URL,SUPA_KEY,{auth:{flowType:'pkce',detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});}
+        return sb;
+      });
+      return libP;
+    }
+    function paint(){
+      var els=document.querySelectorAll('[data-login]');
+      for(var i=0;i<els.length;i++){els[i].textContent=session?'My account':'Log in';}
+    }
+    function stop(){if(timer){clearInterval(timer);timer=null;}}
+    function name(){var u=session&&session.user;return (u&&u.user_metadata&&u.user_metadata.full_name)||(u&&u.email?u.email.split('@')[0]:'');}
+    function field(label,nm,type,extra){
+      var l=cel('label',null,label);var i=cel('input');i.name=nm;i.type=type||'text';
+      if(extra){for(var k in extra){i.setAttribute(k,extra[k]);}}
+      l.appendChild(i);return l;
+    }
+    function msgEl(){var p=cel('p','acc-msg');p.setAttribute('role','status');return p;}
+    function say(p,t,err){p.textContent=t;p.className='acc-msg'+(err?' err':'');}
+    function friendly(e){
+      var m=(e&&e.message)||'Something went wrong. Please try again.';
+      if(/invalid login/i.test(m)){return 'Email or password is incorrect.';}
+      if(/not confirmed/i.test(m)){return 'Please confirm your email first. Check your inbox for the link.';}
+      if(/already registered|already been registered/i.test(m)){return 'An account with this email already exists. Try logging in.';}
+      return m;
+    }
+    function busy(btn,on){btn.disabled=on;}
+    function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+    function head(t,l){ttl.textContent=t;lead.textContent=l||'';}
+
+    function render(){
+      stop();body.textContent='';
+      if(!cfg){head('Learner accounts are coming soon','Soon you will be able to log in to see your courses, material, invoices and messages.');
+        var c=cel('div','acc-card');c.appendChild(cel('h2',null,'Not open yet'));
+        c.appendChild(cel('p','acc-muted','Accounts are being set up. Until then, book a free consultation or send us a message and we will help you directly.'));
+        var a=cel('a','btn btn-primary','Send us a message');a.href='#contact';c.appendChild(a);body.appendChild(c);return;}
+      if(!ready){head('Your account','');body.appendChild(cel('p','acc-muted','Loading...'));return;}
+      if(recovery){return recoveryView();}
+      if(!session){return authView();}
+      dashView();
+    }
+    function authView(){
+      head(mode==='signup'?'Create your account':mode==='forgot'?'Reset your password':'Log in','Access your courses, material, invoices and messages.');
+      var card=cel('div','acc-card');
+      if(mode!=='forgot'){
+        var tabs=cel('div','acc-tabs');tabs.setAttribute('role','tablist');
+        [['login','Log in'],['signup','Sign up']].forEach(function(t){
+          var b=cel('button','acc-tab',t[1]);b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-selected',mode===t[0]?'true':'false');
+          b.addEventListener('click',function(){mode=t[0];render();});tabs.appendChild(b);});
+        card.appendChild(tabs);
+      }
+      var f=cel('form','cform');f.noValidate=true;var m=msgEl();var btn;
+      if(mode==='signup'){
+        f.appendChild(field('Full name','name','text',{autocomplete:'name',required:''}));
+        f.appendChild(field('Email','email','email',{autocomplete:'email',required:''}));
+        f.appendChild(field('Password (at least 8 characters)','password','password',{autocomplete:'new-password',minlength:'8',required:''}));
+        btn=cel('button','btn btn-primary','Create account');
+      }else if(mode==='forgot'){
+        card.appendChild(cel('p','acc-muted','Enter your email and we will send you a link to choose a new password.'));
+        f.appendChild(field('Email','email','email',{autocomplete:'email',required:''}));
+        btn=cel('button','btn btn-primary','Send reset link');
+      }else{
+        f.appendChild(field('Email','email','email',{autocomplete:'email',required:''}));
+        f.appendChild(field('Password','password','password',{autocomplete:'current-password',required:''}));
+        btn=cel('button','btn btn-primary','Log in');
+      }
+      btn.type='submit';f.appendChild(btn);f.appendChild(m);card.appendChild(f);
+      var links=cel('div','acc-links');
+      if(mode==='login'){var fb=cel('button','acc-link','Forgot your password?');fb.type='button';fb.addEventListener('click',function(){mode='forgot';render();});links.appendChild(fb);}
+      if(mode==='forgot'){var bb=cel('button','acc-link','Back to log in');bb.type='button';bb.addEventListener('click',function(){mode='login';render();});links.appendChild(bb);}
+      card.appendChild(links);
+      f.addEventListener('submit',function(e){
+        e.preventDefault();var v=f.elements;var email=v.email.value.trim();
+        if(!validEmail(email)){say(m,'Please enter a valid email address.',true);return;}
+        if(mode!=='forgot'&&(v.password.value.length<(mode==='signup'?8:1))){say(m,mode==='signup'?'Use a password with at least 8 characters.':'Please enter your password.',true);return;}
+        if(mode==='signup'&&!v.name.value.trim()){say(m,'Please add your name.',true);return;}
+        busy(btn,true);say(m,'One moment...');
+        var p;
+        if(mode==='signup'){p=sb.auth.signUp({email:email,password:v.password.value,options:{data:{full_name:v.name.value.trim()},emailRedirectTo:back()}});}
+        else if(mode==='forgot'){p=sb.auth.resetPasswordForEmail(email,{redirectTo:back()});}
+        else{p=sb.auth.signInWithPassword({email:email,password:v.password.value});}
+        p.then(function(r){
+          busy(btn,false);
+          if(r.error){say(m,friendly(r.error),true);return;}
+          if(mode==='forgot'){say(m,'If an account exists for that email, a reset link is on its way.');return;}
+          if(mode==='signup'&&!(r.data&&r.data.session)){say(m,'Almost done. Check your inbox and confirm your email, then log in.');return;}
+        },function(){busy(btn,false);say(m,'Network error. Please try again.',true);});
+      });
+      body.appendChild(card);
+    }
+    function recoveryView(){
+      head('Choose a new password','');
+      var card=cel('div','acc-card');var f=cel('form','cform');var m=msgEl();
+      f.appendChild(field('New password (at least 8 characters)','password','password',{autocomplete:'new-password',minlength:'8',required:''}));
+      var btn=cel('button','btn btn-primary','Save password');btn.type='submit';f.appendChild(btn);f.appendChild(m);card.appendChild(f);
+      f.addEventListener('submit',function(e){
+        e.preventDefault();if(f.elements.password.value.length<8){say(m,'Use at least 8 characters.',true);return;}
+        busy(btn,true);
+        sb.auth.updateUser({password:f.elements.password.value}).then(function(r){busy(btn,false);if(r.error){say(m,friendly(r.error),true);return;}recovery=false;render();});
+      });
+      body.appendChild(card);
+    }
+    function dashView(){
+      head('Welcome, '+name(),'Your courses, invoices and messages in one place.');
+      var tabs=cel('div','acc-tabs');tabs.setAttribute('role','tablist');
+      var pane=cel('div');
+      [['courses','My courses'],['invoices','Invoices'],['messages','Messages'],['profile','Profile']].forEach(function(t){
+        var b=cel('button','acc-tab',t[1]);b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-selected',tab===t[0]?'true':'false');
+        b.addEventListener('click',function(){tab=t[0];stop();var all=tabs.children;for(var i=0;i<all.length;i++){all[i].setAttribute('aria-selected',all[i]===b?'true':'false');}show(pane);});
+        tabs.appendChild(b);});
+      body.appendChild(tabs);body.appendChild(pane);show(pane);
+    }
+    function show(pane){
+      pane.textContent='';pane.appendChild(cel('p','acc-muted','Loading...'));
+      var fn={courses:coursesTab,invoices:invoicesTab,messages:messagesTab,profile:profileTab}[tab];
+      Promise.resolve(fn(pane)).catch(function(){pane.textContent='';pane.appendChild(cel('p','acc-msg err','Could not load this section. Please refresh and try again.'));});
+    }
+    function empty(pane,icon,title,text,linkText,href){
+      pane.textContent='';var c=cel('div','acc-card wide acc-empty');c.appendChild(cbub(icon));c.appendChild(cel('h2',null,title));c.appendChild(cel('p','acc-muted',text));
+      if(linkText){var a=cel('a','btn btn-primary',linkText);a.href=href;c.appendChild(a);}pane.appendChild(c);
+    }
+    var STATUS={requested:'Awaiting confirmation',active:'Active',completed:'Completed',cancelled:'Cancelled'};
+    var KIND={elearning:'play',github:'code',lab:'flask',other:'download'};
+    function coursesTab(pane){
+      return Promise.all([sb.from('enrollments').select('course_slug,status,start_date,created_at').order('created_at',{ascending:false}),sb.from('materials').select('course_slug,title,kind,url,sort').order('sort',{ascending:true}),loadCourses()]).then(function(r){
+        if(r[0].error){throw r[0].error;}
+        var en=r[0].data||[],mats=(r[1].data)||[];
+        if(!en.length){empty(pane,'brief','No courses yet','When you enroll, your course appears here with its e-learning material, GitHub repository and labs.','Browse courses','#courses');return;}
+        pane.textContent='';var list=cel('div','acc-list');
+        en.forEach(function(e){
+          var c=null;for(var i=0;i<courses.length;i++){if(courses[i].slug===e.course_slug){c=courses[i];}}
+          var card=cel('article','acc-course');var h=cel('div','acc-head');var h3=cel('h3');
+          if(c){var a=cel('a',null,c.title);a.href='#course-'+c.slug;h3.appendChild(a);}else{h3.textContent=e.course_slug;}
+          h.appendChild(h3);h.appendChild(cel('span','acc-chip'+(e.status==='requested'?' wait':''),STATUS[e.status]||e.status));card.appendChild(h);
+          if(e.start_date){card.appendChild(cel('p','acc-muted','Starts '+new Date(e.start_date).toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'})));}
+          if(e.status==='active'||e.status==='completed'){
+            var ms=mats.filter(function(x){return x.course_slug===e.course_slug&&/^https:\/\//i.test(x.url);});
+            if(ms.length){var ul=cel('ul','acc-mats');ms.forEach(function(x){var li=cel('li');var a2=cel('a');a2.href=x.url;a2.target='_blank';a2.rel='noopener noreferrer';a2.appendChild(cbub(KIND[x.kind]||'download'));a2.appendChild(cel('span',null,x.title));li.appendChild(a2);ul.appendChild(li);});card.appendChild(ul);}
+            else{card.appendChild(cel('p','acc-muted','Your material is being prepared. It will appear here.'));}
+          }else if(e.status==='requested'){card.appendChild(cel('p','acc-muted','Your e-learning material, GitHub repository and labs are released upon enrollment. We will confirm your start date soon.'));}
+          list.appendChild(card);
+        });
+        pane.appendChild(list);
+      });
+    }
+    function invoicesTab(pane){
+      return sb.from('invoices').select('number,description,amount_cents,currency,status,issued_at,pdf_path').order('issued_at',{ascending:false}).then(function(r){
+        if(r.error){throw r.error;}
+        var rows=r.data||[];
+        if(!rows.length){empty(pane,'chart','No invoices yet','Your invoices appear here after you enroll.');return;}
+        pane.textContent='';var card=cel('div','acc-card wide');var sc=cel('div','acc-scroll');var t=cel('table','acc-table');
+        var tr=cel('tr');['Number','Date','Description','Amount','Status',''].forEach(function(h){tr.appendChild(cel('th',null,h));});var th=cel('thead');th.appendChild(tr);t.appendChild(th);
+        var tb=cel('tbody');
+        rows.forEach(function(x){
+          var row=cel('tr');row.appendChild(cel('td',null,x.number));row.appendChild(cel('td',null,new Date(x.issued_at).toLocaleDateString()));row.appendChild(cel('td',null,x.description||''));
+          var amt;try{amt=new Intl.NumberFormat(undefined,{style:'currency',currency:x.currency}).format(x.amount_cents/100);}catch(e){amt=(x.amount_cents/100).toFixed(2)+' '+x.currency;}
+          row.appendChild(cel('td',null,amt));var st=cel('td');st.appendChild(cel('span','acc-chip'+(x.status==='paid'?'':' wait'),x.status));row.appendChild(st);
+          var d=cel('td');
+          if(x.pdf_path){var b=cel('button','btn btn-ghost btn-sm','Download');b.type='button';b.addEventListener('click',function(){
+            var w=window.open('','_blank');
+            sb.storage.from('invoices').createSignedUrl(x.pdf_path,120).then(function(s){
+              if(s.error||!s.data){if(w){w.close();}b.textContent='Unavailable';return;}
+              if(w){w.opener=null;w.location=s.data.signedUrl;}else{location.href=s.data.signedUrl;}
+            });});d.appendChild(b);}
+          row.appendChild(d);tb.appendChild(row);
+        });
+        t.appendChild(tb);sc.appendChild(t);card.appendChild(sc);pane.appendChild(card);
+      });
+    }
+    function messagesTab(pane){
+      pane.textContent='';var card=cel('div','acc-card wide');card.appendChild(cel('h2',null,'Messages'));
+      card.appendChild(cel('p','acc-muted','Write to us here. Our replies appear in this thread.'));
+      var thread=cel('div','acc-thread');thread.setAttribute('aria-live','polite');card.appendChild(thread);
+      var f=cel('form','cform');var ta=cel('textarea');ta.name='message';ta.setAttribute('aria-label','Your message');ta.maxLength=4000;ta.required=true;f.appendChild(ta);
+      var btn=cel('button','btn btn-primary','Send message');btn.type='submit';f.appendChild(btn);var m=msgEl();f.appendChild(m);card.appendChild(f);pane.appendChild(card);
+      function load(){
+        return sb.from('messages').select('id,sender,body,created_at').order('created_at',{ascending:true}).limit(200).then(function(r){
+          if(r.error){throw r.error;}thread.textContent='';
+          if(!r.data.length){thread.appendChild(cel('p','acc-muted','No messages yet.'));return;}
+          r.data.forEach(function(x){var b=cel('div','acc-bub'+(x.sender==='learner'?' me':''),x.body);b.appendChild(cel('small',null,(x.sender==='learner'?'You':'Simplitech Academy')+' - '+new Date(x.created_at).toLocaleString()));thread.appendChild(b);});
+          thread.scrollTop=thread.scrollHeight;
+        });
+      }
+      f.addEventListener('submit',function(e){
+        e.preventDefault();var text=ta.value.trim();if(!text){say(m,'Please write a message.',true);return;}
+        busy(btn,true);say(m,'Sending...');
+        sb.from('messages').insert({user_id:session.user.id,sender:'learner',body:text}).then(function(r){
+          busy(btn,false);
+          if(r.error){say(m,'Your message could not be sent. Please try again.',true);return;}
+          ta.value='';say(m,'Sent. We will reply here.');
+          sendForm({subject:'New message in the learner portal',name:name(),email:session.user.email||'',message:text}).catch(function(){});
+          load().catch(function(){});
+        });
+      });
+      load().catch(function(){thread.textContent='';thread.appendChild(cel('p','acc-msg err','Could not load your messages.'));});
+      timer=setInterval(function(){if(!document.hidden&&isAcc()&&tab==='messages'){load().catch(function(){});}},30000);
+    }
+    function profileTab(pane){
+      pane.textContent='';var card=cel('div','acc-card');card.appendChild(cel('h2',null,'Profile'));
+      card.appendChild(cel('p','acc-muted','Signed in as '+(session.user.email||'')));
+      var f=cel('form','cform');var m=msgEl();var n=field('Full name','name','text',{autocomplete:'name'});n.firstChild.nextSibling.value=name();f.appendChild(n);
+      var b=cel('button','btn btn-primary','Save name');b.type='submit';f.appendChild(b);f.appendChild(m);card.appendChild(f);
+      f.addEventListener('submit',function(e){e.preventDefault();var v=f.elements.name.value.trim();if(!v){say(m,'Please add your name.',true);return;}
+        Promise.all([sb.from('profiles').update({full_name:v}).eq('id',session.user.id),sb.auth.updateUser({data:{full_name:v}})]).then(function(r){say(m,(r[0].error||r[1].error)?'Could not save. Please try again.':'Saved.',!!(r[0].error||r[1].error));});});
+      var f2=cel('form','cform');f2.style.marginTop='22px';var m2=msgEl();f2.appendChild(field('New password (at least 8 characters)','password','password',{autocomplete:'new-password',minlength:'8'}));
+      var b2=cel('button','btn btn-ghost','Change password');b2.type='submit';f2.appendChild(b2);f2.appendChild(m2);card.appendChild(f2);
+      f2.addEventListener('submit',function(e){e.preventDefault();if(f2.elements.password.value.length<8){say(m2,'Use at least 8 characters.',true);return;}
+        sb.auth.updateUser({password:f2.elements.password.value}).then(function(r){if(r.error){say(m2,friendly(r.error),true);return;}f2.reset();say(m2,'Password changed.');});});
+      var out=cel('button','btn btn-ghost','Log out');out.type='button';out.style.marginTop='22px';
+      out.addEventListener('click',function(){sb.auth.signOut().then(function(){session=null;tab='courses';mode='login';paint();location.hash='#home';});});
+      card.appendChild(out);pane.appendChild(card);
+    }
+    window.addEventListener('hashchange',function(){if(isAcc()){render();}else{stop();}});
+    if(cfg){
+      loadLib().then(function(){
+        sb.auth.onAuthStateChange(function(ev,s){
+          session=s;if(ev==='PASSWORD_RECOVERY'){recovery=true;if(!isAcc()){location.hash='#account';}}
+          if(ev==='SIGNED_OUT'){recovery=false;}
+          setTimeout(function(){ready=true;paint();if(isAcc()){render();}},0);
+        });
+        return sb.auth.getSession();
+      }).then(function(r){session=r.data&&r.data.session;ready=true;paint();if(isAcc()){render();}},function(err){ready=true;if(isAcc()){body.textContent='';head('Your account','');body.appendChild(cel('p','acc-msg err',err.message));}});
+    }
+    if(isAcc()){render();}
   })();
   loadCourses();
   loadBytes();

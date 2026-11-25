@@ -384,6 +384,69 @@ a{color:inherit}
 .q-miss b{display:block;margin-bottom:4px}
 .q-miss span{display:block;color:var(--muted)}
 .q-next{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:.93rem}
+
+/* course landing pages */
+a.course-name{color:var(--fg);text-decoration:none}
+a.course-name::after{content:" \2192";color:var(--accent-text);opacity:0;transition:opacity .15s}
+a.course-name:hover,a.course-name:focus-visible{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+@media (hover:none){a.course-name::after{opacity:.7}}
+a.course-name:hover::after,a.course-name:focus-visible::after{opacity:1}
+.crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:.9rem;margin:0 0 18px}
+.crumb a{color:var(--accent-text);text-decoration:none;font-weight:600}
+.c-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.c-badges span{padding:3px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font:600 12px var(--font-body)}
+.c-badges .long{background:linear-gradient(135deg,var(--grad-a),var(--grad-b));border-color:transparent;color:var(--btn-ink)}
+#view-course h1{font-size:clamp(2.1rem,4.8vw,3.4rem);max-width:22ch;margin-top:0}
+.c-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.c-actions .ico{width:18px;height:18px;margin-right:8px}
+.cfacts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px}
+.cfact{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);min-width:0}
+.cfact .bub{width:42px;height:42px;border-radius:12px}
+.cfact .bub .ico{width:22px;height:22px}
+.cfact div>span{display:block;font:500 11px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cfact b{display:block;font-size:1rem;line-height:1.3}
+.c-outcomes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}
+.c-outcomes li{display:flex;gap:12px;align-items:flex-start}
+.c-outcomes .ico{width:22px;height:22px;color:var(--accent-text);margin-top:1px}
+.c-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.c-head h2{margin:0}
+.mods{display:grid;gap:10px}
+.cmod{border:1px solid var(--line);border-radius:14px;background:var(--bg);overflow:hidden}
+.cmod summary{display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer;list-style:none;font-weight:700;font-size:1.04rem}
+.cmod summary::-webkit-details-marker{display:none}
+.cmod summary:hover{background:var(--surface-2)}
+.cmod .n{display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--grad-a),var(--grad-b));color:var(--btn-ink);font:700 14px var(--font-body)}
+.cmod .mt{flex:1;min-width:0}
+.cmod .wk{flex:none;font:500 12px var(--font-mono);color:var(--muted)}
+.cmod .chev{flex:none;width:18px;height:18px;color:var(--muted);transition:transform .15s}
+.cmod[open] .chev{transform:rotate(180deg)}
+.cmod-in{padding:4px 18px 20px 62px}
+.cmod-in ul{margin:0 0 12px;padding-left:18px;columns:2;column-gap:32px}
+.cmod-in li{margin:4px 0;break-inside:avoid}
+.cmod-lab{margin:0;padding:10px 14px;border-radius:10px;background:var(--surface-2);font-size:.93rem;color:var(--fg-soft)}
+.cmod-lab b{color:var(--fg)}
+.cmod-in a{font-weight:600}
+.c-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.c-card{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.c-card h3{font-size:1.15rem;margin:0 0 12px}
+.c-card ul{margin:0;padding-left:18px}
+.c-card li{margin:5px 0}
+.c-card p{margin:0}
+.c-certs{display:flex;flex-wrap:wrap;gap:10px}
+.c-certs span{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--surface);font-weight:600;font-size:.93rem}
+.c-certs .ico{width:18px;height:18px;color:var(--accent-text)}
+.c-next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.c-nextcard{display:flex;flex-direction:column;gap:8px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--fg);text-decoration:none}
+.c-nextcard:hover{border-color:var(--accent)}
+.c-nextcard b{font-size:1.05rem}
+.c-nextcard span{color:var(--muted);font-size:.9rem}
+.c-cta{padding:34px;border:1px solid var(--accent);border-radius:18px;background:var(--surface);text-align:center}
+.c-cta h2{margin:0 0 8px}
+.c-cta p{color:var(--muted);margin:0 0 20px}
+.c-cta .c-actions{justify-content:center;margin-top:0}
+.c-note{color:var(--muted);font-size:.85rem;margin-top:16px}
+@media (max-width:900px){.cfacts{grid-template-columns:repeat(2,minmax(0,1fr))}.c-outcomes,.c-two,.c-next{grid-template-columns:minmax(0,1fr)}.cmod-in{padding-left:18px}.cmod-in ul{columns:1}}
+@media (max-width:520px){.cfacts{grid-template-columns:minmax(0,1fr)}.cmod summary{padding:14px}.c-cta{padding:24px}}
 .course-list p{color:var(--muted);font-size:.92rem;margin-top:4px}
 .tag{font:500 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);white-space:nowrap}
 .tag-long{color:var(--accent-text);border-color:var(--accent)}
@@ -717,7 +780,7 @@ body.dialog-open{overflow:hidden}
   </defs>
 </svg>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 9.5 4.3 4.3 0 0 0 7 18z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol><symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 6a3 3 0 0 1 0 6M18 14c2 .7 3 2.8 3 6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol><symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></symbol><symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol><symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4 18-7z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 9.5 4.3 4.3 0 0 0 7 18z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol><symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 6a3 3 0 0 1 0 6M18 14c2 .7 3 2.8 3 6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol><symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></symbol><symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol><symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4 18-7z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol></defs></svg>
 <header class="site-header">
   <div class="wrap bar">
     <a class="logo" href="#home" aria-label="Simplitech Academy, home">
@@ -883,31 +946,31 @@ body.dialog-open{overflow:hidden}
         <article class="card">
           <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Cloud engineering</h3></div>
           <ul class="course-list">
-            <li><div class="course-head"><span class="course-name">AWS Cloud Computing &amp; AI</span><span class="tag">Short course</span></div></li>
-            <li><div class="course-head"><span class="course-name">AWS Cloud Engineering &amp; AI</span><span class="tag tag-long">Long program</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-aws-cloud-computing-ai">AWS Cloud Computing &amp; AI</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-aws-cloud-engineering-ai">AWS Cloud Engineering &amp; AI</a><span class="tag tag-long">Long program</span></div></li>
           </ul>
         </article>
         <article class="card">
           <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg></span><h3>DevOps and automation</h3></div>
           <ul class="course-list">
-            <li><div class="course-head"><span class="course-name">Docker &amp; CI/CD Pipelines</span><span class="tag">Short course</span></div></li>
-            <li><div class="course-head"><span class="course-name">Kubernetes in Practice</span><span class="tag">Short course</span></div></li>
-            <li><div class="course-head"><span class="course-name">DevOps Engineer Program</span><span class="tag tag-long">Long program</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-docker-cicd-pipelines">Docker &amp; CI/CD Pipelines</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-kubernetes-in-practice">Kubernetes in Practice</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-devops-engineer-program">DevOps Engineer Program</a><span class="tag tag-long">Long program</span></div></li>
           </ul>
         </article>
         <article class="card">
           <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-server"/></svg></span><h3>Infrastructure</h3></div>
           <ul class="course-list">
-            <li><div class="course-head"><span class="course-name">Linux, Networking &amp; Scripting</span><span class="tag">Short course</span></div></li>
-            <li><div class="course-head"><span class="course-name">Terraform &amp; Ansible</span><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-linux-networking-scripting">Linux, Networking &amp; Scripting</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-terraform-ansible">Terraform &amp; Ansible</a><span class="tag">Short course</span></div></li>
           </ul>
         </article>
         <article class="card">
           <div class="card-top"><span class="bub"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg></span><h3>Reliability and SRE</h3></div>
           <ul class="course-list">
-            <li><div class="course-head"><span class="course-name">Monitoring &amp; Observability</span><span class="tag">Short course</span></div></li>
-            <li><div class="course-head"><span class="course-name">SRE Essentials</span><span class="tag">Short course</span></div></li>
-            <li><div class="course-head"><span class="course-name">Site Reliability Engineer Program</span><span class="tag tag-long">Long program</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-monitoring-observability">Monitoring &amp; Observability</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-sre-essentials">SRE Essentials</a><span class="tag">Short course</span></div></li>
+            <li><div class="course-head"><a class="course-name" href="#course-sre-program">Site Reliability Engineer Program</a><span class="tag tag-long">Long program</span></div></li>
           </ul>
         </article>
       </div>
@@ -1280,6 +1343,29 @@ body.dialog-open{overflow:hidden}
   </section>
 </div>
 
+<div id="view-course" hidden>
+  <section class="about-hero">
+    <svg class="deco" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="deco-line" d="M0 330 C500 220 900 460 1400 330 S2200 200 2560 330"/>
+      <path class="deco-line" d="M0 1110 C600 1000 1000 1250 1500 1110 S2200 1000 2560 1120"/>
+      <circle class="deco-node" cx="2260" cy="250" r="12"/><circle class="deco-node" cx="2300" cy="1120" r="12"/>
+      <circle class="deco-ring" cx="2260" cy="250" r="34"/><circle class="deco-ring" cx="2300" cy="1120" r="34"/>
+    </svg>
+    <div class="wrap">
+      <p class="crumb"><a href="#courses">Courses</a><span aria-hidden="true">/</span><span id="cGroup"></span></p>
+      <div class="c-badges" id="cBadges"></div>
+      <h1 id="cTitle"></h1>
+      <p class="lead" id="cTag"></p>
+      <div class="c-actions">
+        <a class="btn btn-primary" href="#contact">Book a free consultation</a>
+        <a class="btn btn-ghost" id="cDl" href="syllabi/" download><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Download syllabus (PDF)</a>
+      </div>
+      <div class="cfacts" id="cFacts"></div>
+    </div>
+  </section>
+  <div id="courseBody"></div>
+</div>
+
 <div id="view-about" hidden>
   <section class="about-hero">
     <svg class="deco" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -1508,7 +1594,7 @@ body.dialog-open{overflow:hidden}
     about:['about',null],
     contact:[null,'sec-contact']
   };
-  var views={home:document.getElementById('view-home'),about:document.getElementById('view-about'),blog:document.getElementById('view-blog'),bytes:document.getElementById('view-bytes'),practice:document.getElementById('view-practice')};
+  var views={home:document.getElementById('view-home'),about:document.getElementById('view-about'),blog:document.getElementById('view-blog'),bytes:document.getElementById('view-bytes'),practice:document.getElementById('view-practice'),course:document.getElementById('view-course')};
   var nav=document.getElementById('nav');
   var toggle=document.getElementById('navToggle');
   var current=null;
@@ -1526,6 +1612,7 @@ body.dialog-open{overflow:hidden}
     else if(view==='about'||view==='blog'){active=view;}
     else if(view==='bytes'){active='simplibytes';}
     else if(view==='practice'){active='practice';}
+    else if(view==='course'){active='courses';}
     var links=nav.querySelectorAll('a[data-nav]');
     for(var i=0;i<links.length;i++){
       if(links[i].getAttribute('data-nav')===active){links[i].setAttribute('aria-current','page');}
@@ -1534,10 +1621,113 @@ body.dialog-open{overflow:hidden}
     var mbtn=document.getElementById('navMoreBtn');
     if(mbtn){mbtn.classList.toggle('on',['about','faq','blog'].indexOf(active)>-1);}
   }
+  /* course landing pages, rendered from courses.json */
+  var courses=[],courseP=null,pageTitle=document.title;
+  function loadCourses(){
+    if(courseP){return courseP;}
+    courseP=fetch('courses.json',{cache:'no-store'}).then(function(r){if(!r.ok){throw new Error('status '+r.status);}return r.json();})
+      .then(function(d){courses=Array.isArray(d)?d.filter(function(c){return c&&c.slug&&/^[a-z0-9-]+$/.test(c.slug)&&c.title&&c.modules;}):[];return courses;})
+      .catch(function(){courseP=null;return courses;});
+    return courseP;
+  }
+  function cel(tag,cls,txt){var e=document.createElement(tag);if(cls){e.className=cls;}if(txt!=null){e.textContent=txt;}return e;}
+  function cico(name){var s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('class','ico');s.setAttribute('aria-hidden','true');var u=document.createElementNS('http://www.w3.org/2000/svg','use');u.setAttribute('href','#i-'+name);s.appendChild(u);return s;}
+  function cbub(name){var b=cel('span','bub');b.appendChild(cico(name));return b;}
+  function csec(alt,title,extra){
+    var s=cel('section','section'+(alt?' section-alt':'')),w=cel('div','wrap');s.appendChild(w);
+    if(title){var h=cel('div','c-head'),h2=cel('h2',null,title);h.appendChild(h2);if(extra){h.appendChild(extra);}w.appendChild(h);}
+    return {s:s,w:w};
+  }
+  function clist(arr,cls){var u=cel('ul',cls);arr.forEach(function(t){u.appendChild(cel('li',null,t));});return u;}
+  function renderCourse(slug){
+    var root=document.getElementById('courseBody');
+    loadCourses().then(function(){
+      if(location.hash!=='#course-'+slug){return;}
+      var c=null;for(var i=0;i<courses.length;i++){if(courses[i].slug===slug){c=courses[i];break;}}
+      root.textContent='';
+      var badges=document.getElementById('cBadges');badges.textContent='';
+      if(!c){
+        document.getElementById('cTitle').textContent='Course not found';document.getElementById('cTag').textContent='This course page is not available. Browse all courses instead.';
+        document.getElementById('cGroup').textContent='';document.getElementById('cFacts').textContent='';
+        var dl0=document.getElementById('cDl');dl0.hidden=true;
+        var s0=csec(false);var a0=cel('a','btn btn-primary','See all courses');a0.href='#courses';s0.w.appendChild(a0);root.appendChild(s0.s);
+        return;
+      }
+      document.getElementById('cDl').hidden=false;
+      document.title=c.title+' | Simplitech Academy';
+      document.getElementById('cGroup').textContent=c.group;
+      document.getElementById('cTitle').textContent=c.title;
+      document.getElementById('cTag').textContent=c.tagline;
+      badges.appendChild(cel('span',c.type==='long'?'long':'',c.type==='long'?'Long program':'Short course'));
+      badges.appendChild(cel('span',null,c.level));
+      var dl=document.getElementById('cDl');dl.href='syllabi/'+c.slug+'.pdf';dl.setAttribute('download',c.slug+'-syllabus.pdf');
+      var facts=document.getElementById('cFacts');facts.textContent='';
+      [['clock','Duration',c.weeks+' weeks'],['users','Live sessions',c.sessions+' x 60 min'],['globe','Format','Live online, one to one'],['target','Level',c.level]].forEach(function(f){
+        var d=cel('div','cfact');d.appendChild(cbub(f[0]));var t=cel('div');t.appendChild(cel('span',null,f[1]));t.appendChild(cel('b',null,f[2]));d.appendChild(t);facts.appendChild(d);
+      });
+      // outcomes
+      var o=csec(false,'What you will learn');
+      var ol=cel('ul','c-outcomes');c.outcomes.forEach(function(t){var li=cel('li');li.appendChild(cico('check'));li.appendChild(cel('span',null,t));ol.appendChild(li);});
+      o.w.appendChild(ol);root.appendChild(o.s);
+      // curriculum
+      var all=cel('button','btn btn-ghost','Expand all');all.type='button';
+      var cur=csec(true,'Curriculum',all);
+      var mods=cel('div','mods');
+      c.modules.forEach(function(m,i){
+        var d=cel('details','cmod');if(i===0){d.open=true;}
+        var sm=cel('summary');sm.appendChild(cel('span','n',String(i+1)));sm.appendChild(cel('span','mt',m.t));
+        if(m.w){sm.appendChild(cel('span','wk',m.w+' weeks'));}
+        sm.appendChild(cico('chev'));d.appendChild(sm);
+        var inn=cel('div','cmod-in');inn.appendChild(clist(m.topics));
+        var lab=cel('p','cmod-lab');lab.appendChild(cel('b',null,m.course?'Course: ':'Hands-on: '));lab.appendChild(document.createTextNode(m.lab));inn.appendChild(lab);
+        if(m.course){var tgt=null;for(var k=0;k<courses.length;k++){if(courses[k].slug===m.course){tgt=courses[k];}}
+          if(tgt){var p=cel('p');p.style.margin='10px 0 0';var a=cel('a',null,'See the '+tgt.title+' course');a.href='#course-'+tgt.slug;p.appendChild(a);inn.appendChild(p);}}
+        d.appendChild(inn);mods.appendChild(d);
+      });
+      cur.w.appendChild(mods);root.appendChild(cur.s);
+      all.addEventListener('click',function(){
+        var ds=mods.querySelectorAll('details'),open=all.textContent==='Expand all';
+        for(var j=0;j<ds.length;j++){ds[j].open=open;}
+        all.textContent=open?'Collapse all':'Expand all';
+      });
+      // tools and projects
+      var tp=csec(false);var two=cel('div','c-two');
+      var c1=cel('div','c-card');c1.appendChild(cel('h3',null,'Tools you will use'));var ch=cel('div','chips');c.tools.forEach(function(t){ch.appendChild(cel('span',null,t));});c1.appendChild(ch);
+      var c2=cel('div','c-card');c2.appendChild(cel('h3',null,'Projects you will build'));c2.appendChild(clist(c.projects));
+      two.appendChild(c1);two.appendChild(c2);tp.w.appendChild(two);root.appendChild(tp.s);
+      // who and prerequisites
+      var wp=csec(true);var two2=cel('div','c-two');
+      var c3=cel('div','c-card');c3.appendChild(cel('h3',null,'Who it is for'));c3.appendChild(clist(c.who));
+      var c4=cel('div','c-card');c4.appendChild(cel('h3',null,'Prerequisites'));c4.appendChild(cel('p',null,c.prereq));
+      two2.appendChild(c3);two2.appendChild(c4);wp.w.appendChild(two2);root.appendChild(wp.s);
+      // certifications
+      if(c.prepares&&c.prepares.length){
+        var ce=csec(false,'Certification path');var cw=cel('div','c-certs');
+        c.prepares.forEach(function(t){var sp=cel('span');sp.appendChild(cico('badge'));sp.appendChild(document.createTextNode(t));cw.appendChild(sp);});
+        ce.w.appendChild(cw);ce.w.appendChild(cel('p','c-note','This course helps you prepare. Exams are taken separately with the provider, and we cannot promise a pass.'));root.appendChild(ce.s);
+      }
+      // next steps
+      var nx=(c.next||[]).map(function(sl){for(var q=0;q<courses.length;q++){if(courses[q].slug===sl){return courses[q];}}return null;}).filter(Boolean);
+      if(nx.length){
+        var ns=csec(true,'Next steps');var ng=cel('div','c-next');
+        nx.forEach(function(n){var a=cel('a','c-nextcard');a.href='#course-'+n.slug;a.appendChild(cel('b',null,n.title));a.appendChild(cel('span',null,n.weeks+' weeks · '+(n.type==='long'?'Long program':'Short course')));ng.appendChild(a);});
+        ns.w.appendChild(ng);root.appendChild(ns.s);
+      }
+      // final call to action
+      var fin=csec(false);var box=cel('div','c-cta');box.appendChild(cel('h2',null,'Ready to start '+c.title+'?'));box.appendChild(cel('p',null,'Book a free consultation to plan your schedule, or take the syllabus with you.'));
+      var act=cel('div','c-actions');
+      var b1=cel('a','btn btn-primary','Book a free consultation');b1.href=/^https:\/\//i.test(BOOKING_URL)?BOOKING_URL:'#contact';if(/^https:\/\//i.test(BOOKING_URL)){b1.target='_blank';b1.rel='noopener';}
+      var b2=cel('a','btn btn-ghost','Download syllabus (PDF)');b2.href='syllabi/'+c.slug+'.pdf';b2.setAttribute('download',c.slug+'-syllabus.pdf');
+      act.appendChild(b1);act.appendChild(b2);box.appendChild(act);
+      box.appendChild(cel('p','c-note','Durations assume two one-hour live sessions per week plus practice time. Your coach confirms the plan with you.'));
+      fin.w.appendChild(box);root.appendChild(fin.s);
+    });
+  }
   function route(){
     var key=(location.hash||'').replace('#','');
     var isByte=/^byte-[a-z0-9-]+$/.test(key);
-    var r=isByte?['bytes',null]:(routes[key]||routes.home);
+    var isCourse=/^course-[a-z0-9-]+$/.test(key);
+    var r=isByte?['bytes',null]:isCourse?['course',null]:(routes[key]||routes.home);
     var view=r[0]||current||'home';
     var changed=view!==current;
     if(changed){
@@ -1549,9 +1739,12 @@ body.dialog-open{overflow:hidden}
       target.scrollIntoView({behavior:(reduce||changed)?'auto':'smooth',block:'start'});
     }else if(isByte){
       focusByte(key.slice(5));
+    }else if(isCourse){
+      window.scrollTo(0,0);
     }else if(changed||key===''||key==='home'||key==='about'||key==='blog'||key==='simplibytes'||key==='practice'){
       window.scrollTo(0,0);
     }
+    if(isCourse){renderCourse(key.slice(7));}else if(document.title!==pageTitle){document.title=pageTitle;}
     highlight(key,view);
     closeMenu();
   }
@@ -2264,12 +2457,13 @@ body.dialog-open{overflow:hidden}
 
   /* site search: static entries plus the loaded Simplibytes and blog posts */
   (function(){
-    var STATIC=[{"t": "Practice", "s": "Page", "h": "#practice", "k": "mock interview tests labs quizzes"}, {"t": "Mock interview (paid)", "s": "Practice", "h": "#mock-interview", "k": "interview feedback improvement book paid"}, {"t": "Practice tests", "s": "Practice", "h": "#practice-tests", "k": "timed test exam mock"}, {"t": "Labs and project ideas", "s": "Practice", "h": "#labs", "k": "hands-on projects portfolio"}, {"t": "Quick quizzes", "s": "Practice", "h": "#quizzes", "k": "quiz questions"}, {"t": "Host a static website on AWS", "s": "Lab idea", "h": "#labs", "k": "S3 CloudFront IAM A live site running in your own cloud account"}, {"t": "Ship a container with a CI/CD pipeline", "s": "Lab idea", "h": "#labs", "k": "Docker GitHub Actions A pipeline that builds, tests and deploys on every push"}, {"t": "Build a network and server with Terraform", "s": "Lab idea", "h": "#labs", "k": "Terraform AWS A VPC and a server defined entirely in code"}, {"t": "Run an app on Kubernetes", "s": "Lab idea", "h": "#labs", "k": "Kubernetes Helm A rolling update and a rollback you can demo"}, {"t": "Monitoring dashboard with alerts", "s": "Lab idea", "h": "#labs", "k": "Prometheus Grafana Dashboards and an alert tied to an SLO"}, {"t": "Incident drill and postmortem", "s": "Lab idea", "h": "#labs", "k": "SLOs Runbooks A written blameless postmortem"}, {"t": "Quiz: Cloud basics", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: DevOps and CI/CD", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: Linux and networking", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: Containers and Kubernetes", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: SRE and observability", "s": "Quiz", "h": "#quizzes", "k": "questions practice"},{"t": "Courses", "s": "Section", "h": "#courses", "k": "career path devops sre cloud"}, {"t": "DevOps Engineer path", "s": "Section", "h": "#courses", "k": "career devops ci/cd pipelines roadmap"}, {"t": "Site Reliability Engineer path", "s": "Section", "h": "#courses", "k": "career sre slo incident reliability roadmap"}, {"t": "Certification courses", "s": "Section", "h": "#certifications", "k": "exam aws azure google cloud certified"}, {"t": "Tools you will use", "s": "Section", "h": "#tools", "k": "technologies logos stack"}, {"t": "Simplibytes", "s": "Page", "h": "#simplibytes", "k": "daily cue cards fact interview question subscribe"}, {"t": "Online tutorials", "s": "Section", "h": "#learn", "k": "youtube videos free watch"}, {"t": "Blog: daily tech brief", "s": "Page", "h": "#blog", "k": "news cloud ai updates"}, {"t": "About us", "s": "Page", "h": "#about", "k": "mission team time zones"}, {"t": "Book a free consultation", "s": "Section", "h": "#contact", "k": "calendly call schedule book"}, {"t": "Send us a message", "s": "Section", "h": "#contact", "k": "contact write query form"}, {"t": "AWS Cloud Computing & AI", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "AWS Cloud Engineering & AI", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Docker & CI/CD Pipelines", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Kubernetes in Practice", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "DevOps Engineer Program", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Linux, Networking & Scripting", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Terraform & Ansible", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Monitoring & Observability", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "SRE Essentials", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "Site Reliability Engineer Program", "s": "Course", "h": "#courses", "k": "course training"}, {"t": "AWS Certified Cloud Practitioner", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified Solutions Architect Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified Developer Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified CloudOps Engineer Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified DevOps Engineer Professional", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AZ-900 Azure Fundamentals", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-104 Azure Administrator Associate", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-204 Azure Developer Associate", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-400 DevOps Engineer Expert", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-305 Azure Solutions Architect Expert", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "Google Cloud Digital Leader", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Associate Cloud Engineer", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Professional Cloud Architect", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Professional Cloud DevOps Engineer", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "AWS", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Microsoft Azure", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Google Cloud", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Docker", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Kubernetes", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Helm", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Terraform", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Ansible", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "GitHub Actions", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "GitLab", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Jenkins", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Argo CD", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Prometheus", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Grafana", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Linux", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Git", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Bash", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Python", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Do I need experience to start?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "How do the one-to-one sessions work?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "Are the courses fully online?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "What is the difference between a short course and a long program?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "Which course should I choose?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "How much does a course cost?", "s": "FAQ", "h": "#faq", "k": "question answer"}];
+    var STATIC=[{"t": "Practice", "s": "Page", "h": "#practice", "k": "mock interview tests labs quizzes"}, {"t": "Mock interview (paid)", "s": "Practice", "h": "#mock-interview", "k": "interview feedback improvement book paid"}, {"t": "Practice tests", "s": "Practice", "h": "#practice-tests", "k": "timed test exam mock"}, {"t": "Labs and project ideas", "s": "Practice", "h": "#labs", "k": "hands-on projects portfolio"}, {"t": "Quick quizzes", "s": "Practice", "h": "#quizzes", "k": "quiz questions"}, {"t": "Host a static website on AWS", "s": "Lab idea", "h": "#labs", "k": "S3 CloudFront IAM A live site running in your own cloud account"}, {"t": "Ship a container with a CI/CD pipeline", "s": "Lab idea", "h": "#labs", "k": "Docker GitHub Actions A pipeline that builds, tests and deploys on every push"}, {"t": "Build a network and server with Terraform", "s": "Lab idea", "h": "#labs", "k": "Terraform AWS A VPC and a server defined entirely in code"}, {"t": "Run an app on Kubernetes", "s": "Lab idea", "h": "#labs", "k": "Kubernetes Helm A rolling update and a rollback you can demo"}, {"t": "Monitoring dashboard with alerts", "s": "Lab idea", "h": "#labs", "k": "Prometheus Grafana Dashboards and an alert tied to an SLO"}, {"t": "Incident drill and postmortem", "s": "Lab idea", "h": "#labs", "k": "SLOs Runbooks A written blameless postmortem"}, {"t": "Quiz: Cloud basics", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: DevOps and CI/CD", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: Linux and networking", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: Containers and Kubernetes", "s": "Quiz", "h": "#quizzes", "k": "questions practice"}, {"t": "Quiz: SRE and observability", "s": "Quiz", "h": "#quizzes", "k": "questions practice"},{"t": "Courses", "s": "Section", "h": "#courses", "k": "career path devops sre cloud"}, {"t": "DevOps Engineer path", "s": "Section", "h": "#courses", "k": "career devops ci/cd pipelines roadmap"}, {"t": "Site Reliability Engineer path", "s": "Section", "h": "#courses", "k": "career sre slo incident reliability roadmap"}, {"t": "Certification courses", "s": "Section", "h": "#certifications", "k": "exam aws azure google cloud certified"}, {"t": "Tools you will use", "s": "Section", "h": "#tools", "k": "technologies logos stack"}, {"t": "Simplibytes", "s": "Page", "h": "#simplibytes", "k": "daily cue cards fact interview question subscribe"}, {"t": "Online tutorials", "s": "Section", "h": "#learn", "k": "youtube videos free watch"}, {"t": "Blog: daily tech brief", "s": "Page", "h": "#blog", "k": "news cloud ai updates"}, {"t": "About us", "s": "Page", "h": "#about", "k": "mission team time zones"}, {"t": "Book a free consultation", "s": "Section", "h": "#contact", "k": "calendly call schedule book"}, {"t": "Send us a message", "s": "Section", "h": "#contact", "k": "contact write query form"}, {"t": "AWS Certified Cloud Practitioner", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified Solutions Architect Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified Developer Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified CloudOps Engineer Associate", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AWS Certified DevOps Engineer Professional", "s": "Certification", "h": "#certifications", "k": "AWS exam certified prep"}, {"t": "AZ-900 Azure Fundamentals", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-104 Azure Administrator Associate", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-204 Azure Developer Associate", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-400 DevOps Engineer Expert", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "AZ-305 Azure Solutions Architect Expert", "s": "Certification", "h": "#certifications", "k": "Azure Microsoft exam certified prep"}, {"t": "Google Cloud Digital Leader", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Associate Cloud Engineer", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Professional Cloud Architect", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "Google Professional Cloud DevOps Engineer", "s": "Certification", "h": "#certifications", "k": "Google Cloud GCP exam certified prep"}, {"t": "AWS", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Microsoft Azure", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Google Cloud", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Docker", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Kubernetes", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Helm", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Terraform", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Ansible", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "GitHub Actions", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "GitLab", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Jenkins", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Argo CD", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Prometheus", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Grafana", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Linux", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Git", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Bash", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Python", "s": "Technology", "h": "#tools", "k": "tool technology"}, {"t": "Do I need experience to start?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "How do the one-to-one sessions work?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "Are the courses fully online?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "What is the difference between a short course and a long program?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "Which course should I choose?", "s": "FAQ", "h": "#faq", "k": "question answer"}, {"t": "How much does a course cost?", "s": "FAQ", "h": "#faq", "k": "question answer"}];
     var dlg=document.getElementById('searchDialog'),inp=document.getElementById('searchInput'),list=document.getElementById('searchList'),head=document.getElementById('searchHead'),btn=document.getElementById('searchBtn');
     if(!dlg||!btn||typeof dlg.showModal!=='function'){if(btn){btn.hidden=true;}return;}
     var POPULAR=['DevOps Engineer path','Site Reliability Engineer path','Certification courses','Simplibytes','Book a free consultation'];
     function all(){
       var out=STATIC.slice(),i;
+      for(i=0;i<courses.length;i++){var cc=courses[i];out.push({t:cc.title,s:'Course',h:'#course-'+cc.slug,k:(cc.tagline||'')+' '+(cc.tools||[]).join(' ')+' '+(cc.group||'')+' syllabus curriculum'});}
       for(i=0;i<bytes.length;i++){var b=bytes[i];out.push({t:b.title,s:'Simplibyte',h:'#byte-'+b.id,k:(b.cat||'')+' '+(b.area||'')+' '+(b.body||'')});}
       for(i=0;i<posts.length;i++){var p=posts[i];out.push({t:p.title||'Daily tech brief',s:'Blog',h:'#blog',k:(p.summary||'')+' '+(p.date||'')});}
       return out;
@@ -2439,6 +2633,7 @@ body.dialog-open{overflow:hidden}
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&more.classList.contains('open')){setOpen(false);mb.focus();}});
     more.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a')){setOpen(false);}});
   })();
+  loadCourses();
   loadBytes();
   window.Simplibytes={render:renderPng,cards:function(){return bytes.slice();}};
 

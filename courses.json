@@ -1,0 +1,1079 @@
+[
+ {
+  "slug": "linux-networking-scripting",
+  "title": "Linux, Networking & Scripting",
+  "group": "Infrastructure",
+  "type": "short",
+  "level": "Beginner",
+  "weeks": 6,
+  "tagline": "The command line, networking and scripting skills every infrastructure role starts from.",
+  "who": [
+   "Career changers moving into IT, cloud or DevOps",
+   "Support or admin staff who want to automate their work",
+   "Anyone who will take a cloud or DevOps course next"
+  ],
+  "prereq": "None. You need a laptop and a stable internet connection.",
+  "outcomes": [
+   "Work confidently in a Linux terminal",
+   "Manage users, permissions, packages and services",
+   "Explain how IP, DNS, HTTP and TLS fit together",
+   "Troubleshoot connectivity with standard tools",
+   "Automate repetitive tasks with Bash and Python",
+   "Keep your scripts and configuration in Git"
+  ],
+  "modules": [
+   {
+    "t": "Linux fundamentals",
+    "topics": [
+     "Filesystem layout and navigation",
+     "Working with files and directories",
+     "Searching and filtering text with grep, find and pipes",
+     "Editing files with nano and vim",
+     "Reading manual pages"
+    ],
+    "lab": "Organise a messy log directory and find specific errors in it."
+   },
+   {
+    "t": "Users, permissions and processes",
+    "topics": [
+     "Users, groups and sudo",
+     "File permissions with chmod and chown",
+     "Processes, signals and job control",
+     "Services with systemd",
+     "Scheduling with cron"
+    ],
+    "lab": "Run a small app as a service with a scheduled job."
+   },
+   {
+    "t": "Packages, storage and system health",
+    "topics": [
+     "Package managers",
+     "Disks, partitions and mounts",
+     "Reading logs with journalctl",
+     "Checking CPU, memory and disk (top, free, df)",
+     "Basic performance troubleshooting"
+    ],
+    "lab": "Diagnose a slow server and write down what you found."
+   },
+   {
+    "t": "Networking essentials",
+    "topics": [
+     "IP addresses, subnets and CIDR",
+     "Ports and protocols",
+     "DNS from name to address",
+     "HTTP requests and responses",
+     "TLS and certificates at a high level"
+    ],
+    "lab": "Trace a request from a browser to a web server step by step."
+   },
+   {
+    "t": "Network troubleshooting and security basics",
+    "topics": [
+     "ping, traceroute, curl, dig and ss",
+     "Firewalls with ufw and iptables basics",
+     "SSH keys and safe remote access",
+     "Hardening a server"
+    ],
+    "lab": "Lock down SSH and open only the ports the server needs."
+   },
+   {
+    "t": "Scripting with Bash and Python",
+    "topics": [
+     "Variables, loops, functions and exit codes",
+     "Reading and writing files",
+     "Calling a web API from Python",
+     "Git basics: commit, branch, push"
+    ],
+    "lab": "Build a backup-and-report script and keep it in a Git repository."
+   }
+  ],
+  "tools": [
+   "Linux (Ubuntu)",
+   "Bash",
+   "Python",
+   "Git",
+   "SSH",
+   "systemd"
+  ],
+  "projects": [
+   "A server health report script",
+   "A hardened Linux server with a service and a scheduled job"
+  ],
+  "prepares": [
+   "Linux Essentials (foundation level)"
+  ],
+  "next": [
+   "aws-cloud-computing-ai",
+   "docker-cicd-pipelines"
+  ],
+  "sessions": 12,
+  "hours": 12
+ },
+ {
+  "slug": "aws-cloud-computing-ai",
+  "title": "AWS Cloud Computing & AI",
+  "group": "Cloud engineering",
+  "type": "short",
+  "level": "Beginner",
+  "weeks": 8,
+  "tagline": "Core AWS services, security and architecture, plus a first look at AI services on AWS.",
+  "who": [
+   "Beginners who want to start a cloud career",
+   "IT staff moving workloads to AWS",
+   "Learners preparing for the AWS Cloud Practitioner exam"
+  ],
+  "prereq": "None. Basic computer skills are enough. Linux knowledge helps but is not required.",
+  "outcomes": [
+   "Explain cloud models and the shared responsibility model",
+   "Create and secure an AWS account with budgets and alerts",
+   "Build a web application on EC2, a load balancer and a VPC",
+   "Store data in S3, RDS and DynamoDB",
+   "Create least-privilege access with IAM",
+   "Build a small serverless API and monitor it with CloudWatch",
+   "Use managed AI services in a simple application"
+  ],
+  "modules": [
+   {
+    "t": "Cloud concepts and AWS basics",
+    "topics": [
+     "IaaS, PaaS and SaaS",
+     "Shared responsibility model",
+     "Regions and Availability Zones",
+     "Console and AWS CLI",
+     "Billing, free tier and budgets"
+    ],
+    "lab": "Set up a secured account with budget alerts."
+   },
+   {
+    "t": "Identity and security",
+    "topics": [
+     "IAM users, groups, roles and policies",
+     "Least privilege and MFA",
+     "Encryption and KMS basics",
+     "Security groups and network ACLs"
+    ],
+    "lab": "Create least-privilege roles for a small team."
+   },
+   {
+    "t": "Compute and networking",
+    "topics": [
+     "EC2, AMIs and EBS",
+     "Auto Scaling and load balancing",
+     "VPC, subnets, routing and NAT",
+     "Public and private resources"
+    ],
+    "lab": "Run a web app behind a load balancer inside a VPC."
+   },
+   {
+    "t": "Storage and databases",
+    "topics": [
+     "S3 storage classes, versioning and policies",
+     "EFS and shared storage",
+     "RDS and backups",
+     "DynamoDB basics"
+    ],
+    "lab": "Host a static site on S3 and connect an app to a database."
+   },
+   {
+    "t": "Serverless, monitoring and automation",
+    "topics": [
+     "Lambda and API Gateway",
+     "CloudWatch metrics, logs and alarms",
+     "Intro to CloudFormation",
+     "Scripting with the AWS CLI"
+    ],
+    "lab": "Build a serverless API and add alarms for errors."
+   },
+   {
+    "t": "AI on AWS and exam preparation",
+    "topics": [
+     "Overview of managed AI services, including Amazon Bedrock",
+     "Responsible AI basics",
+     "Cost optimisation and the Well-Architected pillars",
+     "Practice questions and exam review"
+    ],
+    "lab": "Add a small AI feature to your app with a managed service."
+   }
+  ],
+  "tools": [
+   "AWS Console",
+   "AWS CLI",
+   "EC2",
+   "S3",
+   "IAM",
+   "VPC",
+   "RDS",
+   "Lambda",
+   "CloudWatch"
+  ],
+  "projects": [
+   "A secured, load-balanced web application",
+   "A serverless API with monitoring"
+  ],
+  "prepares": [
+   "AWS Certified Cloud Practitioner"
+  ],
+  "next": [
+   "docker-cicd-pipelines",
+   "terraform-ansible"
+  ],
+  "sessions": 16,
+  "hours": 16
+ },
+ {
+  "slug": "docker-cicd-pipelines",
+  "title": "Docker & CI/CD Pipelines",
+  "group": "DevOps and automation",
+  "type": "short",
+  "level": "Beginner to intermediate",
+  "weeks": 6,
+  "tagline": "Package applications in containers and ship them with automated pipelines.",
+  "who": [
+   "Aspiring DevOps engineers",
+   "Developers who want to automate builds and releases",
+   "Cloud learners adding a hands-on delivery skill"
+  ],
+  "prereq": "Basic Linux command line and Git. The Linux, Networking & Scripting course covers this.",
+  "outcomes": [
+   "Use Git branching and pull requests in a team workflow",
+   "Write Dockerfiles and build small, safe images",
+   "Run multi-service apps with Docker Compose",
+   "Build a CI pipeline with GitHub Actions",
+   "Deploy automatically to a server or cloud environment",
+   "Use release strategies such as rolling and blue-green",
+   "Add tests and security checks to a pipeline"
+  ],
+  "modules": [
+   {
+    "t": "Git and collaboration",
+    "topics": [
+     "Branching strategies",
+     "Pull requests and code review",
+     "Resolving merge conflicts",
+     "Protecting the main branch"
+    ],
+    "lab": "Practise a pull request workflow on a sample repository."
+   },
+   {
+    "t": "Docker fundamentals",
+    "topics": [
+     "Images and containers",
+     "Writing a Dockerfile",
+     "Layers and build caching",
+     "Volumes and networks",
+     "Registries"
+    ],
+    "lab": "Containerise a small web application."
+   },
+   {
+    "t": "Compose and image best practice",
+    "topics": [
+     "Docker Compose for multi-service apps",
+     "Configuration and secrets",
+     "Small and secure images",
+     "Image scanning"
+    ],
+    "lab": "Run an application with a database using Compose."
+   },
+   {
+    "t": "Continuous integration with GitHub Actions",
+    "topics": [
+     "Workflows, triggers and runners",
+     "Running tests automatically",
+     "Caching and artifacts",
+     "Secrets in pipelines"
+    ],
+    "lab": "Build a pipeline that tests and builds on every push."
+   },
+   {
+    "t": "Continuous delivery and release strategies",
+    "topics": [
+     "Pushing images to a registry",
+     "Deploying to a cloud server",
+     "Environments and approvals",
+     "Rolling, blue-green and canary releases",
+     "Rollbacks"
+    ],
+    "lab": "Deploy to a cloud VM with an approval step."
+   },
+   {
+    "t": "Pipeline quality and capstone",
+    "topics": [
+     "Linting and security scanning in CI",
+     "Reading and fixing pipeline failures",
+     "How the same ideas work in Jenkins and GitLab CI",
+     "Capstone review"
+    ],
+    "lab": "Present your complete pipeline from commit to running container."
+   }
+  ],
+  "tools": [
+   "Git",
+   "GitHub",
+   "Docker",
+   "Docker Compose",
+   "GitHub Actions"
+  ],
+  "projects": [
+   "A containerised application with a complete CI/CD pipeline"
+  ],
+  "prepares": [],
+  "next": [
+   "kubernetes-in-practice",
+   "terraform-ansible"
+  ],
+  "sessions": 12,
+  "hours": 12
+ },
+ {
+  "slug": "kubernetes-in-practice",
+  "title": "Kubernetes in Practice",
+  "group": "DevOps and automation",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 6,
+  "tagline": "Deploy, scale and troubleshoot real workloads on Kubernetes.",
+  "who": [
+   "DevOps and cloud engineers running containers",
+   "Developers who deploy to Kubernetes",
+   "Learners preparing for CKA or CKAD"
+  ],
+  "prereq": "Docker basics and a comfortable Linux command line.",
+  "outcomes": [
+   "Explain the Kubernetes architecture",
+   "Deploy and update applications with Deployments",
+   "Expose apps with Services and Ingress",
+   "Manage configuration, secrets and storage",
+   "Package apps with Helm",
+   "Scale and roll back safely",
+   "Troubleshoot failing workloads"
+  ],
+  "modules": [
+   {
+    "t": "Architecture and first cluster",
+    "topics": [
+     "Control plane and nodes",
+     "The API server and kubectl",
+     "Local clusters with kind or minikube",
+     "Objects and YAML manifests"
+    ],
+    "lab": "Create a local cluster and deploy your first Pod."
+   },
+   {
+    "t": "Workloads",
+    "topics": [
+     "Pods, ReplicaSets and Deployments",
+     "Labels and selectors",
+     "Readiness and liveness probes",
+     "Resource requests and limits"
+    ],
+    "lab": "Deploy an app with health checks and resource limits."
+   },
+   {
+    "t": "Networking",
+    "topics": [
+     "Services: ClusterIP, NodePort and LoadBalancer",
+     "Ingress controllers",
+     "DNS inside the cluster",
+     "NetworkPolicy basics"
+    ],
+    "lab": "Expose an application through an Ingress."
+   },
+   {
+    "t": "Configuration and storage",
+    "topics": [
+     "ConfigMaps and Secrets",
+     "Volumes, PersistentVolumes and claims",
+     "StatefulSets",
+     "Backups at a high level"
+    ],
+    "lab": "Run a database with persistent storage."
+   },
+   {
+    "t": "Packaging and delivery",
+    "topics": [
+     "Helm charts and values",
+     "Kustomize overview",
+     "GitOps and Argo CD introduction"
+    ],
+    "lab": "Package your app as a Helm chart and deploy it with Argo CD."
+   },
+   {
+    "t": "Operations and troubleshooting",
+    "topics": [
+     "Horizontal Pod Autoscaler",
+     "Rolling updates and rollbacks",
+     "RBAC basics",
+     "Debugging with describe, logs and events",
+     "Managed Kubernetes such as EKS"
+    ],
+    "lab": "Fix a set of broken deployments against the clock."
+   }
+  ],
+  "tools": [
+   "Kubernetes",
+   "kubectl",
+   "Helm",
+   "kind",
+   "Argo CD"
+  ],
+  "projects": [
+   "A Helm-packaged application with autoscaling and a GitOps deployment"
+  ],
+  "prepares": [
+   "A good base for the CKA and CKAD exams"
+  ],
+  "next": [
+   "monitoring-observability",
+   "devops-engineer-program"
+  ],
+  "sessions": 12,
+  "hours": 12
+ },
+ {
+  "slug": "terraform-ansible",
+  "title": "Terraform & Ansible",
+  "group": "Infrastructure",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 6,
+  "tagline": "Provision and configure infrastructure as version-controlled code.",
+  "who": [
+   "DevOps and cloud engineers",
+   "System administrators moving to automation",
+   "Learners preparing for the Terraform Associate exam"
+  ],
+  "prereq": "Linux basics and some AWS experience, for example the AWS Cloud Computing & AI course.",
+  "outcomes": [
+   "Explain infrastructure as code and why it matters",
+   "Write Terraform for networks, servers and load balancers",
+   "Organise code with variables, outputs and modules",
+   "Manage state safely in a team",
+   "Configure servers repeatably with Ansible playbooks",
+   "Combine Terraform and Ansible in one workflow"
+  ],
+  "modules": [
+   {
+    "t": "Infrastructure as code and Terraform basics",
+    "topics": [
+     "Declarative infrastructure",
+     "Providers and resources",
+     "plan, apply and destroy",
+     "What state is and why it matters"
+    ],
+    "lab": "Create and destroy your first cloud resources with code."
+   },
+   {
+    "t": "Variables, outputs and modules",
+    "topics": [
+     "Input variables and locals",
+     "Outputs",
+     "Writing reusable modules",
+     "Using registry modules"
+    ],
+    "lab": "Build a reusable network module."
+   },
+   {
+    "t": "State and working in teams",
+    "topics": [
+     "Remote state with locking",
+     "Environments and workspaces",
+     "Detecting and handling drift",
+     "Importing existing resources"
+    ],
+    "lab": "Move state to a remote backend and share it with a teammate."
+   },
+   {
+    "t": "Terraform on AWS",
+    "topics": [
+     "VPC, subnets and security groups",
+     "EC2 and load balancers",
+     "IAM roles for infrastructure",
+     "fmt, validate and plan in CI"
+    ],
+    "lab": "Deploy a three-tier layout with code."
+   },
+   {
+    "t": "Ansible fundamentals",
+    "topics": [
+     "Inventory and ad-hoc commands",
+     "Playbooks and modules",
+     "Variables, handlers and idempotence",
+     "Testing playbooks"
+    ],
+    "lab": "Configure a group of web servers with one playbook."
+   },
+   {
+    "t": "Roles and a combined workflow",
+    "topics": [
+     "Roles and Jinja2 templates",
+     "Ansible Vault for secrets",
+     "Terraform creates, Ansible configures",
+     "Capstone review"
+    ],
+    "lab": "Provision servers with Terraform and configure them with Ansible."
+   }
+  ],
+  "tools": [
+   "Terraform",
+   "Ansible",
+   "AWS",
+   "Git"
+  ],
+  "projects": [
+   "A complete environment provisioned and configured from code"
+  ],
+  "prepares": [
+   "HashiCorp Certified: Terraform Associate"
+  ],
+  "next": [
+   "kubernetes-in-practice",
+   "devops-engineer-program"
+  ],
+  "sessions": 12,
+  "hours": 12
+ },
+ {
+  "slug": "monitoring-observability",
+  "title": "Monitoring & Observability",
+  "group": "Reliability and SRE",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 4,
+  "tagline": "See what your systems are doing with metrics, dashboards, alerts, logs and traces.",
+  "who": [
+   "DevOps and SRE engineers",
+   "Developers who run their own services",
+   "Operations staff who handle alerts"
+  ],
+  "prereq": "Linux basics and some container experience.",
+  "outcomes": [
+   "Choose useful signals for a service",
+   "Collect metrics with Prometheus",
+   "Build Grafana dashboards",
+   "Write alerts that are actionable and route them well",
+   "Search logs and follow a request with traces",
+   "Connect metrics, logs and traces during an investigation"
+  ],
+  "modules": [
+   {
+    "t": "Observability foundations",
+    "topics": [
+     "Monitoring and observability compared",
+     "Metrics, logs and traces",
+     "The four golden signals",
+     "RED and USE methods"
+    ],
+    "lab": "Pick the right signals for a sample service."
+   },
+   {
+    "t": "Metrics with Prometheus",
+    "topics": [
+     "How scraping works",
+     "Exporters and instrumentation",
+     "PromQL basics",
+     "Recording rules"
+    ],
+    "lab": "Instrument an app and query its metrics."
+   },
+   {
+    "t": "Dashboards and alerts",
+    "topics": [
+     "Grafana dashboards and variables",
+     "Alert rules and Alertmanager routing",
+     "Avoiding alert fatigue",
+     "Writing runbook links into alerts"
+    ],
+    "lab": "Build a dashboard and an alert that pages the right person."
+   },
+   {
+    "t": "Logs, traces and capstone",
+    "topics": [
+     "Centralised logging with Loki or the ELK stack",
+     "Tracing and OpenTelemetry overview",
+     "Correlating signals during an incident",
+     "Capstone review"
+    ],
+    "lab": "Set up the full stack for a sample application."
+   }
+  ],
+  "tools": [
+   "Prometheus",
+   "Grafana",
+   "Alertmanager",
+   "OpenTelemetry",
+   "Loki"
+  ],
+  "projects": [
+   "A monitoring stack with dashboards and alerts for a sample application"
+  ],
+  "prepares": [],
+  "next": [
+   "sre-essentials",
+   "sre-program"
+  ],
+  "sessions": 8,
+  "hours": 8
+ },
+ {
+  "slug": "sre-essentials",
+  "title": "SRE Essentials",
+  "group": "Reliability and SRE",
+  "type": "short",
+  "level": "Intermediate",
+  "weeks": 5,
+  "tagline": "SLOs, error budgets, incident response and the habits of reliable teams.",
+  "who": [
+   "Engineers moving towards SRE roles",
+   "DevOps engineers who own production systems",
+   "Team leads who want a reliability practice"
+  ],
+  "prereq": "Linux basics. Some cloud or container experience helps.",
+  "outcomes": [
+   "Explain what SRE is and how it differs from DevOps",
+   "Define SLIs, SLOs and error budgets for a service",
+   "Set up burn-rate style alerts",
+   "Run an incident with clear roles and communication",
+   "Write a blameless postmortem",
+   "Reduce toil with automation"
+  ],
+  "modules": [
+   {
+    "t": "SRE principles",
+    "topics": [
+     "SRE and DevOps compared",
+     "Toil and how to measure it",
+     "Reliability as a feature",
+     "Risk and trade-offs"
+    ],
+    "lab": "Audit the toil in a sample team."
+   },
+   {
+    "t": "SLIs, SLOs and error budgets",
+    "topics": [
+     "Choosing good SLIs",
+     "Setting targets with users in mind",
+     "Error budgets and policies",
+     "Burn-rate alerting"
+    ],
+    "lab": "Define SLOs for a sample service."
+   },
+   {
+    "t": "Incident response",
+    "topics": [
+     "Roles, severity levels and on-call",
+     "Communication during incidents",
+     "Runbooks and escalation",
+     "Mitigate first, investigate second"
+    ],
+    "lab": "Take part in a simulated incident."
+   },
+   {
+    "t": "Postmortems and learning",
+    "topics": [
+     "Blameless culture",
+     "Timelines and contributing factors",
+     "Useful action items",
+     "Sharing what you learned"
+    ],
+    "lab": "Write the postmortem for your simulated incident."
+   },
+   {
+    "t": "Reliability engineering practice",
+    "topics": [
+     "Capacity planning and load testing",
+     "Redundancy and graceful degradation",
+     "Intro to chaos engineering",
+     "Automating away toil"
+    ],
+    "lab": "Review the reliability of a system design."
+   }
+  ],
+  "tools": [
+   "Prometheus",
+   "Grafana",
+   "Runbooks",
+   "Incident tooling"
+  ],
+  "projects": [
+   "An SLO document, a runbook and a postmortem for a simulated incident"
+  ],
+  "prepares": [],
+  "next": [
+   "monitoring-observability",
+   "sre-program"
+  ],
+  "sessions": 10,
+  "hours": 10
+ },
+ {
+  "slug": "devops-engineer-program",
+  "title": "DevOps Engineer Program",
+  "group": "DevOps and automation",
+  "type": "long",
+  "level": "Beginner to job-ready",
+  "weeks": 36,
+  "tagline": "The full path from Linux basics to a job-ready DevOps portfolio, with a coach all the way.",
+  "who": [
+   "Career changers aiming for a DevOps engineer role",
+   "IT professionals who want a structured path",
+   "Developers moving into platform and delivery work"
+  ],
+  "prereq": "None. Beginners are welcome. Your coach adjusts the pace to your background.",
+  "outcomes": [
+   "Work confidently with Linux, networking and scripting",
+   "Build and secure infrastructure on AWS",
+   "Containerise applications and automate delivery with CI/CD",
+   "Run workloads on Kubernetes",
+   "Define environments with Terraform and Ansible",
+   "Add monitoring and alerts to what you build",
+   "Present a portfolio project, CV and interview answers"
+  ],
+  "modules": [
+   {
+    "t": "Linux, networking and scripting",
+    "topics": [
+     "The command line and permissions",
+     "Networking and troubleshooting",
+     "Bash, Python and Git"
+    ],
+    "lab": "Covered in the Linux, Networking & Scripting course.",
+    "w": 6,
+    "course": "linux-networking-scripting"
+   },
+   {
+    "t": "Cloud on AWS",
+    "topics": [
+     "IAM and security",
+     "Compute, networking and storage",
+     "Serverless and monitoring"
+    ],
+    "lab": "Covered in the AWS Cloud Computing & AI course.",
+    "w": 8,
+    "course": "aws-cloud-computing-ai"
+   },
+   {
+    "t": "Containers and CI/CD",
+    "topics": [
+     "Docker and Compose",
+     "GitHub Actions pipelines",
+     "Release strategies"
+    ],
+    "lab": "Covered in the Docker & CI/CD Pipelines course.",
+    "w": 6,
+    "course": "docker-cicd-pipelines"
+   },
+   {
+    "t": "Kubernetes",
+    "topics": [
+     "Workloads, networking and storage",
+     "Helm and GitOps",
+     "Operations and troubleshooting"
+    ],
+    "lab": "Covered in the Kubernetes in Practice course.",
+    "w": 6,
+    "course": "kubernetes-in-practice"
+   },
+   {
+    "t": "Infrastructure as code",
+    "topics": [
+     "Terraform on AWS",
+     "State and modules",
+     "Ansible configuration"
+    ],
+    "lab": "Covered in the Terraform & Ansible course.",
+    "w": 6,
+    "course": "terraform-ansible"
+   },
+   {
+    "t": "Capstone and career preparation",
+    "topics": [
+     "Design and build an end-to-end project: app, pipeline, infrastructure code, Kubernetes and monitoring",
+     "Portfolio and GitHub profile",
+     "CV and LinkedIn review",
+     "Mock interviews and feedback"
+    ],
+    "lab": "Present your capstone project and answer interview-style questions about it.",
+    "w": 4
+   }
+  ],
+  "tools": [
+   "Linux",
+   "Git",
+   "AWS",
+   "Docker",
+   "GitHub Actions",
+   "Kubernetes",
+   "Helm",
+   "Terraform",
+   "Ansible",
+   "Prometheus",
+   "Grafana"
+  ],
+  "projects": [
+   "An end-to-end capstone: application, CI/CD pipeline, Terraform-built infrastructure, Kubernetes deployment and monitoring"
+  ],
+  "prepares": [
+   "AWS Certified Cloud Practitioner",
+   "HashiCorp Certified: Terraform Associate",
+   "A good base for the CKA and CKAD exams"
+  ],
+  "next": [
+   "sre-program"
+  ],
+  "sessions": 72,
+  "hours": 72
+ },
+ {
+  "slug": "sre-program",
+  "title": "Site Reliability Engineer Program",
+  "group": "Reliability and SRE",
+  "type": "long",
+  "level": "Beginner to job-ready",
+  "weeks": 33,
+  "tagline": "The full path to an SRE role, with hands-on incident practice.",
+  "who": [
+   "Career changers aiming for an SRE role",
+   "DevOps and operations engineers moving to SRE",
+   "Developers who want to own reliability"
+  ],
+  "prereq": "None. Beginners are welcome. Your coach adjusts the pace to your background.",
+  "outcomes": [
+   "Work confidently with Linux, networking and scripting",
+   "Run and secure workloads on AWS and Kubernetes",
+   "Build monitoring, dashboards and alerts",
+   "Define SLOs and manage error budgets",
+   "Lead an incident and write a blameless postmortem",
+   "Show a reliability project in your portfolio"
+  ],
+  "modules": [
+   {
+    "t": "Linux, networking and scripting",
+    "topics": [
+     "The command line and permissions",
+     "Networking and troubleshooting",
+     "Bash, Python and Git"
+    ],
+    "lab": "Covered in the Linux, Networking & Scripting course.",
+    "w": 6,
+    "course": "linux-networking-scripting"
+   },
+   {
+    "t": "Cloud on AWS",
+    "topics": [
+     "IAM and security",
+     "Compute, networking and storage",
+     "Serverless and monitoring"
+    ],
+    "lab": "Covered in the AWS Cloud Computing & AI course.",
+    "w": 8,
+    "course": "aws-cloud-computing-ai"
+   },
+   {
+    "t": "Monitoring and observability",
+    "topics": [
+     "Prometheus and Grafana",
+     "Alerting that works",
+     "Logs and traces"
+    ],
+    "lab": "Covered in the Monitoring & Observability course.",
+    "w": 4,
+    "course": "monitoring-observability"
+   },
+   {
+    "t": "SRE essentials",
+    "topics": [
+     "SLIs, SLOs and error budgets",
+     "Incident response",
+     "Postmortems and toil"
+    ],
+    "lab": "Covered in the SRE Essentials course.",
+    "w": 5,
+    "course": "sre-essentials"
+   },
+   {
+    "t": "Kubernetes",
+    "topics": [
+     "Workloads, networking and storage",
+     "Operations and troubleshooting",
+     "Autoscaling and rollbacks"
+    ],
+    "lab": "Covered in the Kubernetes in Practice course.",
+    "w": 6,
+    "course": "kubernetes-in-practice"
+   },
+   {
+    "t": "Capstone and career preparation",
+    "topics": [
+     "A reliability project: define SLOs, instrument a service, set up alerts, run a game day and write a postmortem",
+     "Portfolio and GitHub profile",
+     "CV and LinkedIn review",
+     "Mock interviews and feedback"
+    ],
+    "lab": "Present your reliability project and answer interview-style questions about it.",
+    "w": 4
+   }
+  ],
+  "tools": [
+   "Linux",
+   "Git",
+   "AWS",
+   "Kubernetes",
+   "Prometheus",
+   "Grafana",
+   "Alertmanager",
+   "Runbooks"
+  ],
+  "projects": [
+   "A reliability capstone: SLOs, monitoring, alerting, a game day and a written postmortem"
+  ],
+  "prepares": [
+   "AWS Certified Cloud Practitioner",
+   "A good base for the CKA and CKAD exams"
+  ],
+  "next": [
+   "devops-engineer-program"
+  ],
+  "sessions": 66,
+  "hours": 66
+ },
+ {
+  "slug": "aws-cloud-engineering-ai",
+  "title": "AWS Cloud Engineering & AI",
+  "group": "Cloud engineering",
+  "type": "long",
+  "level": "Beginner to job-ready",
+  "weeks": 40,
+  "tagline": "Build, automate and run cloud infrastructure on AWS, with applied AI, in an extended program.",
+  "who": [
+   "Career changers aiming for a cloud engineer role",
+   "IT professionals moving to the cloud",
+   "Learners who want AWS certifications and a portfolio"
+  ],
+  "prereq": "None. Beginners are welcome. Your coach adjusts the pace to your background.",
+  "outcomes": [
+   "Work confidently with Linux, Python and SQL",
+   "Design secure, resilient architectures on AWS",
+   "Run containers on ECS and understand EKS",
+   "Build environments with Terraform",
+   "Deploy to AWS with CI/CD and monitor with CloudWatch",
+   "Build a small AI-powered application with managed AWS services",
+   "Present a final project, CV and interview answers"
+  ],
+  "modules": [
+   {
+    "t": "Foundations: Linux, Python and SQL",
+    "topics": [
+     "The Linux command line and networking",
+     "Python scripting and Git",
+     "SQL and relational database basics"
+    ],
+    "lab": "Write a script that reads data, stores it in a database and reports on it.",
+    "w": 6
+   },
+   {
+    "t": "AWS core services",
+    "topics": [
+     "IAM and security",
+     "EC2, VPC, S3 and databases",
+     "Serverless and CloudWatch"
+    ],
+    "lab": "Covered in the AWS Cloud Computing & AI course.",
+    "w": 8,
+    "course": "aws-cloud-computing-ai"
+   },
+   {
+    "t": "Architecture, security and cost",
+    "topics": [
+     "The Well-Architected Framework",
+     "Multi-AZ and highly available designs",
+     "VPC design: endpoints and peering",
+     "Advanced IAM, encryption and logging with CloudTrail and Config",
+     "Cost optimisation"
+    ],
+    "lab": "Design and deploy a resilient three-tier architecture.",
+    "w": 6
+   },
+   {
+    "t": "Containers on AWS",
+    "topics": [
+     "Docker and image registries",
+     "ECR and ECS with Fargate",
+     "Overview of EKS"
+    ],
+    "lab": "Deploy a containerised application to ECS.",
+    "w": 5
+   },
+   {
+    "t": "Infrastructure as code",
+    "topics": [
+     "Terraform on AWS",
+     "State, modules and environments",
+     "Pipeline checks for infrastructure code"
+    ],
+    "lab": "Rebuild your architecture project entirely with Terraform.",
+    "w": 5
+   },
+   {
+    "t": "CI/CD and observability",
+    "topics": [
+     "GitHub Actions deploying to AWS",
+     "CloudWatch dashboards and alarms",
+     "Prometheus and Grafana basics"
+    ],
+    "lab": "Ship changes to AWS automatically and watch them with dashboards.",
+    "w": 5
+   },
+   {
+    "t": "AI on AWS",
+    "topics": [
+     "Managed AI services and Amazon Bedrock",
+     "Building a small AI-powered application",
+     "Responsible AI",
+     "AWS AI Practitioner exam preparation"
+    ],
+    "lab": "Build and deploy an AI-powered feature on AWS.",
+    "w": 3
+   },
+   {
+    "t": "Final project and career preparation",
+    "topics": [
+     "Plan and present a final project",
+     "Portfolio and GitHub profile",
+     "CV and LinkedIn review",
+     "Mock interviews and feedback"
+    ],
+    "lab": "Present your final project and answer interview-style questions about it.",
+    "w": 2
+   }
+  ],
+  "tools": [
+   "Linux",
+   "Python",
+   "SQL",
+   "AWS",
+   "Docker",
+   "ECS",
+   "Terraform",
+   "GitHub Actions",
+   "CloudWatch",
+   "Amazon Bedrock"
+  ],
+  "projects": [
+   "A resilient three-tier architecture built with Terraform",
+   "An AI-powered application deployed on AWS",
+   "A final project presented to your coach"
+  ],
+  "prepares": [
+   "AWS Certified Cloud Practitioner",
+   "AWS Certified AI Practitioner",
+   "AWS Certified Solutions Architect - Associate",
+   "HashiCorp Certified: Terraform Associate"
+  ],
+  "next": [
+   "devops-engineer-program"
+  ],
+  "sessions": 80,
+  "hours": 80
+ }
+]
